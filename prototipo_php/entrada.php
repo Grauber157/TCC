@@ -23,6 +23,8 @@
                     $alternativas[$i] = $resul - rand(1, 10);
                 }
 
+                shuffle($alternativas);
+
                 $escolha = 0;
                 //h1 para escrever o codígo
                 echo "{$n1} + {$n2} = X";
