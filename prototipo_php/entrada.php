@@ -20,7 +20,7 @@
                 $alternativas[0] = $resul;
                 for ($i=1; $i < 3; $i++) 
                 { 
-                    $alternativas[$i] = $resul - rand
+                    $alternativas[$i] = $resul - rand(1, 10);
                 }
 
                 $escolha = 0;
