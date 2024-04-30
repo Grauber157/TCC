@@ -36,10 +36,12 @@
     <form action="exe1.php" method="post">
         <!--BUTTON 1-->
         <button type="submit" name="escolha">
+            <input type="submit" value="10" name="escolha">
             <?php 
-                echo $alternativas[0];
-                $escolha = $alternativas[0];
+                //echo $alternativas[0];
+                //$escolha = 1;
             ?>
+            
         </button>
         <!--BUTTON 2-->
         <button type="submit" name="escolha">
