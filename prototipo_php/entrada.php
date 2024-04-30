@@ -18,7 +18,7 @@
                 //Estrutura de Repetição For() para randomizar as questões
                 //$alternativas[0] é o resultado correto
                 $alternativas[0] = $resul;
-                for ($i=1; $i < 3; $i++) 
+                for ($i=1; $i < 4; $i++) 
                 { 
                     $alternativas[$i] = $resul - rand(1, 10);
                 }
@@ -33,25 +33,29 @@
     </h1>
 
     <!--ALTERNATIVAS-->
-    <form action="exe1.php" method="get">
+    <form action="exe1.php" method="post">
+        <!--BUTTON 1-->
         <button type="submit" name="escolha">
             <?php 
                 echo $alternativas[0];
-                $escolha = 1;
+                $escolha = $alternativas[0];
             ?>
         </button>
+        <!--BUTTON 2-->
         <button type="submit" name="escolha">
             <?php 
                 echo $alternativas[1];
                 $escolha = 2;
             ?>
         </button>
+        <!--BUTTON 3-->
         <button type="submit" name="escolha">
             <?php 
                 echo $alternativas[2];
                 $escolha = 3;
             ?>
         </button>
+        <!--BUTTON 4-->
         <button type="submit" name="escolha">
             <?php 
                 echo $alternativas[3];
