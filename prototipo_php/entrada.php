@@ -46,6 +46,7 @@
             <?php 
                 echo $alternativas[1];
                 $escolha = 2;
+                //teste
             ?>
         </button>
         <!--BUTTON 3-->
