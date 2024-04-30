@@ -1,20 +1,14 @@
 <?php
-    //$nome = $_GET['nome'];
-    //$idade = $_GET['idade'];
-    //$salario = $_GET['salario'];
-    //INSS: x-1412,00=7,5% / 1412,01- 
-    $resul = $_POST['resultado'];
-    $escolha = $_POST['escolha'];
-    var_dump($resul);
-    var_dump($escolha);
-    if ($escolha == $resul)
+    //$_POST['resultado'];
+    $_POST['escolha'];
+    
+    if ($_POST['escolha'] == null)
     {
-        
-        echo "ta ceto";
+        echo "aaaaaa";
     }
     else
     {
-        echo "ta erraod";
+        echo "bbbbbb";
     }
     
 ?>
