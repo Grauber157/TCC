@@ -10,6 +10,11 @@
     <h1>
         <p>
             <?php 
+                //Limpa as variáveis super-globais do PHP a cada reload da página
+                //*AINDA EM TESTE*//
+                unset($_GET["escolha"]);
+                unset($_GET["resultado"]);
+
                 //Gera os valores e o resultado da questão
                 $n1 = rand(1, 10);
                 $n2 = rand(1, 10);
@@ -34,7 +39,6 @@
 
     <!--ALTERNATIVAS-->
     <form action="" method="get">
-
         <!--RESULTADO-->
         <input type="hidden" value="<?php echo $resul; ?>" name="resultado">
 
@@ -49,7 +53,6 @@
 
         <!--BUTTON 4-->
         <input type="submit" value="<?php echo $alternativas[3]; ?>" name="escolha">
-
     </form>
 
     <?php
