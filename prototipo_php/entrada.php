@@ -25,7 +25,6 @@
 
                 shuffle($alternativas);
 
-                $escolha = 0;
                 //h1 para escrever o codígo
                 echo "{$n1} + {$n2} = X";
             ?>
@@ -33,38 +32,22 @@
     </h1>
 
     <!--ALTERNATIVAS-->
-    <form action="exe1.php" method="post">
+    <form action="exe1.php" method="get">
+        <!--RESULTADO-->
+        <input type="hidden" value="<?php echo $resul; ?>" name="resultado">
+
         <!--BUTTON 1-->
-        <button type="submit" name="escolha">
-            <input type="submit" value="10" name="escolha">
-            <?php 
-                //echo $alternativas[0];
-                //$escolha = 1;
-            ?>
-            
-        </button>
+        <input type="submit" value="<?php echo $alternativas[0]; ?>" name="escolha">
+
         <!--BUTTON 2-->
-        <button type="submit" name="escolha">
-            <?php 
-                echo $alternativas[1];
-                $escolha = 2;
-                //teste
-            ?>
-        </button>
+        <input type="submit" value="<?php echo $alternativas[1]; ?>" name="escolha">
+
         <!--BUTTON 3-->
-        <button type="submit" name="escolha">
-            <?php 
-                echo $alternativas[2];
-                $escolha = 3;
-            ?>
-        </button>
+        <input type="submit" value="<?php echo $alternativas[2]; ?>" name="escolha">
+
         <!--BUTTON 4-->
-        <button type="submit" name="escolha">
-            <?php 
-                echo $alternativas[3];
-                $escolha = 4;
-            ?>
-        </button>
+        <input type="submit" value="<?php echo $alternativas[3]; ?>" name="escolha">
+
     </form>
 </body>
 </html>

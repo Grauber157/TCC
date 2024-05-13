@@ -1,16 +1,8 @@
 <?php
-    //$_POST['resultado'];
-    $_POST['escolha'];
+    $valor = $_GET["escolha"];
+    $resultado = $_GET["resultado"];
 
-    if ($_POST['escolha'] == null)
-    {
-        echo "VALOR NULO";
-        var_dump($_POST['escolha']);
-    }
-    else
-    {
-        echo "HÁ VALOR";
-        var_dump($_POST['escolha']);
-    }
-    
+    echo "SEU VALOR FOI: {$valor}\n";
+    echo "RESULTADO CORRETO: {$resultado}\n";
+
 ?>
