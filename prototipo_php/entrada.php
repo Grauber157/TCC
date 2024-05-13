@@ -23,16 +23,18 @@
                     $alternativas[$i] = $resul - rand(1, 10);
                 }
 
+                //Embaralha as alternativas, randomizando a posição da alternativa correta
                 shuffle($alternativas);
 
-                //h1 para escrever o codígo
+                //h1 para escrever o codígo na página
                 echo "{$n1} + {$n2} = X";
             ?>
         </p>
     </h1>
 
     <!--ALTERNATIVAS-->
-    <form action="exe1.php" method="get">
+    <form action="" method="get">
+
         <!--RESULTADO-->
         <input type="hidden" value="<?php echo $resul; ?>" name="resultado">
 
@@ -49,5 +51,27 @@
         <input type="submit" value="<?php echo $alternativas[3]; ?>" name="escolha">
 
     </form>
+
+    <?php
+        //'if()' e 'isset()' para verificar a existência das variáveis
+        //Caso elas estejam definidas, 'isset()' resulta true, que por fim, imprime a decisão
+        if (isset($_GET["escolha"]) and isset($_GET["resultado"]))
+        {
+            $valor = $_GET["escolha"];
+            $resultado = $_GET["resultado"];
+
+            if ($valor == $resultado)
+            {
+                echo "VOCÊ ACERTOU!";
+            }
+            else
+            {
+                echo "RESULTADO ERRADO";
+            }
+        }
+    ?>
+
+    <p>ACERTOS: </p>
+
 </body>
 </html>
