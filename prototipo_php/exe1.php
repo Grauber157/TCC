@@ -1,18 +1,22 @@
 <?php
-    $valor = $_GET["escolha"];
-    $resultado = $_GET["resultado"];
-
-    if ($valor == $resultado)
+    //'if()' e 'isset()' para verificar a existência das variáveis;
+    //Caso elas estejam definidas, 'isset()' resulta true, que por fim, imprime a decisão.
+    if (isset($_GET["escolha"]) and isset($_GET["resultado"]))
     {
-        echo "VOCÊ ACERTOU!";
+        $valor = $_GET["escolha"];
+        $resultado = $_GET["resultado"];
+
+        if ($valor == $resultado)
+        {
+            echo "VOCÊ ACERTOU!";
+        }
+
+        else
+        {
+            echo "RESULTADO ERRADO";
+        }
     }
-
-    else
-    {
-        echo "RESULTADO ERRADO";
-    }
-
-
+    
 ?>
 
 <?php

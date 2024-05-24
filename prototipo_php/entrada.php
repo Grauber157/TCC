@@ -10,28 +10,28 @@
     <h1>
         <p>
             <?php 
-                //Limpa as variáveis super-globais do PHP a cada reload da página
+                //Limpa as variáveis super-globais do PHP a cada reload da página;
                 //*AINDA EM TESTE*//
                 unset($_GET["escolha"]);
                 unset($_GET["resultado"]);
 
-                //Gera os valores e o resultado da questão
+                //Gera os valores e o resultado da questão.
                 $n1 = rand(1, 10);
                 $n2 = rand(1, 10);
                 $resul = $n1 + $n2;
                 
-                //Estrutura de Repetição For() para randomizar as questões
-                //$alternativas[0] é o resultado correto
+                //Estrutura de Repetição For() para randomizar as questões;
+                //$alternativas[0] é o resultado correto.
                 $alternativas[0] = $resul;
                 for ($i=1; $i < 4; $i++) 
                 { 
                     $alternativas[$i] = $resul - rand(1, 10);
                 }
 
-                //Embaralha as alternativas, randomizando a posição da alternativa correta
+                //Embaralha as alternativas, randomizando a posição da alternativa correta.
                 shuffle($alternativas);
 
-                //h1 para escrever o codígo na página
+                //h1 para escrever o codígo na página.
                 echo "{$n1} + {$n2} = X";
             ?>
         </p>
@@ -67,7 +67,7 @@
             (
                 {
                     //'url:' é uma variável que indica para qual documento que os dados vão ser encaminhados.
-                    url: entrada.php,
+                    url: 'exe1.php',
                     //'method:' SuperGlobal a ser usada para passar o valor do HTML ao PHP, por meio do jQuery.
                     method: 'GET',
                     //'data:' variável que armazena todos os dados que serão enviados.
@@ -79,30 +79,17 @@
                         
                         resultado: $('input[name="resultado"]').val()
                     },
+                    success: function(response)
+                    {
+                        $('#result').html(response);
+                    }
 
                 }
             )
         }
     </script>
 
-    <?php
-        //'if()' e 'isset()' para verificar a existência das variáveis
-        //Caso elas estejam definidas, 'isset()' resulta true, que por fim, imprime a decisão
-        if (isset($_GET["escolha"]) and isset($_GET["resultado"]))
-        {
-            $escolha = $_GET["escolha"];
-            $resultado = $_GET["resultado"];
-
-            if ($escolha == $resultado)
-            {
-                echo "VOCÊ ACERTOU!";
-            }
-            else
-            {
-                echo "RESULTADO ERRADO";
-            }
-        }
-    ?>
+    <div id='result'></div>
 
     <p>ACERTOS: </p>
 
