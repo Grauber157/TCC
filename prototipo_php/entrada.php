@@ -43,27 +43,57 @@
         <input type="hidden" value="<?php echo $resul; ?>" name="resultado">
 
         <!--BUTTON 1-->
-        <input type="submit" value="<?php echo $alternativas[0]; ?>" name="escolha">
+        <input type="button" value="<?php echo $alternativas[0]; ?>" name="escolha" onclick="ProcessamentoResposta(<?php echo $alternativas[0]; ?>)">
 
         <!--BUTTON 2-->
-        <input type="submit" value="<?php echo $alternativas[1]; ?>" name="escolha">
+        <input type="button" value="<?php echo $alternativas[1]; ?>" name="escolha" onclick="ProcessamentoResposta(<?php echo $alternativas[1]; ?>)">
 
         <!--BUTTON 3-->
-        <input type="submit" value="<?php echo $alternativas[2]; ?>" name="escolha">
+        <input type="button" value="<?php echo $alternativas[2]; ?>" name="escolha" onclick="ProcessamentoResposta(<?php echo $alternativas[2]; ?>)">
 
         <!--BUTTON 4-->
-        <input type="submit" value="<?php echo $alternativas[3]; ?>" name="escolha">
+        <input type="button" value="<?php echo $alternativas[3]; ?>" name="escolha" onclick="ProcessamentoResposta(<?php echo $alternativas[3]; ?>)">
     </form>
+
+    <!--CODÍGO JAVASCRIPT... *infelizmente*-->
+    
+    <!--Link para a biblioteca jQuery do Javascript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function ProcessamentoResposta(valor)
+        {
+            $.ajax
+            (
+                {
+                    //'url:' é uma variável que indica para qual documento que os dados vão ser encaminhados.
+                    url: entrada.php,
+                    //'method:' SuperGlobal a ser usada para passar o valor do HTML ao PHP, por meio do jQuery.
+                    method: 'GET',
+                    //'data:' variável que armazena todos os dados que serão enviados.
+                    data: 
+                    {
+                        //Pega o Parâmetro da função 'ProcessamentoResposta(valor)' e coloca na variável 'escolha:';
+                        //assim essa variável é jogada na superglobal '$_GET' entrando no PHP.
+                        escolha: valor,
+                        
+                        resultado: $('input[name="resultado"]').val()
+                    },
+
+                }
+            )
+        }
+    </script>
 
     <?php
         //'if()' e 'isset()' para verificar a existência das variáveis
         //Caso elas estejam definidas, 'isset()' resulta true, que por fim, imprime a decisão
         if (isset($_GET["escolha"]) and isset($_GET["resultado"]))
         {
-            $valor = $_GET["escolha"];
+            $escolha = $_GET["escolha"];
             $resultado = $_GET["resultado"];
 
-            if ($valor == $resultado)
+            if ($escolha == $resultado)
             {
                 echo "VOCÊ ACERTOU!";
             }
