@@ -1,0 +1,17 @@
+-----LOGIN-----
+
+- nome_aluno VARCHAR(30)
+- senha VARCHAR(30)
+- email VARCHAR(50)
+- data_nascimento DATE
+
+- nome_responsavel VARCHAR(30)
+- email_responsavel VARCHAR(50)
+- telefone VARCHAR(15)
+
+-----CONTA-----
+
+- nome_usuario VARCHAR(30)
+- descricao VARCHAR(200)
+- pontuacao INT(10)
+- ano_escolar INT(2)
