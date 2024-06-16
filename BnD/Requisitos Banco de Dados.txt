@@ -16,7 +16,6 @@
 
 CREATE DATABASE math_language;
 USE math_language;
-
 CREATE TABLE Usuario(
 	id_aluno INT(10) PRIMARY KEY AUTO_INCREMENT,
 	email VARCHAR(255),
@@ -30,3 +29,6 @@ CREATE TABLE Usuario(
 	instituicao_escolar VARCHAR(50)
 );
 	
+//codigo de teste://
+INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, descricao, data_nascimento, pontuacao, ano_escolar, instituicao_escolar)
+VALUES ('daniels@hotmail.com', 'aaaaaaaa', 'Daniels Silva' ,'Jscdell', 'jogando vava', '1988-04-7', 51231, '3EM', 'IFSP Campus Birigui');

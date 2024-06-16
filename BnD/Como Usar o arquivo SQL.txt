@@ -1,0 +1,8 @@
+Em caso de testes do banco de dados e tals, segue essa bagaça ai:
+
+1- Resumo, entre em alguma ferramenta de MySQL ('MySQL workbench' ou 'localhost/phpmyadmin' em algum navegador);
+
+2- Crie um banco de dados com o nome: 'math_language';
+
+3- Depois ache algum botão para importar, assim então selecione o arquivo e só esperar, que todas as tabelas e os dados seram carregados;
+☺
