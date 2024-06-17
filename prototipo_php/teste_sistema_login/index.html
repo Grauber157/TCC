@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Cadastre-se</h1>
+
+    <form action="server_side.php" method="post">
+
+        <label for="">Email: </label>
+        <input type="text" name="email" id="email">
+        <label for="">Senha: </label>
+        <input type="password" name="senha" id="senha">
+        <input type="submit" value="enviar">
+
+    </form>
+
+    <script>
+        function Processamento()
+        {
+            $.ajax
+            (
+                {
+                    //'url:' é uma variável que indica para qual documento que os dados vão ser encaminhados.
+                    url: 'server_side.php',
+                    //'method:' SuperGlobal a ser usada para passar o valor do HTML ao PHP, por meio do jQuery.
+                    method: 'GET',
+                    //'data:' variável que armazena todos os dados que serão enviados.
+                    data: 
+                    {
+                        //Pega o Parâmetro da função 'ProcessamentoResposta(valor)' e coloca na variável 'escolha:';
+                        //assim essa variável é jogada na superglobal '$_GET' entrando no PHP.
+
+                        //escolha: valor,//
+                        
+                        email: $('input[name="email"]').val(),
+                        senha: $('input[name="senha"]').val()
+                    },
+                    success: function(response)
+                    {
+                        $('#result').html(response);
+                    }
+                }
+            )
+        }
+    </script>
+
+</body>
+</html>
