@@ -31,14 +31,14 @@
         <aside class="form-flex">
         <div class="form-container">
             <p class="title">Cadastre-se</p>
-            <form class="form" method="post">
+            <form class="form" action="../php/cadastro.php" method="post">
                 <div class="input-group">
-                    <label for="name">Nome</label>
+                    <label for="name">Nome Completo</label>
                     <input type="text" name="name" id="name" placeholder="Nome">
                 </div>
                 <div class="input-group">
-                    <label for="surname">Sobrenome</label>
-                    <input type="text" name="surname" id="surname" placeholder="Sobrenome">
+                    <label for="surname">Apelido (Nickname)</label>
+                    <input type="text" name="nickname" id="surname" placeholder="Apelido">
                 </div>
                 <div class="input-group">
                     <label for="email">Email</label>
@@ -46,17 +46,33 @@
                 </div>
                 <div class="input-group">
                     <label for="password">Senha</label>
-                    <input type="text" name="password" id="pass" placeholder="Senha">
+                    <input type="password" name="senha" id="pass" placeholder="Senha">
                 </div>
                 <div class="input-group">
                     <label for="password">Confirme sua senha</label>
-                    <input type="text" name="password" id="pass" placeholder="Confirme a sua senha">
+                    <input type="password" name="confirmar_senha" id="pass" placeholder="Confirme sua senha">
                 </div>
                 <div class="input-group">
                     <label for="date">Data de Nascimento</label>
-                    <input type="date" name="date" id="date" placeholder="">
+                    <input type="date" name="data" id="date" placeholder="">
                 </div>
-                <button class="sign">Cadastrar</button>
+                <div class="input-group">
+                    <label for="name">Ano Escolar</label>
+                    <select name="ano_escola" id="name">
+                        <option value="6EF">6ºano Ensino Fundamental</option>
+                        <option value="7EF">7ºano Ensino Fundamental</option>
+                        <option value="8EF">8ºano Ensino Fundamental</option>
+                        <option value="9EF">9ºano Ensino Fundamental</option>
+                        <option value="1EM">1ºano Ensino Médio</option>
+                        <option value="2EM">2ºano Ensino Médio</option>
+                        <option value="3EM">3ºano Ensino Médio</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="name">Nome da Escola</label>
+                    <input type="text" name="nome_escola" id="name" placeholder="Nome da escola">
+                </div>
+                <input class="sign" type="submit" value="Cadastrar">
             </form>
             <p class="signup">Ja tem conta?
                 <a rel="noopener noreferrer" href="login.html" class="">Conecte-se</a>
