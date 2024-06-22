@@ -45,15 +45,7 @@
     }
     else
     {
-        echo "<span>Erro ao Cadastrar</span>";
-        echo "<p>Nome: $name</p><br>";
-        echo "<p>Apelido: $nickname</p><br>";
-        echo "<p>Email: $email</p><br>";
-        echo "<p>Senha: $senha</p><br>";
-        echo "<p>Confirmação senha: $senha_confirmacao</p><br>";
-        echo "<p>Data: $data</p><br>";
-        echo "<p>Ano: $ano_escolar</p><br>";
-        echo "<p>Nome Escola: $nome_escola</p><br>";
+        echo "<span>Erro ao Cadastrar</span><br>";
     }
     
 

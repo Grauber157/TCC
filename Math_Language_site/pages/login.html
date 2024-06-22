@@ -31,16 +31,16 @@
         <aside class="form.aside">
             <div class="form-container">
             <p class="title">Conecte-se</p>
-            <form class="form" method="post">
+            <form class="form" action="../php/login.php" method="post">
                 <div class="input-group">
                     <label for="username">Nome de usuário</label>
-                    <input type="text" name="username" id="username" placeholder="Email ou Nome de usuario">
+                    <input type="text" name="email" id="username" placeholder="Email ou Nome de usuario">
                 </div>
                 <div class="input-group">
                     <label for="password">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Senha">
+                    <input type="password" name="senha" id="password" placeholder="Senha">
                 </div>
-                <button class="sign">Logar</button>
+                <input class="sign" type="submit" value="Login">
             </form>
             <p class="signup">Não tem conta?
                 <a rel="noopener noreferrer" href="cad.html" class="">Cadastre-se</a>
