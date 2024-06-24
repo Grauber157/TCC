@@ -18,7 +18,9 @@ body{
     flex-direction: column;
     line-height: 10px;
   }
-  
+  .title-h1{
+    color: rgb(132, 14, 201);
+  }
   li{
     display: inline-block;
     margin: 20px;

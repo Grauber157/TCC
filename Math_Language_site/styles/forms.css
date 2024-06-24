@@ -33,11 +33,26 @@
     margin-left: 16px;
   }
   
-  .input-group input {
+  .input-group input{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(55, 65, 81, 1);
+    outline: 0;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    color: rgba(156, 163, 175,1);
+    font-family: 'poppinsregular';
+  }
+  .input-group select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 0.375rem;
