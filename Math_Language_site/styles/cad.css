@@ -7,7 +7,8 @@
     background-color: rgba(72, 39, 99, 0.514);
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
-    float: inline-end ;
+    margin-left: 25%;
+    margin-right: 25%;
   }
   
   .title {
@@ -25,6 +26,7 @@
     margin-top: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
+
   }
   
   .input-group label {
@@ -115,9 +117,5 @@
     font-size: 0.75rem;
     line-height: 1rem;
     color: rgba(156, 163, 175, 1);
-  }
-  img{
-    max-width: 80%;
-    float: right;
   }
   

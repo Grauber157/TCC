@@ -58,3 +58,7 @@ input{
     border: none;
     font-size: 15px;
 }
+img{
+    float: right;
+    max-width: 80%;
+}
