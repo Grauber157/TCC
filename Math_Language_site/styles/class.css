@@ -1,0 +1,20 @@
+aside{
+    display: flex;
+    flex-direction: column;
+}
+.ef{
+    background-color: rgba(37, 42, 81, 0.814);
+    max-width: 40%;
+    height: 400px;
+    padding: 16px;
+    border-radius: 15px;
+    margin: 10px;
+}
+.em{
+    background-color: rgba(37, 42, 81, 0.814);
+    max-width: 40%;
+    height: 400px;
+    padding: 16px;
+    border-radius: 15px;
+    margin: 10px;
+}

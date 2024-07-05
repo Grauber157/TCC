@@ -5,6 +5,7 @@ body{
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
+    background-image: url('../Material/images/bgcerto.png');
   }
   
   header{
@@ -12,6 +13,9 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #252852ca;
+    border-radius: 24px;
+    padding: 1.5%;
   }
   
   #title{
@@ -28,11 +32,19 @@ body{
   
   a{
     color: white;
+    border: 2px solid #252852;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px;
   }
   
   a:hover{
-    color: rgb(132, 14, 201);
     transition: 0.3s all;
+    background-color: rgb(132, 14, 201);
+    border: 0.1px solid rgb(132, 14, 201);
+    border-radius: 15px;
+    padding: 10px;
+
   }
   
   #inscreva-se-btn{
@@ -44,4 +56,13 @@ body{
   #inscreva-se-btn:hover{
     background-color: rgb(132, 14, 201);
     color: white;
+  }
+  footer{
+    background-color: #252852ca;
+    border-radius: 24px;
+    padding: 10px;
+  }
+
+  footer li{
+    font-weight: 200;
   }
