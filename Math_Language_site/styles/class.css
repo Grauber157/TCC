@@ -1,6 +1,7 @@
-aside{
+.sec-container{
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
 }
 .ef{
     background-color: rgba(37, 42, 81, 0.814);
