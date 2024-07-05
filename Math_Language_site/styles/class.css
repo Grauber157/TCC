@@ -4,8 +4,10 @@
     gap: 10px;
 }
 .ef{
+    display: flex;
+    flex-direction: column;
     background-color: rgba(37, 42, 81, 0.814);
-    max-width: 40%;
+    max-width: 50%;
     height: 400px;
     padding: 16px;
     border-radius: 15px;
@@ -18,4 +20,11 @@
     padding: 16px;
     border-radius: 15px;
     margin: 10px;
+}
+.ef a{
+    max-width: 25%;
+    height: 100px;
+}
+h4{
+    text-align: center;
 }
