@@ -1,0 +1,14 @@
+.sec-container{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.dis{
+    background-color: rgba(37, 42, 81, 0.814);
+    max-width: 50%;
+    height: 200px;
+    padding: 16px;
+    border-radius: 15px;
+    margin: 10px;
+    margin-right: auto;
+}

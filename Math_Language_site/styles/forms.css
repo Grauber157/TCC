@@ -1,13 +1,12 @@
 /*Main do Formulario*/
 .form-container {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-right: auto;
     width: 50%;
     border-radius: 0.75rem;
     background-color: rgba(72, 39, 99, 0.514);
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
-    float: inline-end ;
   }
   
   .title {
@@ -115,9 +114,5 @@
     font-size: 0.75rem;
     line-height: 1rem;
     color: rgba(156, 163, 175, 1);
-  }
-  img{
-    max-width: 80%;
-    float: right;
   }
   

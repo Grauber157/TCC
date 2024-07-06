@@ -8,23 +8,47 @@
     flex-direction: column;
     background-color: rgba(37, 42, 81, 0.814);
     max-width: 50%;
-    height: 400px;
+    height: 200px;
     padding: 16px;
     border-radius: 15px;
     margin: 10px;
+    margin-left: auto;
 }
 .em{
     background-color: rgba(37, 42, 81, 0.814);
     max-width: 40%;
-    height: 400px;
+    height: 200px;
     padding: 16px;
     border-radius: 15px;
     margin: 10px;
+    margin-right: auto;
 }
 .ef a{
     max-width: 25%;
     height: 100px;
+    border: 1px solid rgba(37, 42, 81, 0.814);
+}
+.ef a:hover{
+    max-width: 25%;
+    height: 100px;
+    border: 1px solid rgb(132, 14, 201);
+    background-color: rgb(132, 14, 201);
+    color: white;
+}
+.em a{
+    max-width: 25%;
+    height: 100px;
+    border: 1px solid rgba(37, 42, 81, 0.814);
+}
+.em a:hover{
+    max-width: 25%;
+    height: 100px;
+    border: 1px solid rgb(132, 14, 201);
+    background-color: rgb(132, 14, 201);
+    color: white;
 }
 h4{
     text-align: center;
+    font-size: x-large;
+    font-weight: 200;
 }
