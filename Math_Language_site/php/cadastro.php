@@ -14,20 +14,8 @@
 
     if($senha == $senha_confirmacao and strlen($name) > 5)
     {
-        #Parâmetros para realizar a conexão com o banco de dados
-        $hostname = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "math_language";
-        $link = mysqli_connect($hostname, $username, $password, $database);
-
-        #Checagem de conexão com o banco de dados
-        if (!$link) 
-        {
-            die("Conexão mal sucedida: " . mysqli_connect_error());
-        }
-        echo "Conexão bem sucedida\n";
-
+        #'Include()' para puxar os comandos do arquivo 'conexao.php'
+        include("include/conexao.php");
         ////AREA DE TESTE////
         $stmt = mysqli_prepare($link, "INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, data_nascimento, ano_escolar, instituicao_escolar) VALUES(?, ?, ?, ?, ?, ?, ?)");
 

@@ -5,23 +5,10 @@
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    #Parâmetros para realizar a conexão com o banco de dados
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "math_language";
-    $link = mysqli_connect($hostname, $username, $password, $database);
+    #'Include()' para puxar os comandos do arquivo 'conexao.php'
+    include("include/conexao.php");
 
-    #Checagem de conexão com o banco de dados
-    if (!$link) 
-    {
-        die("Conexão mal sucedida: " . mysqli_connect_error());
-    }
-    echo "Conexão bem sucedida\n";
-
-    ////AREA DE COISAS LOUCAS////
-
-    #mysqli_prepare() prepara o código SQL para ser enviado
+    #'mysqli_prepare()' prepara o código SQL para ser enviado
     #podendo ser armazenado em uma variável
     $stmt = mysqli_prepare($link, "SELECT email, apelido_usuario, senha FROM usuario WHERE email = ? or apelido_usuario = ?");
     
@@ -31,13 +18,20 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_bind_result($stmt, $email_banco, $apelido_banco, $senha_banco);
         mysqli_stmt_fetch($stmt);
-        if($email == $email_banco or $email == $apelido_banco and $senha == $senha_banco)
+
+        if(($email == $email_banco or $email == $apelido_banco) and ($senha == $senha_banco))
         {
-            echo "Login Concluido!";
+            echo "Login Concluido!<br>";
+            echo "$email // $email_banco<br>";
+            echo "$apelido_banco<br>";
+            echo "$senha // $senha_banco<br>";
         }
         else
         {
             echo "<span>Erro nas credenciais de login!</span><br>";
+            echo "$email // $email_banco<br>";
+            echo "$apelido_banco<br>";
+            echo "$senha // $senha_banco<br>";
         }
         mysqli_stmt_close($stmt);
     }
