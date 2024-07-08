@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $usuario = $_SESSION["login"];
-
+    $usuario = $_SESSION["apelido"];
+    echo "<h1>$usuario</h1>";
 
     $codigo_turma = $_POST["codigo_turma"];
     $senha = $_POST["senha"];
@@ -31,23 +31,30 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_bind_result($stmt, $codigo_banco, $senha_banco, $nome_turma);
         mysqli_stmt_fetch($stmt);
+        
 
         if($codigo_turma == $codigo_banco and $senha == $senha_banco)
         {
-            $stmt2 = mysqli_prepare($link, "INSERT INTO usuario(codigo_turma) VALUES($codigo_banco)");
-            mysqli_stmt_execute($stmt2);
-            mysqli_stmt_fetch($stmt2);
+            mysqli_stmt_close($stmt);
+
+            $stmt = mysqli_prepare($link, "UPDATE usuario SET codigo_turma = ? WHERE nome_usuario = ?");
+            
+            mysqli_stmt_bind_param($stmt, "ss", $codigo_banco, $usuario);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_fetch($stmt);
 
             echo "Sucesso ao entrar na turma!<br>";
             echo "Bem vindo a Turma $nome_turma!<br>";
 
-            mysqli_stmt_close($stmt2);
+            mysqli_stmt_close($stmt);
         }
         else
         {
+            mysqli_stmt_close($stmt);
             echo "Erro ao entrar na turma!<br>";
         }
-        mysqli_stmt_close($stmt);
+        
+        mysqli_close($link);
     }
 
 
