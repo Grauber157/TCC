@@ -24,10 +24,7 @@
             #teste de '$_SESSION[]'
             $_SESSION["apelido"] = $nome_usuario;
             echo "Login Concluido!<br>";
-            echo "$email // $email_banco<br>";
-            echo "$apelido_banco<br>";
-            echo "$senha // $senha_banco<br>";
-            echo "<a href='../../prototipo_php/sistema_turma/teste.html'>Voltar</a>";
+            #echo "<a href='../../prototipo_php/sistema_turma/teste.html'>Voltar</a>";
         }
         else
         {
