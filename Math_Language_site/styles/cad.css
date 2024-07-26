@@ -10,32 +10,32 @@
     margin-left: 25%;
     margin-right: 25%;
   }
-  
+  /* Titulo do Formulario */
   .title {
     text-align: center;
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
   }
-  
+  /* Formulario */
   .form {
     margin-top: 1.5rem;
   }
-  
+  /* Grupo Input (entrada de dados) */
   .input-group {
     margin-top: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
 
   }
-  
+  /* legenda da textBox do grupo input */
   .input-group label {
     display: block;
     color: white;
     margin-bottom: 4px;
     margin-left: 16px;
   }
-  
+  /* texBox do grupo input (caixas de texto) */
   .input-group input{
     display: flex;
     align-items: center;
@@ -51,6 +51,7 @@
     color: rgba(156, 163, 175,1);
     font-family: 'poppinsregular';
   }
+  /* Select do grupo input (caixa de selecao [dd:mm:aaaa]) */
   .input-group select{
     display: flex;
     align-items: center;
@@ -66,11 +67,11 @@
     color: rgba(156, 163, 175,1);
     font-family: 'poppinsregular';
   }
-  
+  /* focus = destacar um elemento na pagina [entrada de dados] */
   .input-group input:focus {
     border-color: rgba(167, 139, 250);
   }
-  
+  /* esqueci minha senha */
   .forgot {
     display: flex;
     justify-content: flex-end;
@@ -79,7 +80,7 @@
     color: rgba(156, 163, 175,1);
     margin: 8px 0 14px 0;
   }
-  
+  /* link para cadastro caso nao a conta nao esteja no sistema */
   .forgot a,.signup a {
     color: rgba(243, 244, 246, 1);
     text-decoration: none;
@@ -89,7 +90,7 @@
   .forgot a:hover, .signup a:hover {
     text-decoration: underline rgba(167, 139, 250, 1);
   }
-  
+  /* Botao de Cadastro */
   .sign {
     margin-top: 8%;
     display: block;
@@ -110,7 +111,7 @@
     background-color: rgba(55, 65, 81, 1);
   }
   
-  
+  /* link para realizar login caso a esteja gravado no sistema*/
   .signup {
     margin-top: 1.5%;
     text-align: center;

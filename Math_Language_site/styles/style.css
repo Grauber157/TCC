@@ -2,11 +2,11 @@
 h1{
     font-weight: 200;
 }
-
+/* Math language */
 .title-h1{
     color: rgb(132, 14, 201); 
 }
-
+/* corpo do index do site */
 main{
     display: flex;
     flex-direction: row;
@@ -27,38 +27,4 @@ p{
     line-height: 20px;
     max-width: 500px;
     font-family: poppinslight;
-}
-
-img{
-    width: 580px;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
-
-form [type="submit"]{
-    height: 50px;
-    width: 50%;
-    background-color: rgb(132, 14, 201);
-    color: white;
-    font-weight: bold;
-}
-form [type="submit"]:hover{
-    cursor: pointer;
-}
-
-input{
-    margin-top: 20px;
-    height: 20px;
-    padding: 15px;
-    border-radius: 20px;
-    border: none;
-    font-size: 15px;
-}
-img{
-    float: right;
-    max-width: 80%;
 }
