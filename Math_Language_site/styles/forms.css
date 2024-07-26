@@ -1,12 +1,15 @@
 /*Main do Formulario*/
 .form-container {
     margin-top: 50px;
+    margin-bottom: 25px;
     margin-right: auto;
+    margin-left: auto;
     width: 50%;
     border-radius: 0.75rem;
     background-color: rgba(72, 39, 99, 0.514);
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
+
   }
   
   .title {
@@ -18,6 +21,7 @@
   
   .form {
     margin-top: 1.5rem;
+
   }
   
   .input-group {
