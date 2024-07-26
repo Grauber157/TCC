@@ -19,8 +19,9 @@
         mysqli_stmt_bind_result($stmt, $email_banco, $apelido_banco, $senha_banco, $nome_usuario);
         mysqli_stmt_fetch($stmt);
 
-        if(($email == $email_banco or $email == $apelido_banco) and ($senha == $senha_banco))
+        if(($email == $email_banco or $email == $apelido_banco) and password_verify($senha, $senha_banco))
         {
+            #($senha == $senha_banco)
             #teste de '$_SESSION[]'
             $_SESSION['apelido'] = $nome_usuario;
             echo "Login Concluido!<br>";

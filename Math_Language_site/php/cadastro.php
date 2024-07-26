@@ -2,8 +2,8 @@
     #Função pra manter as páginas logadas
     session_start();
     #Valores vindos do forms por meio das superglobais
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
     $senha_confirmacao = $_POST["confirmar_senha"];
     $name = $_POST["name"];
 
@@ -16,12 +16,13 @@
     {
         #'Include()' para puxar os comandos do arquivo 'conexao.php'
         include("include/conexao.php");
-        ////AREA DE TESTE////
+        #Sistema de Hash
+        $hash = password_hash($senha, PASSWORD_DEFAULT);
         $stmt = mysqli_prepare($link, "INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, data_nascimento, ano_escolar, instituicao_escolar) VALUES(?, ?, ?, ?, ?, ?, ?)");
 
         if($stmt)
         {
-            mysqli_stmt_bind_param($stmt, "sssssss", $email, $senha, $name, $nickname, $data, $ano_escolar, $nome_escola);
+            mysqli_stmt_bind_param($stmt, "sssssss", $email, $hash, $name, $nickname, $data, $ano_escolar, $nome_escola);
             mysqli_stmt_execute($stmt);
             echo "Dados enviados com Sucesso!\n";
             mysqli_stmt_close($stmt);

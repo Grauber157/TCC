@@ -3,7 +3,7 @@
 CREATE DATABASE math_language;
 USE math_language;
 CREATE TABLE usuario (
-	id_aluno INT,
+	id_aluno INT AUTO_INCREMENT,
     email VARCHAR(255),
     senha VARCHAR(255),
     nome_usuario VARCHAR(50),
