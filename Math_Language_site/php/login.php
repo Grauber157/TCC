@@ -22,7 +22,7 @@
         if(($email == $email_banco or $email == $apelido_banco) and ($senha == $senha_banco))
         {
             #teste de '$_SESSION[]'
-            $_SESSION["apelido"] = $nome_usuario;
+            $_SESSION['apelido'] = $nome_usuario;
             echo "Login Concluido!<br>";
             #echo "<a href='../../prototipo_php/sistema_turma/teste.html'>Voltar</a>";
         }
