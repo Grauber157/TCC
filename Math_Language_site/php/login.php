@@ -21,7 +21,6 @@
 
         if(($email == $email_banco or $email == $apelido_banco) and password_verify($senha, $senha_banco))
         {
-            #($senha == $senha_banco)
             #teste de '$_SESSION[]'
             $_SESSION['apelido'] = $nome_usuario;
             echo "Login Concluido!<br>";
