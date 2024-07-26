@@ -25,6 +25,7 @@
     margin: 10px;
     margin-right: auto;
 }
+/* link das turmas do ensino fundamental */
 .ef a{
     max-width: 25%;
     height: 100px;
@@ -37,6 +38,7 @@
     background-color: rgb(132, 14, 201);
     color: white;
 }
+/* link das turmas do ensino medio */
 .em a{
     margin: 0 auto;
     max-width: 25%;
