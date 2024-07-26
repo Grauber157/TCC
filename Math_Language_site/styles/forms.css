@@ -11,7 +11,7 @@
     color: rgba(243, 244, 246, 1);
 
   }
-  
+  /* titulo do formulario */
   .title {
     text-align: center;
     font-size: 1.5rem;
@@ -23,20 +23,19 @@
     margin-top: 1.5rem;
 
   }
-  
   .input-group {
     margin-top: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  
+  /* legendas do grupo input */
   .input-group label {
     display: block;
     color: white;
     margin-bottom: 4px;
     margin-left: 16px;
   }
-  
+  /* caixas de texto do grupo input */
   .input-group input{
     display: flex;
     align-items: center;
@@ -52,6 +51,7 @@
     color: rgba(156, 163, 175,1);
     font-family: 'poppinsregular';
   }
+  /* caixas de selecao do grupo input */
   .input-group select{
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@
     color: rgba(156, 163, 175,1);
     font-family: 'poppinsregular';
   }
-  
+  /* focus: destacar um elemento na pagina */
   .input-group input:focus {
     border-color: rgba(167, 139, 250);
   }
@@ -90,7 +90,7 @@
   .forgot a:hover, .signup a:hover {
     text-decoration: underline rgba(167, 139, 250, 1);
   }
-  
+  /* botao de realizar o login/cadastro */
   .sign {
     margin-top: 8%;
     display: block;
@@ -111,7 +111,7 @@
     background-color: rgba(55, 65, 81, 1);
   }
   
-  
+  /* link caso ja tenha conta ativa */
   .signup {
     margin-top: 1.5%;
     text-align: center;
