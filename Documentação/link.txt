@@ -1,2 +1,5 @@
 Livro base gameficação -> https://portal.sead.ufsc.br/files/2020/04/eBOOK-Gamificacao.pdf
 Programa de Pós-Graduação em Educação da Universidade Federal do Ceará (UFC) -> http://milanesa.ime.usp.br/rbie/index.php/wcbie/article/view/6248/4373
+Site Pisa -> https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/pisa
+Git reposítorio -> https://docs.github.com/pt/repositories/creating-and-managing-repositories/about-repositories
+Manual do PHP -> https://www.php.net/manual/pt_BR/index.php
