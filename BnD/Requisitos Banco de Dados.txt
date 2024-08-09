@@ -14,8 +14,7 @@ CREATE TABLE usuario (
     ano_escolar VARCHAR(10),
     instituicao_escolar VARCHAR(50),
     turma_codigo VARCHAR(4),
-    PRIMARY KEY (id_aluno),
-    FOREIGN KEY (turma_codigo) REFERENCES turma(codigo)
+    PRIMARY KEY (id_aluno)
 );
 
 CREATE TABLE turma (
@@ -25,6 +24,8 @@ CREATE TABLE turma (
     pontuacao_geral INT(20),
     PRIMARY KEY (codigo)
 );
+
+ALTER TABLE usuario ADD FOREIGN KEY (turma_codigo) REFERENCES turma(codigo)
 	
 //codigo de teste://
 INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, descricao, data_nascimento, pontuacao, ano_escolar, instituicao_escolar)
