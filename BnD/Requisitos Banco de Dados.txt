@@ -25,6 +25,15 @@ CREATE TABLE turma (
     PRIMARY KEY (codigo)
 );
 
+CREATE TABLE jogos (
+	id_usuario INT,
+	escolha_portas INT,
+    ache_o_x INT
+);
+
+
+ALTER TABLE jogos ADD FOREIGN KEY (id_usuario) REFERENCES usuario(id_aluno);
+
 ALTER TABLE usuario ADD FOREIGN KEY (turma_codigo) REFERENCES turma(codigo)
 	
 //codigo de teste://
