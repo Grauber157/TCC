@@ -8,7 +8,7 @@
     <link href="../styles/cabeça.css" rel="stylesheet">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
-    <title>Math Language - Criar Turma</title>
+    <title>Math Language - Entrar em Turma</title>
 </head>
 <body>
     <header>
@@ -20,26 +20,23 @@
             <a href="home.html"><li>Home</li></a>
             <a href="games.html"><li>Jogos</li></a>
             <a href="class.html"><li>Ensino</li></a>
-            <a href="class.html"><li>Turmas</li></a>
+            <a href="turma.html"><li>Turmas</li></a>
             <a href="contact.html"><li>Contatos</li></a>
             <a href="login.html"><li>Login</li></a>
             <a href="cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
         </ul>
     </header>
 
-    <main class="create-class">
-        <h2>Criar Turma</h2>
+    <main class="join-class">
+        <h2>Entrar em Turma</h2>
         <form action="#" method="POST">
-            <label for="nome">Nome da Turma </label>
-            <input type="text" id="nome" name="nome" required>
+            <label for="codigo">Código da Turma</label>
+            <input type="text" id="codigo" name="codigo" required>
 
-            <label for="senha">Senha da turma (+ de 5 caracteres)</label>
-            <input type="password" id="senha" name="senha" minlength="6" required>
+            <label for="senha">Senha da Turma</label>
+            <input type="password" id="senha" name="senha" required>
 
-            <label for="descricao">Descrição da Turma</label>
-            <textarea id="descricao" name="descricao" rows="5" required></textarea>
-
-            <button type="submit" class="btn-criar">CRIAR</button>
+            <button type="submit" class="btn-entrar">ENTRAR</button>
         </form>
     </main>
 
