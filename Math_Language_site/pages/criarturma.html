@@ -8,6 +8,7 @@
     <link href="../styles/cabeça.css" rel="stylesheet">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
     <title>Math Language - Criar Turma</title>
 </head>
 <body>
@@ -27,19 +28,20 @@
         </ul>
     </header>
 
-    <main class="create-class">
-        <h2>Criar Turma</h2>
-        <form action="#" method="POST">
-            <label for="nome">Nome da Turma </label>
-            <input type="text" id="nome" name="nome" required>
+    <main class="create-container">
+        <p class="title">Criar Turma</p>
+        <form class="form" action="#" method="POST">
+            <div class="input-group">
+                <label for="nome">Nome da Turma </label>
+                <input type="text" id="nome" name="nome" required>
+            </div> 
 
-            <label for="senha">Senha da turma (+ de 5 caracteres)</label>
-            <input type="password" id="senha" name="senha" minlength="6" required>
+            <div class="input-group">
+                <label for="senha">Senha da turma (+ de 5 caracteres)</label>
+                <input type="password" id="senha" name="senha" minlength="6" required>
+            </div>
 
-            <label for="descricao">Descrição da Turma</label>
-            <textarea id="descricao" name="descricao" rows="5" required></textarea>
-
-            <button type="submit" class="btn-criar">CRIAR</button>
+            <button class="sign" type="submit" class="btn-criar">CRIAR</button>
         </form>
     </main>
 

@@ -8,6 +8,7 @@
     <link href="../styles/cabeça.css" rel="stylesheet">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
     <title>Math Language - Entrar em Turma</title>
 </head>
 <body>
@@ -27,16 +28,20 @@
         </ul>
     </header>
 
-    <main class="join-class">
-        <h2>Entrar em Turma</h2>
-        <form action="#" method="POST">
+    <main class="create-container">
+        <p class="title">Entrar em Turma</p>
+        <form class="form" action="#" method="POST">
+        <div class="input-group">
             <label for="codigo">Código da Turma</label>
             <input type="text" id="codigo" name="codigo" required>
+        </div>
 
+        <div class="input-group">
             <label for="senha">Senha da Turma</label>
             <input type="password" id="senha" name="senha" required>
+        </div>
 
-            <button type="submit" class="btn-entrar">ENTRAR</button>
+            <button class="sign" type="submit" class="btn-entrar">ENTRAR</button>
         </form>
     </main>
 
