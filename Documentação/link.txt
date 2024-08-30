@@ -3,3 +3,4 @@ Programa de Pós-Graduação em Educação da Universidade Federal do Ceará (UF
 Site Pisa -> https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/pisa
 Git reposítorio -> https://docs.github.com/pt/repositories/creating-and-managing-repositories/about-repositories
 Manual do PHP -> https://www.php.net/manual/pt_BR/index.php
+Artigo -> https://publicacoes.unigranrio.edu.br/recm/article/view/1786
