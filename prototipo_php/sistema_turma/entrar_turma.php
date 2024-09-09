@@ -39,7 +39,7 @@
         #Nao sei oque ele faz kakaka
         mysqli_stmt_fetch($stmt);
         
-
+        #Checa a autenticidade dos dados fornecidos 
         if($codigo_turma == $codigo_banco and $senha == $senha_banco)
         {
             mysqli_stmt_close($stmt);
