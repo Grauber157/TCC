@@ -1,0 +1,46 @@
+.sec-container{
+    gap: 10px;
+}
+.dis1{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(37, 42, 81, 0.814);
+    max-width: 100%;
+    height: 150px;
+    padding: 16px;
+    border-radius: 15px;
+    margin: 10px;
+    margin-right: auto;
+}
+.dis2{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(37, 42, 81, 0.814);
+    max-width: 100%;
+    height: 150px;
+    padding: 16px;
+    border-radius: 15px;
+    margin: 10px;
+    margin-right: auto;
+    text-align: right;
+}
+.dis2-img{
+    max-width: 50%;
+    margin-right: auto;
+    order: -1;
+}
+.dis1-img{
+    max-width: 50%;
+    height: 140px;
+}
+.dis1-texto{
+    max-width: 50%;
+}
+.dis2-texto{
+    max-width: 50%;
+    /* order: 1; */
+}
+img{
+    width: 100%;
+    height: 140px;
+}
