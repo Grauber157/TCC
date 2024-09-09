@@ -1,6 +1,6 @@
 -> Cadastro de Turma 
-    #Implementação 'gerador_codigo_turma.php'
-    
+    #Implementação 'gerador_codigo_turma.php' via comando 'include()';
+    #
 
 
 -> 
