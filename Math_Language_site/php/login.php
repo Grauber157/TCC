@@ -19,7 +19,7 @@
         mysqli_stmt_bind_result($stmt, $email_banco, $apelido_banco, $senha_banco, $nome_usuario);
         mysqli_stmt_fetch($stmt);
 
-        if(($email == $email_banco or $email == $apelido_banco) and password_verify($senha, $senha_banco))
+        if(($email == $email_banco || $email == $apelido_banco) && password_verify($senha, $senha_banco))
         {
             #teste de '$_SESSION[]'
             $_SESSION['apelido'] = $nome_usuario;
@@ -28,10 +28,16 @@
         }
         else
         {
+            $resul = ($email == $email_banco || $email == $apelido_banco) && password_verify($senha, $senha_banco);
+
+            var_dump($resul);
+
             echo "<span>Erro nas credenciais de login!</span><br>";
-            echo "Email: $email // Email Banco: $email_banco<br>";
-            echo "Apelido Banco: $apelido_banco<br>";
-            echo "Senha: $senha // Senha Banco: $senha_banco<br>";
+            echo "Email: $email<br>";
+            echo "Email Banco: $email_banco<br>";
+            echo "Apelido Banco: $apelido_banco<br><br>";
+            echo "Senha: $senha<br>"; 
+            echo "Senha Banco: $senha_banco<br>";
         }
         mysqli_stmt_close($stmt);
     }
