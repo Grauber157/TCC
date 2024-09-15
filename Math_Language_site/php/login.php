@@ -29,9 +29,9 @@
         else
         {
             echo "<span>Erro nas credenciais de login!</span><br>";
-            echo "$email // $email_banco<br>";
-            echo "$apelido_banco<br>";
-            echo "$senha // $senha_banco<br>";
+            echo "Email: $email // Email Banco: $email_banco<br>";
+            echo "Apelido Banco: $apelido_banco<br>";
+            echo "Senha: $senha // Senha Banco: $senha_banco<br>";
         }
         mysqli_stmt_close($stmt);
     }

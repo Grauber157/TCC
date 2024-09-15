@@ -13,12 +13,9 @@
         echo $codigo_turma;
         //include('../php/include/conexao.php');
         
-
         $nome_turma = $_POST["nome"];
         $senha_turma = $_POST["senha"];
-
         
-        
-    ?>    
-</body>
-</html>
+    ?>  
+</body> 
+</html> 
