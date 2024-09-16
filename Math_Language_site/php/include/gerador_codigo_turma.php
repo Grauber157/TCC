@@ -20,6 +20,7 @@
         #implode para juntar as letras e numeros em uma só string
         $codigo_turma = implode("", $codigo);
 
+        $end = false;
     }
     
 ?>
