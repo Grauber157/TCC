@@ -21,9 +21,15 @@
         //INSERÇÃO DE DADOS//
         $sql = "INSERT INTO turma(codigo, nome_turma, senha_turma, descricao) VALUES(?, ?, ?, ?)";
 
-        mysqli_stmt_bind_param($sql, "ssss", $codigo_turma, $nome_turma, $senha_turma, $descricao);
+        $stmt = mysqli_prepare($link, $sql);
 
-        $stmt = mysqli_stmt_prepare($link, $sql);
+        mysqli_stmt_bind_param($stmt, "ssss", $codigo_turma, $nome_turma, $senha_turma, $descricao);
+
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_fetch($stmt);
+
+        
     }
     
 ?>
