@@ -9,11 +9,14 @@
     $descricao = $_POST['descricao'];
 
     //CHECAGEM DE POSSIVEIS DADOS JA EXISTENTES//
-    #*Sem funcao mysqli_stmt_bind_param(), possivel brecha*
-    $sql = "SELECT nome_turma FROM turma WHERE nome_turma = $nome_turma";
-    $stmt = mysqli_stmt_prepare($link, $sql);
+    $sql = "SELECT nome_turma FROM turma WHERE nome_turma = ?";
+    $stmt = mysqli_prepare($link, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $nome_turma);
+    mysqli_stmt_execute($stmt);
+    //mysqli_stmt_bind_result($stmt, $nome_banco);
+    $check = mysqli_stmt_fetch($stmt);
 
-    if()
+    if($check == false)
     {
         //INSERÇÃO DE DADOS//
         $sql = "INSERT INTO turma(codigo, nome_turma, senha_turma, descricao) VALUES(?, ?, ?, ?)";
