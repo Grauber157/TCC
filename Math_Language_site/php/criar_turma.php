@@ -18,6 +18,8 @@
         //INSERÇÃO DE DADOS//
         $sql = "INSERT INTO turma(codigo, nome_turma, senha_turma, descricao) VALUES(?, ?, ?, ?)";
 
+        mysqli_stmt_bind_param($sql, "ssss", $codigo_turma, $nome_turma, $senha_turma, $descricao);
+
         $stmt = mysqli_stmt_prepare($link, $sql);
     }
     
