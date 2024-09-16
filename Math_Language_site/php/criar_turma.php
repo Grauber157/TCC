@@ -9,8 +9,8 @@
     $descricao = $_POST['descricao'];
 
     //CHECAGEM DE POSSIVEIS DADOS JA EXISTENTES//
-    $sql = "SELECT nome FROM turma";
-
+    #*Sem funcao mysqli_stmt_bind_param(), possivel brecha*
+    $sql = "SELECT nome_turma FROM turma WHERE nome_turma = $nome_turma";
     $stmt = mysqli_stmt_prepare($link, $sql);
 
     if()
