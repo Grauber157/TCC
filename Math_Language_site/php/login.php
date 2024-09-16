@@ -1,9 +1,36 @@
 <?php
     #Função pra manter as páginas logadas
     session_start();
+
+    #Função para checar email
+    function EmailCheck($email1, $email_banco1)
+    {
+        if($email1 == $email_banco1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    } 
+    #Função para checar senha
+    function PasswordCheck($senha1, $senha_banco1)
+    {
+        //password_verify() pega a senha digitada pelo usuário, e compara com a senha criptografada
+        if(password_verify($senha1, $senha_banco1))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     #Valores vindos do forms por meio das superglobais
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
     #'Include()' para puxar os comandos do arquivo 'conexao.php'
     include("include/conexao.php");
@@ -19,19 +46,20 @@
         mysqli_stmt_bind_result($stmt, $email_banco, $apelido_banco, $senha_banco, $nome_usuario);
         mysqli_stmt_fetch($stmt);
 
-        if(($email == $email_banco or $email == $apelido_banco) and password_verify($senha, $senha_banco))
+        if(EmailCheck($email, $email_banco) and PasswordCheck($senha, $senha_banco))
         {
-            #teste de '$_SESSION[]'
-            $_SESSION['apelido'] = $nome_usuario;
+            //$_SESSION para manter usuário logado
+            $_SESSION['usuario'] = $nome_usuario;
             echo "Login Concluido!<br>";
-            #echo "<a href='../../prototipo_php/sistema_turma/teste.html'>Voltar</a>";
         }
         else
         {
             echo "<span>Erro nas credenciais de login!</span><br>";
-            echo "$email // $email_banco<br>";
-            echo "$apelido_banco<br>";
-            echo "$senha // $senha_banco<br>";
+            echo "Email: $email<br>";
+            echo "Email Banco: $email_banco<br>";
+            echo "Apelido Banco: $apelido_banco<br><br>";
+            echo "Senha: $senha<br>"; 
+            echo "Senha Banco: $senha_banco<br>";
         }
         mysqli_stmt_close($stmt);
     }

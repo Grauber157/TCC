@@ -1,6 +1,8 @@
 <?php
     session_start();
-    $usuario = $_SESSION["apelido"];
+    $usuario = $_SESSION["usuario"];
+
+    
     echo "<h1>$usuario</h1>";
 
     $codigo_turma = $_POST["codigo_turma"];
@@ -39,7 +41,7 @@
         #Nao sei oque ele faz kakaka
         mysqli_stmt_fetch($stmt);
         
-
+        #Checa a autenticidade dos dados fornecidos 
         if($codigo_turma == $codigo_banco and $senha == $senha_banco)
         {
             mysqli_stmt_close($stmt);

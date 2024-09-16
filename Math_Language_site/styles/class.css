@@ -176,3 +176,18 @@ input:focus {
   outline: none;
   border: 2px solid #8a2be2;
 }
+
+.btn-entrar {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #00008b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-entrar:hover {
+  background-color: #5c558f;
+}

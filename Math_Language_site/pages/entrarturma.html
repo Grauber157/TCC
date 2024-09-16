@@ -20,7 +20,7 @@
         <ul>
             <a href="home.html"><li>Home</li></a>
             <a href="games.html"><li>Jogos</li></a>
-            <a href="class.html"><li>Ensino</li></a>
+            <a href="cont.html"><li>Conteúdo</li></a>
             <a href="turma.html"><li>Turmas</li></a>
             <a href="contact.html"><li>Contatos</li></a>
             <a href="login.html"><li>Login</li></a>
@@ -28,20 +28,17 @@
         </ul>
     </header>
 
-    <main class="create-container">
-        <p class="title">Entrar em Turma</p>
-        <form class="form" action="#" method="POST">
-        <div class="input-group">
+    <main class="join-class">
+        <h2>Entrar em Turma</h2>
+        <form action="../php/entrar_turma.php" method="POST">
+
             <label for="codigo">Código da Turma</label>
             <input type="text" id="codigo" name="codigo" required>
-        </div>
 
-        <div class="input-group">
             <label for="senha">Senha da Turma</label>
             <input type="password" id="senha" name="senha" required>
-        </div>
 
-            <button class="sign" type="submit" class="btn-entrar">ENTRAR</button>
+            <button type="submit" class="btn-entrar">ENTRAR</button>
         </form>
     </main>
 

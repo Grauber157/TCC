@@ -4,11 +4,11 @@
     $username = "root";
     $password = "";
     $database = "math_language";
-    $port = 3307;
+    $port = 3306;
     $link = mysqli_connect($hostname, $username, $password, $database, $port);
 
     #Checagem de conexão com o banco de dados
-    if (!$link) 
+    if (!$link)
     {
         die("Conexão mal sucedida: " . mysqli_connect_error());
     }

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/cabeça.css">
+  <link href="../../styles/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/media.css">
+  <link rel="shortcut icon" type="imagex/png" href="../../Material/images/favicon.ico">
+  <title>Contra-Tempo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1E1E3F;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #2A2A50;
+    }
+
+    #title {
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+
+    #title h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .box_header ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .box_header ul a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    .box_header ul a:hover {
+      color: #A65AD6;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .game-container {
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .equation {
+      font-size: 32px;
+      background-color: #5E428A;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .timer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .hourglass {
+      font-size: 30px;
+      color: white;
+    }
+
+    .progress {
+      background-color: #A65AD6;
+      width: 100%;
+      height: 10px;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+
+    .doors {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .door {
+      background-color: #7A5AAB;
+      width: 150px;
+      height: 250px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .door-number {
+      font-size: 48px;
+      color: white;
+    }
+
+    .door::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: #452A66;
+      border-radius: 50%;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+    <header>
+      <div id="title">
+          <h1 class="title-h1">Math</h1>
+          <h1>Language</h1>
+      </div>
+      <div class="box_header">
+        <ul>
+          <a href="../../pages/home.html"><li>Home</li></a>
+          <a href="../../pages/games.html"><li>Jogos</li></a>
+          <a href="../../pages/class.html"><li>Ensino</li></a>
+          <a href="../../pages/contact.html"><li>Contatos</li></a>
+          <a href="../../pages/login.html"><li>Login</li></a>
+          <a href="../../pages/cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
+        </ul>
+      </div>
+    </header>
+  <main>
+    <h1>Contra-Tempo</h1>
+
+    <div class="game-container">
+        <div class="equation">4 * 2</div>
+        <div class="timer-bar">
+            <div class="hourglass">⏳</div>
+            <div class="progress"></div>
+        </div>
+
+        <div class="doors">
+            <div class="door">
+                <div class="door-number">6</div>
+            </div>
+            <div class="door">
+                <div class="door-number">8</div>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
