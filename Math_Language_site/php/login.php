@@ -47,22 +47,12 @@
 
         if(EmailCheck($email, $email_banco) and PasswordCheck($senha, $senha_banco))
         {
-            echo "Email correto\n";
-            
-            
-                #teste de '$_SESSION[]'
-                $_SESSION['apelido'] = $nome_usuario;
-                echo "Login Concluido!<br>";
-                #echo "<a href='../../prototipo_php/sistema_turma/teste.html'>Voltar</a>";
-            
-            //echo "checando senha\n";
-            
+            //$_SESSION para manter usuário logado
+            $_SESSION['apelido'] = $nome_usuario;
+            echo "Login Concluido!<br>";
         }
         else
         {
-            //$resul = ($email == $email_banco || $email == $apelido_banco) && password_verify($senha, $senha_banco);
-            //var_dump($resul);
-
             echo "<span>Erro nas credenciais de login!</span><br>";
             echo "Email: $email<br>";
             echo "Email Banco: $email_banco<br>";

@@ -1,21 +1,32 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-        //session_start();
-        include('../php/include/gerador_codigo_turma.php');
+<?php
+    //session_start();
+        #funcao 'chr()' para transformar numeros em 
+        #string pela tabela ASCII
+        $end = true;
+        while($end)
+        {
+            #funcao 'chr()' para transformar numeros em 
+            #string pela tabela ASCII
+            $letra1 = chr(rand(65, 90));
+            $letra2 = chr(rand(65, 90));
+            
+            $numero1 = rand(0, 9);
+            $numero2 = rand(0, 9);
+            
+            $codigo[0] = $letra1;
+            $codigo[1] = $letra2;
+            $codigo[2] = $numero1;
+            $codigo[3] = $numero2;
+            
+            #implode para juntar as letras e numeros em uma só string
+            $codigo_turma = implode("", $codigo);
+        }
+        
         echo $codigo_turma;
-        //include('../php/include/conexao.php');
+        include('/include/conexao.php');
         
-        $nome_turma = $_POST["nome"];
-        $senha_turma = $_POST["senha"];
-        
-    ?>  
-</body> 
-</html> 
+        $nome_turma = $_POST['nome'];
+        $senha_turma = $_POST['senha'];
+
+
+?>
