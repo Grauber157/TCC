@@ -1,4 +1,30 @@
 <?php
+    #Função para checar email
+    function EmailCheck($email1, $email_banco1)
+    {
+        if($email1 == $email_banco1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    } 
+    #Função para checar senha
+    function PasswordCheck($senha1, $senha_banco1)
+    {
+        //password_verify() pega a senha digitada pelo usuário, e compara com a senha criptografada
+        if(password_verify($senha1, $senha_banco1))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     #Função pra manter as páginas logadas
     session_start();
     #Valores vindos do forms por meio das superglobais
@@ -19,18 +45,23 @@
         mysqli_stmt_bind_result($stmt, $email_banco, $apelido_banco, $senha_banco, $nome_usuario);
         mysqli_stmt_fetch($stmt);
 
-        if(($email == $email_banco || $email == $apelido_banco) && password_verify($senha, $senha_banco))
+        if(EmailCheck($email, $email_banco) and PasswordCheck($senha, $senha_banco))
         {
-            #teste de '$_SESSION[]'
-            $_SESSION['apelido'] = $nome_usuario;
-            echo "Login Concluido!<br>";
-            #echo "<a href='../../prototipo_php/sistema_turma/teste.html'>Voltar</a>";
+            echo "Email correto\n";
+            
+            
+                #teste de '$_SESSION[]'
+                $_SESSION['apelido'] = $nome_usuario;
+                echo "Login Concluido!<br>";
+                #echo "<a href='../../prototipo_php/sistema_turma/teste.html'>Voltar</a>";
+            
+            //echo "checando senha\n";
+            
         }
         else
         {
-            $resul = ($email == $email_banco || $email == $apelido_banco) && password_verify($senha, $senha_banco);
-
-            var_dump($resul);
+            //$resul = ($email == $email_banco || $email == $apelido_banco) && password_verify($senha, $senha_banco);
+            //var_dump($resul);
 
             echo "<span>Erro nas credenciais de login!</span><br>";
             echo "Email: $email<br>";
