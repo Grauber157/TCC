@@ -21,6 +21,7 @@ CREATE TABLE turma (
 	codigo VARCHAR(4),
     nome_turma VARCHAR(50),
     senha_turma VARCHAR(255),
+    descricao_turma VARCHAR(255),
     pontuacao_geral INT(20),
     PRIMARY KEY (codigo)
 );
