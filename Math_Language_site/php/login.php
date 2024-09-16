@@ -29,8 +29,8 @@
     }
 
     #Valores vindos do forms por meio das superglobais
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
     #'Include()' para puxar os comandos do arquivo 'conexao.php'
     include("include/conexao.php");
