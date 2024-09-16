@@ -29,7 +29,11 @@
 
         mysqli_stmt_fetch($stmt);
 
-        
+        echo "Turma criada com sucesso! Código de turma: $codigo_turma";
+    }
+    else
+    {
+        echo "Nome de turma já esta em uso!";
     }
     
 ?>
