@@ -1,4 +1,7 @@
 <?php
+    #Função pra manter as páginas logadas
+    session_start();
+
     #Função para checar email
     function EmailCheck($email1, $email_banco1)
     {
@@ -25,8 +28,6 @@
         }
     }
 
-    #Função pra manter as páginas logadas
-    session_start();
     #Valores vindos do forms por meio das superglobais
     $email = $_POST["email"];
     $senha = $_POST["senha"];
@@ -48,7 +49,7 @@
         if(EmailCheck($email, $email_banco) and PasswordCheck($senha, $senha_banco))
         {
             //$_SESSION para manter usuário logado
-            $_SESSION['apelido'] = $nome_usuario;
+            $_SESSION['usuario'] = $nome_usuario;
             echo "Login Concluido!<br>";
         }
         else

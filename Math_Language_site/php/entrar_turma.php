@@ -1,6 +1,8 @@
 <?php
     session_start();
-    $usuario = $_SESSION["apelido"];
+    $usuario = $_SESSION["usuario"];
+
+    
     echo "<h1>$usuario</h1>";
 
     $codigo_turma = $_POST["codigo_turma"];
