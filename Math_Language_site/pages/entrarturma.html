@@ -7,6 +7,7 @@
     <link href="../styles/class.css" rel="stylesheet">
     <link href="../styles/cabeça.css" rel="stylesheet">
     <link href="../styles/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/forms.css">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
     <title>Math Language - Entrar em Turma</title>
@@ -28,18 +29,26 @@
         </ul>
     </header>
 
-    <main class="join-class">
-        <h2>Entrar em Turma</h2>
-        <form action="../php/entrar_turma.php" method="POST">
-
-            <label for="codigo">Código da Turma</label>
-            <input type="text" id="codigo" name="codigo" required>
-
-            <label for="senha">Senha da Turma</label>
-            <input type="password" id="senha" name="senha" required>
-
-            <button type="submit" class="btn-entrar">ENTRAR</button>
-        </form>
+    <main>
+        <aside class="form-aside">
+            <div class="form-container">
+            <p class="title">Entrar em uma Turma</p>
+            <form class="form" action="../php/entrar_turma.php" method="post">
+                <div class="input-group">
+                    <label for="codigo">Codigo</label>
+                    <input type="text" name="cod_turma" id="cod_turma" placeholder="Codigo da Turma">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Senha da Turma (min 8 caracteres)">
+                </div>
+                <input class="sign" type="submit" value="Entrar">
+            </form>
+            <p class="signup">Nao esta em nenhuma turma?
+                <a rel="noopener noreferrer" href="criarturma.html" class="">Crie uma turma</a>
+            </p>
+        </div>
+    </aside>
     </main>
 
     <footer>

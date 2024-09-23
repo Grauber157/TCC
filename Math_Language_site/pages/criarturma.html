@@ -7,6 +7,7 @@
     <link href="../styles/class.css" rel="stylesheet">
     <link href="../styles/cabeça.css" rel="stylesheet">
     <link href="../styles/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/forms.css">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
     <title>Math Language - Criar Turma</title>
@@ -29,19 +30,25 @@
     </header>
 
     <main class="create-class">
-        <h2>Criar Turma</h2>
-        <form action="../php/criar_turma.php" method="POST">
-            <label for="nome">Nome da Turma </label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="senha">Senha da turma (+ de 5 caracteres)</label>
-            <input type="password" id="senha" name="senha" minlength="6" required>
-
-            <label for="descricao">Descrição da Turma</label>
-            <textarea id="descricao" name="descricao" rows="5"></textarea>
-
-            <button type="submit" class="btn-criar">CRIAR</button>
-        </form>
+        <aside class="form-aside">
+            <div class="form-container">
+            <p class="title">Criar uma Turma</p>
+            <form class="form" action="../php/criar_turma.php" method="post">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome_turma" id="nome_turma" placeholder="Nome da Turma">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Senha da Turma (min 8 caracteres)">
+                </div>
+                <input class="sign" type="submit" value="Criar">
+            </form>
+            <p class="signup">Ja esta em uma turma?
+                <a rel="noopener noreferrer" href="entrarturma.html" class="">Entrar em uma turma</a>
+            </p>
+        </div>
+    </aside>
     </main>
 
     <footer>
