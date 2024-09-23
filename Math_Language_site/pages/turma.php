@@ -18,12 +18,12 @@
             <h1>Language</h1>
         </div>
         <ul>
-            <a href="home.html"><li>Home</li></a>
-            <a href="games.html"><li>Jogos</li></a>
-            <a href="cont.html"><li>Conteúdo</li></a>
-            <a href="contact.html"><li>Contatos</li></a>
-            <a href="login.html"><li>Login</li></a>
-            <a href="cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
+            <a href="home.php"><li>Home</li></a>
+            <a href="games.php"><li>Jogos</li></a>
+            <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="contact.php"><li>Contatos</li></a>
+            <a href="login.php"><li>Login</li></a>
+            <a href="cad.php" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
         </ul>
     </header>
     
@@ -38,8 +38,8 @@
         
         <section class="actions">
             <div class="turma-options">
-                <a href="criarturma.html" class="btn">Criar</a>
-                <a href="entrarturma.html" class="btn">Entrar</a>
+                <a href="criarturma.php" class="btn">Criar</a>
+                <a href="entrarturma.php" class="btn">Entrar</a>
             </div>
             <div class="info">
                 <h3>O que é as Turmas?</h3>

@@ -18,13 +18,13 @@
             <h1>Language</h1>
         </div>
         <ul>
-            <a href="home.html"><li>Home</li></a>
-            <a href="games.html"><li>Jogos</li></a>
-            <a href="cont.html"><li>Conteúdo</li></a>
-            <a href="turma.html"><li>Turmas</li></a>
-            <a href="contact.html"><li>Contatos</li></a>
-            <a href="login.html"><li>Login</li></a>
-            <a href="cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
+            <a href="home.php"><li>Home</li></a>
+            <a href="games.php"><li>Jogos</li></a>
+            <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="turma.php"><li>Turmas</li></a>
+            <a href="contact.php"><li>Contatos</li></a>
+            <a href="login.php"><li>Login</li></a>
+            <a href="cad.php" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
         </ul>
     </header>
 

@@ -19,12 +19,12 @@
         </div>
         <!--
         <ul>
-            <a href="home.html"><li>Home</li></a>
-            <a href="games.html"><li>Jogos</li></a>
-            <a href="cont.html"><li>Conteúdo</li></a>
-            <a href="turma.html"><li>Turmas</li></a>
-            <a href="contact.html"><li>Contatos</li></a>
-            <a href="login.html"><li>Login</li></a>
+            <a href="home.php"><li>Home</li></a>
+            <a href="games.php"><li>Jogos</li></a>
+            <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="turma.php"><li>Turmas</li></a>
+            <a href="contact.php"><li>Contatos</li></a>
+            <a href="login.php"><li>Login</li></a>
         </ul>
         -->
     </header>
@@ -77,7 +77,7 @@
                 <input class="sign" type="submit" value="Cadastrar">
             </form>
             <p class="signup">Ja tem conta?
-                <a rel="noopener noreferrer" href="login.html" class="">Conecte-se</a>
+                <a rel="noopener noreferrer" href="login.php" class="">Conecte-se</a>
             </p>
         </div>
     </aside>
