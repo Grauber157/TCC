@@ -31,7 +31,6 @@
             <a href="games.php"><li>Jogos</li></a>
             <a href="cont.php"><li>Conteúdo</li></a>
             <a href="turma.php"><li>Turmas</li></a>
-            <a href="login.php"><li>Login</li></a>
             <!-- TESTE DE USUARIO -->
             <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
         </ul>

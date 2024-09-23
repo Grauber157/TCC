@@ -33,7 +33,6 @@
           <a href="../pages/home.php"><li>Home</li></a>
           <a href="../pages/games.php"><li>Jogos</li></a>
           <a href="../pages/contact.php"><li>Contatos</li></a>
-          <a href="../pages/login.php"><li>Login</li></a>
           <a href="../pages/turma.php"><li>Turmas</li></a>
           <!-- teste de $_SESSION -->
           <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
