@@ -53,7 +53,7 @@
                 <input class="sign" type="submit" value="Criar">
             </form>
             <p class="signup">Ja esta em uma turma?
-                <a rel="noopener noreferrer" href="entrarturma.html" class="">Entrar em uma turma</a>
+                <a rel="noopener noreferrer" href="entrarturma.php" class="">Entrar em uma turma</a>
             </p>
         </div>
     </aside>

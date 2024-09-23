@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    include('../php/include/iniciar_sessao.php');
-    if(empty($_SESSION['login']))
-    {
-        header("Location: login.php");
-    }
+    //include('../php/include/iniciar_sessao.php');
+    //if(empty($_SESSION['login']))
+    //{
+    //    header("Location: login.php");
+    //}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
