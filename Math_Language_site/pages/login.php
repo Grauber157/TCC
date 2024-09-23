@@ -1,5 +1,11 @@
-<?php 
-  session_start();
+<?php
+    session_start();
+
+    include('../php/include/iniciar_sessao.php');
+    if(empty($_SESSION['login']))
+    {
+        header("Location: login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,7 +41,7 @@
         <aside class="form-aside">
             <div class="form-container">
             <p class="title">Conecte-se</p>
-            <form class="form" action="../php/login.php" method="post">
+            <form class="form" action="../php/login_exe.php" method="post">
                 <div class="input-group">
                     <label for="username">Nome de usuário</label>
                     <input type="text" name="email" id="username" placeholder="Email ou Nome de usuario">

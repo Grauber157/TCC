@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    include('inicia_sessao.php');
+    if(empty($_SESSION['login']))
+    {
+        header("Location: pages/login.html");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,13 +21,6 @@
     <title>Math Language</title>
 </head>
 <body>
-    <?php
-        include('inicia_sessao.php');
-        if(empty($_SESSION['login']))
-        {
-            header("Location: pages/login.html");
-        }
-    ?>
     <header>
             <div id="title">
                 <h1 class="title-h1">Math</h1>
@@ -37,7 +39,6 @@
             </ul>
         </div>
         </header>
-        
     <main>
         <aside>
             <h2><span>Faça parte</span></h2>

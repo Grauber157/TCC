@@ -1,5 +1,10 @@
-<?php 
-  session_start();
+<?php
+    session_start();
+
+    if(empty($_SESSION['login']))
+    {
+        header("Location: login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,7 +31,7 @@
             <a href="cont.php"><li>Conteúdo</li></a>
             <a href="contact.php"><li>Contatos</li></a>
             <!-- teste de $_SESSION -->
-            <li><?php echo $_SESSION['login']; ?></li>
+            <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
         </ul>
     </header>
     
