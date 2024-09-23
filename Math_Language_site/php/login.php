@@ -49,8 +49,9 @@
         if(EmailCheck($email, $email_banco) and PasswordCheck($senha, $senha_banco))
         {
             //$_SESSION para manter usuário logado
-            $_SESSION['usuario'] = $nome_usuario;
+            $_SESSION['login'] = $nome_usuario;
             echo "Login Concluido!<br>";
+            header("Location: ../index.php");
         }
         else
         {
