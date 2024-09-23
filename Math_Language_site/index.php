@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-    include('inicia_sessao.php');
     if(empty($_SESSION['login']))
     {
         header("Location: pages/login.html");
