@@ -3,7 +3,7 @@
 
     if(empty($_SESSION['login']))
     {
-        header("Location: pages/login.html");
+        header("Location: pages/login.php");
     }
 ?>
 <!DOCTYPE html>
