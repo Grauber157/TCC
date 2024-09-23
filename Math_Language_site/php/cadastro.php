@@ -14,7 +14,7 @@
     $ano_escolar = $_POST["ano_escola"];
     $nome_escola = $_POST["nome_escola"];
 
-    if($senha == $senha_confirmacao and strlen($name) > 5)
+    if($senha == $senha_confirmacao and strlen($name) >= 5)
     {
         #Sistema para checar se o email já esta sendo utilizado
         $stmt = mysqli_prepare($link, "SELECT email FROM usuario WHERE email = ?");
