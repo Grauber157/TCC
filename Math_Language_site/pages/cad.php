@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,15 +20,16 @@
             <h1 class="title-h1">Math</h1>
             <h1>Language</h1>
         </div>
-
+        <!--
         <ul>
-            <a href="home.html"><li>Home</li></a>
-            <a href="games.html"><li>Jogos</li></a>
-            <a href="cont.html"><li>Conteúdo</li></a>
-            <a href="turma.html"><li>Turmas</li></a>
-            <a href="contact.html"><li>Contatos</li></a>
-            <a href="login.html"><li>Login</li></a>
+            <a href="home.php"><li>Home</li></a>
+            <a href="games.php"><li>Jogos</li></a>
+            <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="turma.php"><li>Turmas</li></a>
+            <a href="contact.php"><li>Contatos</li></a>
+            <a href="login.php"><li>Login</li></a>
         </ul>
+        -->
     </header>
     <main>
         <aside class="form-flex">
@@ -34,23 +38,23 @@
             <form class="form" action="../php/cadastro.php" method="post">
                 <div class="input-group">
                     <label for="name">Nome Completo</label>
-                    <input type="text" name="name" id="name" placeholder="Nome">
+                    <input type="text" name="name" id="name" placeholder="Nome" required>
                 </div>
                 <div class="input-group">
                     <label for="surname">Apelido (Nickname)</label>
-                    <input type="text" name="nickname" id="surname" placeholder="Apelido">
+                    <input type="text" name="nickname" id="surname" placeholder="Apelido" required>
                 </div>
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="password" placeholder="Email">
+                    <input type="text" name="email" id="password" placeholder="Email" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Senha</label>
-                    <input type="password" name="senha" id="pass" placeholder="Senha">
+                    <input type="password" name="senha" id="pass" placeholder="Senha" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Confirme sua senha</label>
-                    <input type="password" name="confirmar_senha" id="pass" placeholder="Confirme sua senha">
+                    <input type="password" name="confirmar_senha" id="pass" placeholder="Confirme sua senha" required>
                 </div>
                 <div class="input-group">
                     <label for="date">Data de Nascimento</label>
@@ -76,7 +80,7 @@
                 <input class="sign" type="submit" value="Cadastrar">
             </form>
             <p class="signup">Ja tem conta?
-                <a rel="noopener noreferrer" href="login.html" class="">Conecte-se</a>
+                <a rel="noopener noreferrer" href="login.php" class="">Conecte-se</a>
             </p>
         </div>
     </aside>

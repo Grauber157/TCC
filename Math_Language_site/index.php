@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(empty($_SESSION['login']))
+    {
+        header("Location: pages/login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,10 +33,11 @@
                 <a href="pages/contact.html"><li>Contatos</li></a>
                 <a href="pages/login.html"><li>Login</li></a>
                 <a href="pages/cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
+                <!-- teste de $_SESSION -->
+                <li><?php echo $_SESSION['login']; ?></li>
             </ul>
         </div>
         </header>
-        
     <main>
         <aside>
             <h2><span>Faça parte</span></h2>

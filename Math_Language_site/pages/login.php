@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    include('../php/include/iniciar_sessao.php');
+    if(empty($_SESSION['login']))
+    {
+        header("Location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/cabeça.css" rel="stylesheet">
+    <link href="../styles/forms.css" rel="stylesheet" >
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
@@ -16,29 +26,42 @@
             <h1 class="title-h1">Math</h1>
             <h1>Language</h1>
         </div>
-
+        <!--
         <ul>
-          <a href="games.html"><li>Jogos</li></a>
-          <a href="cont.html"><li>Conteúdo</li></a>
-          <a href="turma.html"><li>Turmas</li></a>
-          <a href="contact.html"><li>Contatos</li></a>
-          <a href="login.html"><li>Login</li></a>
-          <a href="cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
-      </ul>
+            <a href="home.php"><li>Home</li></a>
+            <a href="games.php"><li>Jogos</li></a>
+            <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="turma.php"><li>Turmas</li></a>
+            <a href="contact.php"><li>Contatos</li></a>
+            <a href="cad.php" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
+        </ul>
+        -->
     </header>
-
     <main>
-        <aside>
-            <h2><span>Math</span></h2>
-            <h2>Language</h2>
-            <p>
-                Math Language é um Trabalho de Conclusão de Curso com o objetivo de facilitar e reforçar a aprendizagem da matemática básica no Brasil, por meio de mini-jogos interativos, visando o interesse e o incentivo ao conhecimento. Aqui você terá uma jornada extraordinária, se divertindo com nosso conteúdo, explorando o mundo da matemática e ainda assim aprendendo conceitos fundamentais para o nosso dia a dia.
+        <aside class="form-aside">
+            <div class="form-container">
+            <p class="title">Conecte-se</p>
+            <form class="form" action="../php/login_exe.php" method="post">
+                <div class="input-group">
+                    <label for="username">Nome de usuário</label>
+                    <input type="text" name="email" id="username" placeholder="Email ou Nome de usuario">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" name="senha" id="password" placeholder="Senha">
+                </div>
+                <input class="sign" type="submit" value="Login">
+            </form>
+            <p class="signup">Não tem conta?
+                <a rel="noopener noreferrer" href="cad.php" class="">Cadastre-se</a>
             </p>
-        </aside>
-
-        <article>
+        </div>
+    </aside>
+    <article art-container>
+        <div class="img">
             <img src="#" alt="">
-        </article>
+        </div>
+    </article>
     </main>
     <footer>
         <div class="footer-content1">

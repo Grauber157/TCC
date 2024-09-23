@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(empty($_SESSION['login']))
+    {
+        header("Location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -21,12 +29,13 @@
         <h1>Language</h1>
       </div>
       <div class="box_header">
-        <ul>
-          <a href="../pages/home.html"><li>Home</li></a>
-          <a href="../pages/games.html"><li>Jogos</li></a>
-          <a href="../pages/contact.html"><li>Contatos</li></a>
-          <a href="../pages/login.html"><li>Login</li></a>
-          <a href="../pages/turma.html"><li>Turmas</li></a>
+      <ul>
+          <a href="../pages/home.php"><li>Home</li></a>
+          <a href="../pages/games.php"><li>Jogos</li></a>
+          <a href="../pages/contact.php"><li>Contatos</li></a>
+          <a href="../pages/turma.php"><li>Turmas</li></a>
+          <!-- teste de $_SESSION -->
+          <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
         </ul>
       </div>
     </header>

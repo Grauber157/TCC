@@ -3,7 +3,7 @@
     session_start();
 
     #Função para checar email
-    function EmailCheck($email1, $email_banco1)
+    function EmailCheck($email1, $email_banco1) : bool
     {
         if($email1 == $email_banco1)
         {
@@ -15,7 +15,7 @@
         }
     } 
     #Função para checar senha
-    function PasswordCheck($senha1, $senha_banco1)
+    function PasswordCheck($senha1, $senha_banco1) : bool
     {
         //password_verify() pega a senha digitada pelo usuário, e compara com a senha criptografada
         if(password_verify($senha1, $senha_banco1))
@@ -49,8 +49,9 @@
         if(EmailCheck($email, $email_banco) and PasswordCheck($senha, $senha_banco))
         {
             //$_SESSION para manter usuário logado
-            $_SESSION['usuario'] = $nome_usuario;
+            $_SESSION['login'] = $nome_usuario;
             echo "Login Concluido!<br>";
+            header("Location: ../index.php");
         }
         else
         {

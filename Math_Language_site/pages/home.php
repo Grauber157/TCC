@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(empty($_SESSION['login']))
+    {
+        header("Location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,7 +13,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/cabeça.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/contact.css">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
@@ -19,16 +26,24 @@
         </div>
 
         <ul>
-            <a href="home.html"><li>Home</li></a>
-            <a href="games.html"><li>Jogos</li></a>
-            <a href="cont.html"><li>Conteúdo</li></a>
-            <a href="turma.html"><li>Turmas</li></a>
-            <a href="login.html"><li>Login</li></a>
-            <a href="cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
-        </ul>
+          <a href="games.php"><li>Jogos</li></a>
+          <a href="cont.php"><li>Conteúdo</li></a>
+          <a href="turma.php"><li>Turmas</li></a>
+          <a href="contact.php"><li>Contatos</li></a>
+          <!-- teste de $_SESSION -->
+          <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
+      </ul>
     </header>
+
     <main>
-        <h1>Contatos</h1>
+        <aside>
+            <h2><span>Math</span></h2>
+            <h2>Language</h2>
+            <p>
+                Math Language é um Trabalho de Conclusão de Curso com o objetivo de facilitar e reforçar a aprendizagem da matemática básica no Brasil, por meio de mini-jogos interativos, visando o interesse e o incentivo ao conhecimento. Aqui você terá uma jornada extraordinária, se divertindo com nosso conteúdo, explorando o mundo da matemática e ainda assim aprendendo conceitos fundamentais para o nosso dia a dia.
+            </p>
+        </aside>
+
         <article>
             <img src="#" alt="">
         </article>

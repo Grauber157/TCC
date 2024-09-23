@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(empty($_SESSION['login']))
+    {
+        header("Location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,12 +27,12 @@
         </div>
 
         <ul>
-          <a href="home.html"><li>Home</li></a>
-          <a href="cont.html"><li>Conteúdo</li></a>
-          <a href="turma.html"><li>Turmas</li></a>
-          <a href="contact.html"><li>Contatos</li></a>
-          <a href="login.html"><li>Login</li></a>
-          <a href="cad.html" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
+          <a href="home.php"><li>Home</li></a>
+          <a href="cont.php"><li>Conteúdo</li></a>
+          <a href="turma.php"><li>Turmas</li></a>
+          <a href="contact.php"><li>Contatos</li></a>
+          <!-- teste de $_SESSION -->
+          <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
       </ul>
     </header>
     <main>
@@ -38,7 +46,7 @@
         <div class="game-section">
 
           <div class="game-section-img">
-            <a href="games/matememoria.html"><img src="https://th.bing.com/th/id/OIG4.oGghNTmih3EcteLnEZwA?pid=ImgGn" alt="Matememoria" class="game-image"></a>
+            <a href="games/matememoria.php"><img src="https://th.bing.com/th/id/OIG4.oGghNTmih3EcteLnEZwA?pid=ImgGn" alt="Matememoria" class="game-image"></a>
           </div>
 
             <h3 class="game-title">Matemória</h3>
@@ -48,11 +56,11 @@
           <div class="game-section">
 
             <div class="game-section-img">
-              <a href="games/contra-tempo.html"><img src="https://th.bing.com/th/id/OIG1.VpwdQtPXGVfhy2waV559?pid=ImgGn" alt="Contra-Tempo" class="game-image"></a>
+              <a href="games/contra-tempo.php"><img src="https://th.bing.com/th/id/OIG1.VpwdQtPXGVfhy2waV559?pid=ImgGn" alt="Contra-Tempo" class="game-image"></a>
             </div>
 
             <div class="game-section-img">
-              <a href="games/contra-tempo.html"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo" class="game-image"></a>
+              <a href="games/contra-tempo.php"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo" class="game-image"></a>
             </div>
 
             <h3 class="game-title">Contra-Tempo</h3>
@@ -62,7 +70,7 @@
           <div class="game-section">
 
             <div class="game-section-img">
-              <a href="games/corrida-matematica.html"><img src="https://th.bing.com/th/id/OIG3.WxtyeKUN3zaOqEmZHJFi?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Corrida Matematica" class="game-image"></a>
+              <a href="games/corrida-matematica.php"><img src="https://th.bing.com/th/id/OIG3.WxtyeKUN3zaOqEmZHJFi?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Corrida Matematica" class="game-image"></a>
             </div>
 
             <h3 class="game-title">Corrida Matemática</h3>
@@ -74,7 +82,7 @@
           <div class="game-section">
 
             <div class="game-section-img">
-              <a href="games/ache-x.html"><img src="https://th.bing.com/th/id/OIG2.CBPYZhqpUlNd7Ffi1p_o?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Ache o X" class="game-image"></a>
+              <a href="games/ache-x.php"><img src="https://th.bing.com/th/id/OIG2.CBPYZhqpUlNd7Ffi1p_o?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Ache o X" class="game-image"></a>
             </div>
 
             <h3 class="game-title">Ache o X</h3>
@@ -84,7 +92,7 @@
           <div class="game-section">
 
             <div class="game-section-img">
-              <a href="games/cruzadas-calculadas.html"><img src="https://th.bing.com/th/id/OIG1.cENUC9OMpoegv7p8b98l?pid=ImgGn" alt="Cruzadas Calculadas" class="game-image"></a>
+              <a href="games/cruzadas-calculadas.php"><img src="https://th.bing.com/th/id/OIG1.cENUC9OMpoegv7p8b98l?pid=ImgGn" alt="Cruzadas Calculadas" class="game-image"></a>
             </div>
 
             <h3 class="game-title">Cruzadas Calculadas</h3>
@@ -93,7 +101,7 @@
 
           <div class="game-section">
             <div class="game-section-img">
-              <a href="games/xxxxx.html"><img src="https://th.bing.com/th/id/OIG1.5F8bXRtAE8AU_GeLnRE4?pid=ImgGn" alt="XXXXX" class="game-image"></a>
+              <a href="games/xxxxx.php"><img src="https://th.bing.com/th/id/OIG1.5F8bXRtAE8AU_GeLnRE4?pid=ImgGn" alt="XXXXX" class="game-image"></a>
             </div>
             <h3 class="game-title">Duelo Numérico</h3>
             <p class="game-description">Dois jogadores testam suas agilidades em contas matemáticas para derrotar um ao outro nesse duelo numérico</p>
