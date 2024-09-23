@@ -26,8 +26,6 @@
           <a href="cont.php"><li>Conteúdo</li></a>
           <a href="turma.php"><li>Turmas</li></a>
           <a href="contact.php"><li>Contatos</li></a>
-          <a href="login.php"><li>Login</li></a>
-          <a href="cad.php" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
           <!-- teste de $_SESSION -->
           <li><?php echo $_SESSION['login']; ?></li>
       </ul>

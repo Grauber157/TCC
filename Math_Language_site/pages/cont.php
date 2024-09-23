@@ -30,9 +30,8 @@
           <a href="../pages/contact.php"><li>Contatos</li></a>
           <a href="../pages/login.php"><li>Login</li></a>
           <a href="../pages/turma.php"><li>Turmas</li></a>
-          <a href="../pages/cad.php" id="inscreva-se-btn"
-            ><li>Nao tem conta?</li></a
-          >
+          <!-- teste de $_SESSION -->
+          <li><?php echo $_SESSION['login']; ?></li>
         </ul>
       </div>
     </header>
