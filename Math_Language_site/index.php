@@ -12,6 +12,13 @@
     <title>Math Language</title>
 </head>
 <body>
+    <?php
+        include('inicia_sessao.php');
+        if(empty($_SESSION['login']))
+        {
+            header("Location: pages/login.html");
+        }
+    ?>
     <header>
             <div id="title">
                 <h1 class="title-h1">Math</h1>
