@@ -29,7 +29,7 @@
             <ul>
                 <a href="pages/home.php"><li>Home</li></a>
                 <a href="pages/games.php"><li>Jogos</li></a>
-                <a href="pages/class.php"><li>Ensino</li></a>
+                <a href="pages/cont.php"><li>Ensino</li></a>
                 <a href="pages/contact.php"><li>Contatos</li></a>
                 <a href="pages/login.php"><li>Login</li></a>
                 <a href="pages/cad.php" id="inscreva-se-btn"><li>Nao tem conta?</li></a>

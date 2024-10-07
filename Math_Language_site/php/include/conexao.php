@@ -7,10 +7,13 @@
     $port = 3306;
     $link = mysqli_connect($hostname, $username, $password, $database, $port);
 
-    #Checagem de conexão com o banco de dados
-    if (!$link)
+    //ERRO DE CONEXAO
+    if(!$link)
     {
-        die("Conexão mal sucedida: " . mysqli_connect_error());
+        echo 'Erro: Não foi possível conectar ao MySQL.' . PHP_EOL;
+        echo 'Debugging errno: ' . mysqli_connect_errno() . PHP_EOL;
+        echo 'Debugging error: ' . mysqli_connect_error() . PHP_EOL;
+        return null;
     }
-    echo "Conexão bem sucedida\n";
+    return $link;
 ?>

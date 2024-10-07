@@ -32,6 +32,7 @@
           <a href="contact.php"><li>Contatos</li></a>
           <!-- teste de $_SESSION -->
           <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
+          <a href="../php/include/logout.php"><li>Desconectar</li></a>
       </ul>
     </header>
 
