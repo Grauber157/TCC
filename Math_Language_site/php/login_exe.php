@@ -1,7 +1,5 @@
 <?php
-    #Função pra manter as páginas logadas
     session_start();
-
     #Função para checar email
     function EmailCheck($email1, $email_banco1) : bool
     {
@@ -46,12 +44,15 @@
         mysqli_stmt_bind_result($stmt, $email_banco, $apelido_banco, $senha_banco, $nome_usuario);
         mysqli_stmt_fetch($stmt);
 
-        if(EmailCheck($email, $email_banco) and PasswordCheck($senha, $senha_banco))
+        if(EmailCheck($email, $email_banco) or EmailCheck($email, $apelido_banco))
         {
-            //$_SESSION para manter usuário logado
-            $_SESSION['login'] = $nome_usuario;
-            echo "Login Concluido!<br>";
-            header("Location: ../index.php");
+            if(PasswordCheck($senha, $senha_banco))
+            {
+                //$_SESSION para manter usuário logado
+                $_SESSION['login'] = $nome_usuario;
+                echo "Login Concluido!<br>";
+                header("Location: ../index.php");
+            }
         }
         else
         {

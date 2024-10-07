@@ -35,7 +35,7 @@
             <form class="form" action="../php/login_exe.php" method="post">
                 <div class="input-group">
                     <label for="username">Login</label>
-                    <input type="text" name="email" id="username" placeholder="Email ou Nome de usuario">
+                    <input type="text" name="email" id="email" placeholder="Email ou Nickname">
                 </div>
                 <div class="input-group">
                     <label for="password">Senha</label>
