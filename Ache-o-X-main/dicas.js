@@ -5,6 +5,7 @@ const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
 const submitBtn = document.getElementById('submit-btn');
 const responseInput = document.getElementById('response-input');
+const buttons = document.querySelectorAll('.keyboard button');
 
 // Função para alterar o conteúdo ao clicar nos botões
 btn1.addEventListener('click', () => {
@@ -30,7 +31,7 @@ submitBtn.addEventListener('click', () => {
     }
 });
 
-const buttons = document.querySelectorAll('.keyboard button');
+
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {

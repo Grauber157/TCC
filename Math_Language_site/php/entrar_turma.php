@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $usuario = $_SESSION["login"];
+    $usuario = $_SESSION['login'];
 
     
     echo "<h1>$usuario</h1>";
@@ -19,12 +19,12 @@
     #Função 'mysqli_prepare()' para preparar o comando SQL;
     #Comando para pegar o codigo, senha e nome da turma. De acordo com os dados fornecidos;
     #Os caracteres '?', são posições no comando SQL a ser preenchido na função 'mysqli_stmt_bind_param()';
-    $stmt = mysqli_prepare($link, "SELECT codigo, senha_turma, nome_turma FROM turma WHERE codigo = ? and senha_turma = ?");
+    $stmt = mysqli_prepare($link, "SELECT codigo, senha_turma, nome_turma FROM turma WHERE codigo = ?");
 
     if($stmt)
     {
         #Função que substitui os '?' por variáveis;
-        mysqli_stmt_bind_param($stmt, "ss", $codigo_turma, $senha);
+        mysqli_stmt_bind_param($stmt, "ss", $codigo_turma);
         #Executa o código SQL;
         mysqli_stmt_execute($stmt);
         #Pega os resultados do banco de dados, e adiciona nas variáveis;
