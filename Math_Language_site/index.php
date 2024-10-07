@@ -31,10 +31,16 @@
                 <a href="pages/games.php"><li>Jogos</li></a>
                 <a href="pages/cont.php"><li>Ensino</li></a>
                 <a href="pages/contact.php"><li>Contatos</li></a>
-                <a href="pages/login.php"><li>Login</li></a>
-                <a href="pages/cad.php" id="inscreva-se-btn"><li>Nao tem conta?</li></a>
+                <?php
+                    //retira o bug do login
+                    if(empty($_SESSION['login']))
+                    {
+                        echo "<a href='pages/login.php'><li>Login</li></a>";
+                        echo "<a href='pages/cad.php' id='inscreva-se-btn'><li>Nao tem conta?</li></a>";
+                    }
+                ?>
                 <!-- teste de $_SESSION -->
-                <li><?php echo $_SESSION['login']; ?></li>
+                <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
             </ul>
         </div>
         </header>
