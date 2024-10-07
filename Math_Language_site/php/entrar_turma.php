@@ -5,19 +5,10 @@
     
     echo "<h1>$usuario</h1>";
 
-    $codigo_turma = $_POST["codigo_turma"];
+    $codigo_turma = $_POST["cod_turma"];
     $senha = $_POST["senha"];
 
-    ////REMOVER (substituir pelo 'include()')////
-
-    #Parâmetros para realizar a conexão com o banco de dados;
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "math_language";
-    $port = 3306;
-    $link = mysqli_connect($hostname, $username, $password, $database, $port);
-    #Checagem de conexão com o banco de dados;
+    include('include/conexao.php');
     if (!$link) 
     {
         die("Conexão mal sucedida: " . mysqli_connect_error());

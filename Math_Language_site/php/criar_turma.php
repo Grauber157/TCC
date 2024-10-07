@@ -4,9 +4,9 @@
     #include() para gerar o código da turma
     include('include/gerador_codigo_turma.php');
         
-    $nome_turma = $_POST['nome'];
+    $nome_turma = $_POST['nome_turma'];
     $senha_turma = $_POST['senha'];
-    $descricao = $_POST['descricao'];
+    //$descricao = $_POST['descricao'];
 
     //CHECAGEM DE POSSIVEIS DADOS JA EXISTENTES//
     $sql = "SELECT nome_turma FROM turma WHERE nome_turma = ?";
@@ -18,11 +18,11 @@
     if($check == false)
     {
         //INSERÇÃO DE DADOS//
-        $sql = "INSERT INTO turma(codigo, nome_turma, senha_turma, descricao) VALUES(?, ?, ?, ?)";
+        $sql = "INSERT INTO turma(codigo, nome_turma, senha_turma) VALUES(?, ?, ?)";
 
         $stmt = mysqli_prepare($link, $sql);
 
-        mysqli_stmt_bind_param($stmt, "ssss", $codigo_turma, $nome_turma, $senha_turma, $descricao);
+        mysqli_stmt_bind_param($stmt, "sss", $codigo_turma, $nome_turma, $senha_turma);
 
         mysqli_stmt_execute($stmt);
 

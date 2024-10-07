@@ -58,7 +58,7 @@ if (empty($_SESSION['login'])) {
       <!--MATEMORIA-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/matememoria.php"><img src="components/images/capa_matemória.png" alt="Matememoria"
+          <a href="games/matememoria.html"><img src="components/images/capa_matemória.png" alt="Matememoria"
               class="game-image"></a>
         </div>
 
@@ -71,7 +71,7 @@ if (empty($_SESSION['login'])) {
       <!--CONTRA TEMPO-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/contra-tempo.php"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo"
+          <a href="games/contra-tempo.html"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo"
               class="game-image"></a>
         </div>
 
@@ -84,7 +84,7 @@ if (empty($_SESSION['login'])) {
       <!--PLANAMENTE ESPACIAL-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/planamente-espacial.php"><img src="components/images/capa_planamenteespacial.png"
+          <a href="games/planamente-espacial.html"><img src="components/images/capa_planamenteespacial.png"
               alt="Planamente Espacial" class="game-image"></a>
         </div>
 
@@ -103,7 +103,8 @@ if (empty($_SESSION['login'])) {
       <!--ACHE O X-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/ache-x.php"><img src="components/images/capa_achex.png" alt="Ache o X" class="game-image"></a>
+          <!--Trocar o href desse jogo-->
+          <a href="../../Ache-o-X-main/teclado.html"><img src="components/images/capa_achex.png" alt="Ache o X" class="game-image"></a>
         </div>
 
         <h3 class="game-title">Ache o X</h3>
@@ -115,7 +116,7 @@ if (empty($_SESSION['login'])) {
       <!--...-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/"><img src="" alt="" class="game-image"></a>
+          <a href="#"><img src="" alt="" class="game-image"></a>
         </div>
 
         <h3 class="game-title">...</h3>
