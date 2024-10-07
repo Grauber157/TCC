@@ -28,17 +28,17 @@
         <h1 class="title-h1">Math</h1>
         <h1>Language</h1>
       </div>
-      <div class="box_header">
       <ul>
-          <a href="../pages/home.php"><li>Home</li></a>
-          <a href="../pages/games.php"><li>Jogos</li></a>
-          <a href="../pages/contact.php"><li>Contatos</li></a>
-          <a href="../pages/turma.php"><li>Turmas</li></a>
-          <!-- teste de $_SESSION -->
-          <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
-        </ul>
-      </div>
+        <a href="home.php"><li>Home</li></a>
+        <a href="games.php"><li>Jogos</li></a>
+        <a href="cont.php"><li>Conteúdo</li></a>
+        <a href="turma.php"><li>Turmas</li></a>
+        <a href="contact.php"><li>Contatos</li></a>
+        <!-- teste de $_SESSION -->
+        <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>" . $_SESSION['login'] . "</h3>"; ?></li></a>
+      </ul>
     </header>
+    
     <main>
       <h1 style="text-align: center">Conteúdos</h1>
       <section class="sec-container">

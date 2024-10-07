@@ -29,12 +29,14 @@
             <a href="home.php"><li>Home</li></a>
             <a href="games.php"><li>Jogos</li></a>
             <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="turma.php"><li>Turmas</li></a>
             <a href="contact.php"><li>Contatos</li></a>
             <!-- teste de $_SESSION -->
-            <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
+            <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>" . $_SESSION['login'] . "</h3>"; ?></li></a>
         </ul>
+
     </header>
-    
+
     <main class="dashboard">
         <section class="ranking">
             <h2>Top 20 Turmas</h2>
