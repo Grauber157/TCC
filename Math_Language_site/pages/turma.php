@@ -36,7 +36,8 @@
         </ul>
 
     </header>
-
+    <h1>Turmas</h1>
+    
     <main class="dashboard">
         <section class="ranking">
             <h2>Top 20 Turmas</h2>
