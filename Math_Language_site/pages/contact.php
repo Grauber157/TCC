@@ -39,9 +39,6 @@
     </header>
     <main>
         <h1>Contatos</h1>
-        <article>
-            <img src="#" alt="">
-        </article>
     </main>
         
     <footer>

@@ -40,7 +40,7 @@
     </header>
     
     <main>
-      <h1 style="text-align: center">Conteúdos</h1>
+      <h1>Conteúdos</h1>
       <section class="sec-container">
         <div class="dis1">
           <div class="titulo1">

@@ -1,4 +1,4 @@
-<div?php
+<?php
 session_start();
 
 if (empty($_SESSION['login'])) {
@@ -12,14 +12,13 @@ if (empty($_SESSION['login'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../styles/cabeça.css" rel="stylesheet">
+  <link href="../styles/cabeça.css" rel="stylesheet" >
   <link href="../styles/fonts.css" rel="stylesheet">
   <link href="../styles/media.css" rel="stylesheet">
   <link href="../styles/games.css" rel="stylesheet">
   <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
   <title>Math Language</title>
 </head>
-
 <body>
   <header>
     <div id="title">
@@ -39,9 +38,6 @@ if (empty($_SESSION['login'])) {
   </header>
   <main>
     <h1>Jogos</h1>
-    <article>
-      <img src="#" alt="">
-    </article>
 
     <!--seção teste-->
     <div class="game-container">
@@ -95,7 +91,7 @@ if (empty($_SESSION['login'])) {
       <div class="game-section">
         <div class="game-section-img">
           <!--Trocar o href desse jogo-->
-          <a href="../../Ache-o-X-main/teclado.html"><img src="components/images/capa_achex.png" alt="Ache o X" class="game-image"></a>
+          <a href="games/ache-x.html"><img src="components/images/capa_achex.png" alt="Ache o X" class="game-image"></a>
         </div>
 
         <h3 class="game-title">Ache o X</h3>
