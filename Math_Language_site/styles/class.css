@@ -7,9 +7,11 @@
 
 .ranking {
   width: 30%;
-  background-color: #2e2a4a;
+  background-color: #252852ca;
   padding: 20px;
   border-radius: 10px;
+  margin: 10px;
+
 }
 
 .ranking h2 {
@@ -32,9 +34,10 @@
 
 .actions {
   width: 65%;
-  background-color: #2e2a4a;
+  background-color: #252852ca;
   padding: 20px;
   border-radius: 10px;
+  margin: 10px;
 }
 
 .turma-options {

@@ -29,16 +29,35 @@
             <a href="home.php"><li>Home</li></a>
             <a href="games.php"><li>Jogos</li></a>
             <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="turma.php"><li>Turmas</li></a>
             <a href="contact.php"><li>Contatos</li></a>
             <!-- teste de $_SESSION -->
-            <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
+            <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>" . $_SESSION['login'] . "</h3>"; ?></li></a>
         </ul>
+
     </header>
+    <h1>Turmas</h1>
     
     <main class="dashboard">
         <section class="ranking">
             <h2>Top 20 Turmas</h2>
             <ul>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>clan 1</span><span>2000</span></li>
                 <li><span>clan 1</span><span>2000</span></li>
                 <!-- Repetir itens conforme necessário -->
             </ul>
@@ -50,28 +69,36 @@
                 <a href="entrarturma.php" class="btn">Entrar</a>
             </div>
             <div class="info">
-                <h3>O que é as Turmas?</h3>
-                <p>Texto explicativo sobre o que são as turmas.</p>
+                <h3>O que são as Turmas?</h3>
+                <p>...</p>
             </div>
         </section>
     </main>
-
+    
     <footer>
-        <div class="footer-content1">
-            <div class="contact-info">
-                <h3>Contato</h3>
-                <p>Email: <a href="mailto:mathlanguagebri@gmail.com">mathlanguagebri@gmail.com</a></p>
-                <p>Telefone: <a href="tel:+5518988136720">(18) 98813-6720</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p id="copy">&copy; 2024 Ensino à Matemática. Todos os direitos reservados.</p>
-            <div class="social-icons">
-                <a href="https://github.com/Grauber157/TCC.git"><img src="../Material/images/github.png" alt="Github"></a>
-                <a href="#"><img src="../Material/images/twitter.png" alt="Twitter"></a>
-                <a href="https://instagram.com/mathlanguage"><img src="../Material/images/instagram.png" alt="Instagram"></a>
-            </div>
-        </div>
-    </footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <h3>Contato</h3>
+        <p><img src="../Material/images/phone.png" alt="Phone Icon"><a href="tel:+5518988136720"> (18) 98813-6720</a></p>
+        <p><img src="../Material/images/email.png" alt="Email Icon"><a href="mailto:mathlanguagebri@gmail.com">mathlanguagebri@gmail.com</a></p></br>
+      </div>
+
+      <div class="about-info">
+        <h3>Sobre nós</h3>
+        <p>Lorem Ipsum é um texto padrão em latim usado na indústria de design gráfico e editoriação para preencher espaços de texto.</p>
+      </div>
+    
+    </div>
+    
+    <div class="footer-bottom">
+      <p id="copy">&copy; 2024 Ensino à Matemática. Todos os direitos reservados.</p></br>
+      <div class="social-icons">
+        <a href="https://github.com/Grauber157/TCC.git"><img src="../Material/images/githubb.png" alt="Github"></a>
+        <a href="#"><img src="../Material/images/twitterr.png" alt="Twitter"></a>
+        <a href="https://instagram.com/mathlanguage"><img src="../Material/images/instagramm.png" alt="Instagram"></a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
