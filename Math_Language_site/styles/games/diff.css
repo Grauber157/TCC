@@ -19,7 +19,7 @@ body {
     margin-top: 20px;
 }
 button {
-    background-color: rgb(132, 14, 201);
+    background-color: #6c2d91;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
@@ -28,5 +28,5 @@ button {
     border-radius: 5px;
 }
 button:hover {
-    background-color: #3e419f;
+    background-color: #4d2d61;
 }
