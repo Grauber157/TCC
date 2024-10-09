@@ -28,7 +28,7 @@
         <ul>
             <a href="home.php"><li>Home</li></a>
             <a href="games.php"><li>Jogos</li></a>
-            <a href="cont.php"><li>Conteúdo</li></a>
+            <a href="cont.php"><li>Conteúdos</li></a>
             <a href="turma.php"><li>Turmas</li></a>
             <a href="contact.php"><li>Contatos</li></a>
             <!-- teste de $_SESSION -->
@@ -40,25 +40,18 @@
     
     <main class="dashboard">
         <section class="ranking">
-            <h2>Top 20 Turmas</h2>
+            <h2>Top 10 Usuários</h2>
             <ul>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
-                <li><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 1</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 2</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 3</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 4</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 5</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 6</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 7</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 8</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 9</span><span>clan 1</span><span>2000</span></li>
+                <li><span>nome 10</span><span>clan 1</span><span>2000</span></li>
                 <!-- Repetir itens conforme necessário -->
             </ul>
         </section>

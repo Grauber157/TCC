@@ -29,7 +29,8 @@
             <ul>
                 <a href="pages/home.php"><li>Home</li></a>
                 <a href="pages/games.php"><li>Jogos</li></a>
-                <a href="pages/cont.php"><li>Ensino</li></a>
+                <a href="pages/cont.php"><li>Conteúdos</li></a>
+                <a href="pages/turma.php"><li>Turmas</li></a>
                 <a href="pages/contact.php"><li>Contatos</li></a>
                 <?php
                     //retira o bug do login
