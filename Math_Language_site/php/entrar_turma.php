@@ -24,12 +24,11 @@
     if($stmt)
     {
         #Função que substitui os '?' por variáveis;
-        mysqli_stmt_bind_param($stmt, "ss", $codigo_turma);
+        mysqli_stmt_bind_param($stmt, "s", $codigo_turma);
         #Executa o código SQL;
         mysqli_stmt_execute($stmt);
         #Pega os resultados do banco de dados, e adiciona nas variáveis;
         mysqli_stmt_bind_result($stmt, $codigo_banco, $senha_banco, $nome_turma);
-        #Nao sei oque ele faz kakaka
         mysqli_stmt_fetch($stmt);
         
         #Checa a autenticidade dos dados fornecidos 
@@ -37,7 +36,7 @@
         {
             mysqli_stmt_close($stmt);
 
-            $stmt = mysqli_prepare($link, "UPDATE usuario SET codigo_turma = ? WHERE nome_usuario = ?");
+            $stmt = mysqli_prepare($link, "UPDATE usuario SET turma_codigo = ? WHERE nome_usuario = ?");
             
             mysqli_stmt_bind_param($stmt, "ss", $codigo_banco, $usuario);
             mysqli_stmt_execute($stmt);
