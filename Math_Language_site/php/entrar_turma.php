@@ -19,10 +19,10 @@
         </div>
         <ul>
             <a href="../pages/home.php"><li>Home</li></a>
-            <a href="games.php"><li>Jogos</li></a>
-            <a href="cont.php"><li>Conteúdos</li></a>
-            <a href="turma.php"><li>Turmas</li></a>
-            <a href="contact.php"><li>Contatos</li></a>
+            <a href="../pages/games.php"><li>Jogos</li></a>
+            <a href="../pages/cont.php"><li>Conteúdos</li></a>
+            <a href="../pages/turma.php"><li>Turmas</li></a>
+            <a href="../pages/contact.php"><li>Contatos</li></a>
         </ul>
 
     </header>
