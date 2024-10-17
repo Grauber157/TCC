@@ -16,6 +16,7 @@ if (empty($_SESSION['login'])) {
   <link href="../styles/fonts.css" rel="stylesheet">
   <link href="../styles/media.css" rel="stylesheet">
   <link href="../styles/games.css" rel="stylesheet">
+  <link href="../styles/popup.css" rel="stylesheet">
   <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
   <title>Math Language</title>
 </head>
@@ -45,7 +46,7 @@ if (empty($_SESSION['login'])) {
       <!--MATEMORIA-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/matememoria.html"><img src="components/images/capa_matemória.png" alt="Matememoria"
+          <a href="#popup1"><img src="components/images/capa_matemória.png" alt="Matememoria"
               class="game-image"></a>
         </div>
 
@@ -54,6 +55,12 @@ if (empty($_SESSION['login'])) {
         <p class="game-description">Use seus conhecimentos em contas matemáticas e sua memória para acertar as cartas
           que são correspondentes ao mesmo resultado.</p>
       </div>
+        
+      <!-- Simulação do pop-up de dificuldades -->
+      <!-- Topo -->
+      <?php
+        include '../php/popup.php';
+      ?>
 
       <!--CONTRA TEMPO-->
       <div class="game-section">

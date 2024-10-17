@@ -4,7 +4,7 @@
     $username = "root";
     $password = "";
     $database = "math_language";
-    $port = 3306;   //PC do DU = 3306, Normal = 3307;
+    $port = 3307;   //PC do DU = 3306, Normal = 3307;
     $link = mysqli_connect($hostname, $username, $password, $database, $port);
 
     //ERRO DE CONEXAO
