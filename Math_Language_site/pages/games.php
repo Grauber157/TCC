@@ -16,26 +16,14 @@ if (empty($_SESSION['login'])) {
   <link href="../styles/fonts.css" rel="stylesheet">
   <link href="../styles/media.css" rel="stylesheet">
   <link href="../styles/games.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
   <title>Math Language</title>
 </head>
 <body>
-  <header>
-    <div id="title">
-      <h1 class="title-h1">Math</h1>
-      <h1>Language</h1>
-    </div>
+  
+  <?php include '../php/include/menu.php'; ?>
 
-    <ul>
-      <a href="home.php"><li>Home</li></a>
-      <a href="games.php"><li>Jogos</li></a>
-      <a href="cont.php"><li>Conteúdo</li></a>
-      <a href="turma.php"><li>Turmas</li></a>
-      <a href="contact.php"><li>Contatos</li></a>
-      <!-- teste de $_SESSION -->
-      <a href="#" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
-    </ul>
-  </header>
   <main>
     <h1>Jogos</h1>
 
@@ -125,30 +113,10 @@ if (empty($_SESSION['login'])) {
     </div>
 
   </main>
-  <footer>
-    <div class="footer-content">
-      <div class="contact-info">
-        <h3>Contato</h3>
-        <p><img src="../Material/images/phone.png" alt="Phone Icon"><a href="tel:+5518988136720"> (18) 98813-6720</a></p>
-        <p><img src="../Material/images/email.png" alt="Email Icon"><a href="mailto:mathlanguagebri@gmail.com">mathlanguagebri@gmail.com</a></p></br>
-      </div>
+  
+  <?php include '../php/include/rodape.php'; ?>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-      <div class="about-info">
-        <h3>Sobre nós</h3>
-        <p>Lorem Ipsum é um texto padrão em latim usado na indústria de design gráfico e editoriação para preencher espaços de texto.</p>
-      </div>
-    
-    </div>
-    
-    <div class="footer-bottom">
-      <p id="copy">&copy; 2024 Ensino à Matemática. Todos os direitos reservados.</p></br>
-      <div class="social-icons">
-        <a href="https://github.com/Grauber157/TCC.git"><img src="../Material/images/githubb.png" alt="Github"></a>
-        <a href="#"><img src="../Material/images/twitterr.png" alt="Twitter"></a>
-        <a href="https://instagram.com/mathlanguage"><img src="../Material/images/instagramm.png" alt="Instagram"></a>
-      </div>
-    </div>
-  </footer>
 </body>
 
 </html>

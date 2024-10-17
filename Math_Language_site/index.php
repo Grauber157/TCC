@@ -27,7 +27,7 @@
             </div>
             <div class="box_header">
             <ul>
-                <a href="pages/home.php"><li>Home</li></a>
+                <a href="index.php"><li>Home</li></a>
                 <a href="pages/games.php"><li>Jogos</li></a>
                 <a href="pages/cont.php"><li>Ensino</li></a>
                 <a href="pages/contact.php"><li>Contatos</li></a>
@@ -41,6 +41,7 @@
                 ?>
                 <!-- teste de $_SESSION -->
                 <a href="cad.php" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
+                
             </ul>
         </div>
         </header>
