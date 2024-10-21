@@ -6,6 +6,9 @@ body{
     margin: 0 auto;
     padding: 15px;
     background-image: url('../Material/images/bgcerto.png');
+    background-size: cover; /* Faz a imagem cobrir toda a área do body */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
   }
   /* cabecalho do site [all pages] */
   header{
