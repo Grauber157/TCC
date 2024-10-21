@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    if(empty($_SESSION['login']))
-    {
-        header("Location: login.php");
-    }
+    //if(empty($_SESSION['login']))
+    //{
+        //header("Location: login.php");
+    //}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/cabeça.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/contact.css">
+    <link rel="stylesheet" href="../style/contact.css">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
