@@ -1,4 +1,12 @@
-html {
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo</title>
+    
+  <style>
+    html {
     background-color: #22264C;
 }
 
@@ -59,10 +67,25 @@ body {
   
 @keyframes rotate {
     from {
-        transform: rotateX(-30deg) rotateY(-50deg);
+        transform: rotateX(40deg) rotateY(-50deg);
     }
   
     to {
-        transform: rotateX(-30deg) rotateY(310deg); /* Ajuste o valor final para 310deg */
+        transform: rotateX(40deg) rotateY(310deg); /* Ajuste o valor final para 310deg */
     }
 }
+
+  </style>
+
+</head>
+<body>
+    <div class="cube">
+        <div class="face face--front"></div>
+        <div class="face face--right"></div>
+        <div class="face face--back"></div>
+        <div class="face face--left"></div>
+        <div class="face face--top"></div>
+        <div class="face face--bottom"></div>
+      </div>
+</body>
+</html>
