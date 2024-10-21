@@ -1,3 +1,4 @@
+<!---
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -34,5 +35,28 @@
       }
       }
     </script>
+</body>
+</html>
+    -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Escolha a Dificuldade</title>
+    <link rel="stylesheet" href="styles/matemoria.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Matemória</h1>
+    <p>Escolha o nível de dificuldade</p>
+      <div class="buttons">
+        <form action="nivmatemoria.php" method="GET">
+          <button type="submit" name="dificuldade" value="facil">Fácil</button>
+          <button type="submit" name="dificuldade" value="medio">Médio</button>
+          <button type="submit" name="dificuldade" value="dificil">Difícil</button>
+        </form>
+      </div>
+  </div>
 </body>
 </html>

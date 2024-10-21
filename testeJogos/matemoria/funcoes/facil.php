@@ -1,3 +1,4 @@
+<script>
 // Lista de valores das cartas (expressões e suas soluções correspondentes)
 const cardValues = [
     { expression: '13', solution: '5+8' },
@@ -143,8 +144,6 @@ function gameOver() {
     finalTimeDisplay.textContent = finalScore; // Exibe a pontuação final
 }
 
-
-
 // Embaralha as cartas antes de renderizar
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -171,3 +170,16 @@ function restartGame() {
 shuffle(cardValues);
 cardValues.forEach(createCard);
 startTimer();
+</script>
+
+<script>
+    function reiniciarJogo() {
+    // Lógica para reiniciar o jogo
+    window.location.reload();
+    }
+  
+    function voltarPagina() {
+    // Redireciona para a página inicial
+    window.location.href = 'index.php';
+    }
+</script>

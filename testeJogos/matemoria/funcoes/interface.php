@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Matemória</title>
-    <link rel="stylesheet" href="matemoria.css">
+    <link rel="stylesheet" href="styles/matemoria.css">
 </head>
 <body>
     <div class="game-container">
@@ -22,19 +22,3 @@
             <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
         </div>
     </div>
-
-    <script src="facil.js"></script>
-    <script>
-        function reiniciarJogo() {
-        // Lógica para reiniciar o jogo
-        window.location.reload();
-        }
-  
-        function voltarPagina() {
-        // Redireciona para a página inicial
-        window.location.href = 'index.html';
-        }
-    </script>
-
-</body>
-</html>

@@ -1,4 +1,5 @@
-// Lista de valores das cartas (expressões e suas soluções correspondentes) - nível médio
+<script>
+  // Lista de valores das cartas (expressões e suas soluções correspondentes) - nível médio
 const cardValues = [
     { expression: '13', solution: '9+√16' },
     { expression: '9+√16', solution: '13' },
@@ -169,3 +170,16 @@ function restartGame() {
 shuffle(cardValues);
 cardValues.forEach(createCard);
 startTimer();
+</script>
+
+<script>
+    function reiniciarJogo() {
+    // Lógica para reiniciar o jogo
+    window.location.reload();
+    }
+  
+    function voltarPagina() {
+    // Redireciona para a página inicial
+    window.location.href = 'index.php';
+    }
+</script>
