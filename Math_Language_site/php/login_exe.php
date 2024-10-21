@@ -69,4 +69,6 @@
     {
         echo "Erro" . mysqli_error($link);
     }
+
+    //echo("<p><a href='login.php'</a></p>");
 ?>

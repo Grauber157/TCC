@@ -1,10 +1,12 @@
 <?php
     session_start();
 
-    //if(empty($_SESSION['login']))
-    //{
-        //header("Location: pages/login.php");
-    //}
+    if(empty($_SESSION['login']))
+    {
+      header("Location: login.php");
+    }
+    //include("php/include/logout.php");
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

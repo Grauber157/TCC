@@ -1,9 +1,10 @@
 <?php
 session_start();
 
-//if (empty($_SESSION['login'])) {
-  //header("Location: login.php");
-//}
+  if(empty($_SESSION['login']))
+  {
+    header("Location: login.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
