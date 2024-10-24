@@ -15,18 +15,26 @@
     mysqli_stmt_execute($stmt);
     $check = mysqli_stmt_fetch($stmt);
 
+    //ATRIBUIÇÃO DE ADM NA TURMA AO CRIAR//
+    #
+    $comando = "SELECT id_aluno FROM usuario WHERE nome_usuario = ?";
+    $stmt2 = mysqli_prepare($link, $comando);
+    mysqli_stmt_bind_param($stmt2, "s", $_SESSION['login']);
+    mysqli_stmt_execute($stmt2);
+    mysqli_stmt_bind_result($stmt2, $id_usuario);
+    mysqli_stmt_fetch($stmt2);
+
     if($check == false)
     {
         //INSERÇÃO DE DADOS//
         $sql = "INSERT INTO turma(codigo, nome_turma, senha_turma) VALUES(?, ?, ?)";
+        var_dump($sql);
 
         $stmt = mysqli_prepare($link, $sql);
 
         mysqli_stmt_bind_param($stmt, "sss", $codigo_turma, $nome_turma, $senha_turma);
 
         mysqli_stmt_execute($stmt);
-
-        mysqli_stmt_fetch($stmt);
 
         echo "Turma criada com sucesso! Código de turma: $codigo_turma";
     }
