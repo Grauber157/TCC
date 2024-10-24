@@ -52,6 +52,6 @@
         echo "<span>Erro ao Cadastrar</span><br>";
     }
     
-
+    header("Location: ../index.php");
     
 ?>

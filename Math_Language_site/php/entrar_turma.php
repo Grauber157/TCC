@@ -56,5 +56,5 @@
         mysqli_close($link);
     }
 
-
+    header("Location: turma.php");
 ?>

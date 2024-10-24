@@ -35,4 +35,6 @@
         echo "Nome de turma já esta em uso!";
     }
     
+    header("Location: turma.php");
+
 ?>

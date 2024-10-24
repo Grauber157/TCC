@@ -3,7 +3,7 @@
 
     if(empty($_SESSION['login']))
     {
-      header("Location: login.php");
+      header("Location: pages/login.php");
     }
     //include("php/include/logout.php");
     
