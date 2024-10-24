@@ -54,9 +54,6 @@
                         <option value="7EF">7º ano Ensino Fundamental</option>
                         <option value="8EF">8º ano Ensino Fundamental</option>
                         <option value="9EF">9º ano Ensino Fundamental</option>
-                        <option value="1EM">1º ano Ensino Médio</option>
-                        <option value="2EM">2º ano Ensino Médio</option>
-                        <option value="3EM">3º ano Ensino Médio</option>
                         <option value="Professor">Professor</option>
                     </select>
                 </div>
