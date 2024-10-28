@@ -2,7 +2,7 @@
     #Função pra manter as páginas logadas
     session_start();
     #'Include()' para puxar os comandos do arquivo 'conexao.php'
-    include("include/conexao.php");
+    include("../core/conexao_mysql.php");
     #Valores vindos do forms por meio das superglobais
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -17,7 +17,7 @@
     if($senha == $senha_confirmacao and strlen($name) >= 5)
     {
         #Sistema para checar se o email já esta sendo utilizado
-        $stmt = mysqli_prepare($link, "SELECT email FROM usuario WHERE email = ?");
+        $stmt = mysqli_prepare($conexao, "SELECT email FROM usuario WHERE email = ?");
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_bind_result($stmt, $email_checagem);
@@ -27,7 +27,7 @@
             
             #Sistema de Hash
             $hash = password_hash($senha, PASSWORD_DEFAULT);
-            $stmt = mysqli_prepare($link, "INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, data_nascimento, ano_escolar, instituicao_escolar) VALUES(?, ?, ?, ?, ?, ?, ?)");
+            $stmt = mysqli_prepare($conexao, "INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, data_nascimento, ano_escolar, instituicao_escolar) VALUES(?, ?, ?, ?, ?, ?, ?)");
 
             if($stmt)
             {
@@ -38,7 +38,7 @@
             }
             else
             {
-                echo "Erro ao enviar os dados" . mysqli_error($link);
+                echo "Erro ao enviar os dados" . mysqli_error($conexao);
             }
         }
         else

@@ -1,6 +1,6 @@
 <?php
     //INSERE
-    function Insere(string $entidade, array $dados) : bool
+    function Inserir(string $entidade, array $dados) : bool
     {
         $retorno = false;
 
@@ -13,7 +13,7 @@
 
         $instrucao = Insert($entidade, $coringa);
 
-        $conexao = conecta();
+        $conexao = conectar();
 
         $stmt = mysqli_prepare($conexao, $instrucao);
 
@@ -27,13 +27,13 @@
 
         mysqli_stmt_close($stmt);
 
-        desconecta($conexao);
+        desconectar($conexao);
 
         return $retorno;
     }
 
     //ATUALIZA
-    function atualiza(string $entidade, array $dados, array $criterio = []) : bool
+    function Atualizar(string $entidade, array $dados, array $criterio = []) : bool
     {
         $retorno = false;
 
@@ -65,7 +65,7 @@
         }
 
         $instrucao = update($entidade, $coringa_dados, $coringa_criterio);
-        $conexao = conecta();
+        $conexao = conectar();
 
         $stmt = mysqli_prepare($conexao, $instrucao);
 
@@ -88,13 +88,13 @@
 
         mysqli_stmt_close($stmt);
 
-        desconecta($conexao);
+        desconectar($conexao);
 
         return $retorno;
     }
 
     //DELETAR
-    function Deleta(string $entidade, array $criterio = []) : bool
+    function Deletar(string $entidade, array $criterio = []) : bool
     {
         $retorno = false;
     
@@ -117,7 +117,7 @@
     
         $instrucao = delete($entidade, $coringa_criterio);
     
-        $conexao = conecta();
+        $conexao = conectar();
     
         $stmt = mysqli_prepare($conexao, $instrucao);
     
@@ -139,13 +139,13 @@
     
         mysqli_stmt_close($stmt);
     
-        desconecta($conexao);
+        desconectar($conexao);
     
         return $retorno;
     }
 
     //BUSCAR
-    function buscar (string $entidade, array $campos = ['*'], array $criterio = [], string $ordem = null) : array
+    function Buscar(string $entidade, array $campos = ['*'], array $criterio = [], string $ordem = null) : array
     {
         $retorno = false;
         $coringa_criterio = [];
@@ -172,7 +172,7 @@
 
         $instrucao = select($entidade, $campos, $coringa_criterio, $ordem);
 
-        $conexao = conecta();
+        $conexao = conectar();
 
         $stmt = mysqli_prepare($conexao, $instrucao);
 
@@ -199,7 +199,7 @@
 
         mysqli_stmt_close($stmt);
 
-        desconecta($conexao);
+        desconectar($conexao);
 
         $retorno = $retorno;
 

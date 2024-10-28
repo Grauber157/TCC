@@ -1,9 +1,9 @@
 <?php
 
-    function conecta() :mysqli
+    function Conectar() : mysqli
     {
         $servidor = 'localhost';
-        $banco = 'blog';
+        $banco = 'math_language';
         $port = 3307;
         $usuario = 'root';
         $senha = '';
@@ -20,7 +20,7 @@
         return $conexao;
     }
     //Fecha a conexao
-    function desconecta($conexao)
+    function Desconectar($conexao)
     {
         mysqli_close($conexao);
     }
