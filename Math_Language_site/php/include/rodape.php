@@ -8,7 +8,7 @@
 
       <div class="about-info">
         <h3>Sobre nós</h3>
-        <p>Math Language é um projeto voltado a disciplina de Projeto Integrador, com foco na área de ensino da Matemática. O site foi pensado e desenvolvido por Daniel Alves de Morais, Eduardo Pereira Xavier, gabriel faria Dias e Nícolas Eduardo dos Santos Almeida</p>
+        <p>Math Language é um projeto voltado a disciplina de Projeto Integrador, com foco na área de ensino da Matemática. O site foi pensado e desenvolvido por Daniel Alves de Morais, Eduardo Pereira Xavier, Gabriel Faria Dias e Nícolas Eduardo dos Santos Almeida</p>
       </div>
     
     </div>
