@@ -70,7 +70,7 @@
             if(crypt($senha,$salt) == $retorno[0]['senha']) 
             {
                 $_SESSION['login']['usuario'] = $retorno[0];
-                #CRITERIO 3) se a 'url_retorno' 
+                #CRITERIO 3) se a 'url_retorno' ????????????
                 if(!empty($_SESSION['url_retorno'])) 
                 {
                     header('Location: ' . $_SESSION['url_retorno']);
