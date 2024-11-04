@@ -1,11 +1,16 @@
 <?php
     session_start();
+    //Função limpar dados
     require_once '../php/includes/funcoes.php';
+    //Função de conexão
     require_once 'conexao_mysql.php';
+    //Comandos base sql
     require_once 'sql.php';
+    //Comandos formatados mysql
     require_once 'mysql.php';
+    //Salt pra função hash
     $salt = '$exemplosaltifsp';
-
+    
     foreach($_POST as $indice => $dado)
     {
         $$indice = limparDados($dado);
@@ -20,6 +25,7 @@
     {
         //CADASTRA-INSERE O USUARIO NO BANCO
         case 'insert':
+            #atribuicao de dados
             $dados = [
                 'nome' => $nome,
                 'email' => $email,
@@ -33,6 +39,7 @@
 
         //ATUALIZA O PERFIL DO BANCO
         case 'update':
+            #id para identificar o usuario na tabela
             $id = (int)$id;
             $dados = [
                 'nome' => $nome,
@@ -49,18 +56,21 @@
 
         //LOGIN USUARIO
         case 'login':
+            #criterio para checagem
             $criterio = [
-                ['email', '=', $email],
-                ['AND', 'ativo', '=', 1]
+                ['email', '=', $email]
             ];
+        #retorno da busca para checagem de dados
+        $retorno = Buscar('usuario', ['id_usuario', 'email', 'senha'], $criterio);
 
-        $retorno = Buscar('usuario', ['id', 'nome', 'email', 'senha', 'adm'], $criterio);
-
+        #CRITERIO 1) se obter um retorno na busca maior que 0
         if(count($retorno) > 0) 
         {
+            #CRITERIO 2) se o hash inserido for igual ao hash do banco
             if(crypt($senha,$salt) == $retorno[0]['senha']) 
             {
                 $_SESSION['login']['usuario'] = $retorno[0];
+                #CRITERIO 3) se a 'url_retorno' 
                 if(!empty($_SESSION['url_retorno'])) 
                 {
                     header('Location: ' . $_SESSION['url_retorno']);
@@ -70,7 +80,6 @@
             }
         }
         break;
-
 
         //LOG OUT DO USUARIO
         case 'logout':
