@@ -9,11 +9,6 @@
         <a href="http://localhost/TCC/Math_Language_site/pages/cont.php"><li>Ensino</li></a>
         <a href="http://localhost/TCC/Math_Language_site/pages/turma.php"><li>Turmas</li></a>
         <a href="http://localhost/TCC/Math_Language_site/pages/contact.php"><li>Contatos</li></a>
-        <!-- teste de $_SESSION -->
-         
-        </div>
-      </li>
         <a href="#" id="inscreva-se-btn"><li><?php echo "<h3>" . $_SESSION['login'] . "</h3>"; ?></li></a>
-        <a href="logout.php"><li>Desconectar</li></a>
     </ul>
 </header>

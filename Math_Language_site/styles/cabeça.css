@@ -125,17 +125,49 @@ body{
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .footer-content {
+  header{
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
+    background-color: #252852ca;
+    border-radius: 24px;
+    padding: 1%;
   }
-
-  .footer-content div {
-    margin-bottom: 20px;
+  #title{
+    line-height: 5px;
+    text-align: center;
+  }
+  /* barra de enderecos (lista) */
+  li{
+    display: inline-block;
+    margin: 10px;
+  }
+  /*  barra de enderecos (hyperlinks)*/
+  a{
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px;
+  }
+  /* efeito de transicao nos hyperlinks */
+  a:hover{
+    transition: 0.3s all;
+    color: rgb(132, 14, 201);
+  }
+  /* botao de cadastro caso a conta ja exista */
+  #inscreva-se-btn{
+    border: 2px solid rgb(132, 14, 201);
+    padding: 10px;
+    border-radius: 15px;
+  }
+  /* efeito de transicao para o botao-link de cadastro */
+  #inscreva-se-btn:hover{
+    background-color: rgb(132, 14, 201);
+    color: white;
   }
 }
-.social-icons img{
-  width: 30px;
-  height: 30px;
-}
 
+@media (max-width: 320px) {
+  
+}
