@@ -25,6 +25,21 @@
   <body>
     
   <?php include '../php/include/menu.php'; ?>
+    <header>
+      <div id="title">
+        <h1 class="title-h1">Math</h1>
+        <h1>Language</h1>
+      </div>
+      <ul>
+        <a href="home.php"><li>Home</li></a>
+        <a href="games.php"><li>Jogos</li></a>
+        <a href="cont.php"><li>Conteúdos</li></a>
+        <a href="turma.php"><li>Turmas</li></a>
+        <a href="contact.php"><li>Contatos</li></a>
+        <!-- teste de $_SESSION -->
+        <a href="#" id="inscreva-se-btn"><li><?php echo "<h3>" . $_SESSION['login'] . "</h3>"; ?></li></a>
+      </ul>
+    </header>
     
     <main>
       <h1>Conteúdos</h1>

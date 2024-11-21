@@ -17,6 +17,7 @@ session_start();
   <link href="../styles/fonts.css" rel="stylesheet">
   <link href="../styles/media.css" rel="stylesheet">
   <link href="../styles/games.css" rel="stylesheet">
+  <link href="../styles/popup.css" rel="stylesheet">
   <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
   <title>Math Language</title>
 </head>
@@ -24,6 +25,16 @@ session_start();
   
   <?php include '../php/include/menu.php'; ?>
 
+    <ul>
+      <a href="home.php"><li>Home</li></a>
+      <a href="games.php"><li>Jogos</li></a>
+      <a href="cont.php"><li>Conteúdos</li></a>
+      <a href="turma.php"><li>Turmas</li></a>
+      <a href="contact.php"><li>Contatos</li></a>
+      <!-- teste de $_SESSION -->
+      <a href="#" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
+    </ul>
+  </header>
   <main>
     <h1>Jogos</h1>
 
@@ -33,7 +44,7 @@ session_start();
       <!--MATEMORIA-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/matememoria.html"><img src="components/images/capa_matemória.png" alt="Matememoria"
+          <a href="#popup1"><img src="components/images/capa_matemória.png" alt="Matememoria"
               class="game-image"></a>
         </div>
 
@@ -42,6 +53,12 @@ session_start();
         <p class="game-description">Use seus conhecimentos em contas matemáticas e sua memória para acertar as cartas
           que são correspondentes ao mesmo resultado.</p>
       </div>
+        
+      <!-- Simulação do pop-up de dificuldades -->
+      <!-- Topo -->
+      <?php
+        include '../php/popup.php';
+      ?>
 
       <!--CONTRA TEMPO-->
       <div class="game-section">
