@@ -1,6 +1,3 @@
-<?php 
-    require_once '../core/usuario_repositorio.php';
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,6 +31,8 @@
                     <label for="password">Senha</label>
                     <input type="password" name="senha" id="password" placeholder="Senha">
                 </div>
+                <!-- input type='hidden' para enviar a acao -->
+                <input type="hidden" name="acao" value="login">
                 <input class="sign" type="submit" value="Login">
             </form>
             <p class="signup">Não tem conta?

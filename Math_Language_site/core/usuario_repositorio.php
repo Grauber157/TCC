@@ -1,7 +1,6 @@
 <?php
-    session_start();
     //Função limpar dados
-    require_once '../php/includes/funcoes.php';
+    require_once '../php/include/funcoes.php';
     //Função de conexão
     require_once 'conexao_mysql.php';
     //Comandos base sql
@@ -27,13 +26,17 @@
         case 'insert':
             #atribuicao de dados
             $dados = [
-                'nome' => $nome,
                 'email' => $email,
                 #criptografa a senha
-                'senha' => crypt($senha, $salt)
+                'senha' => crypt($senha, $salt),
+                'nome_usuario' => $name,
+                'apelido_usuario' => $nickname,
+                'data_nascimento' => $data,
+                'ano_escolar' => $ano_escola,
+                'instituicao_escola' => $nome_escola
                 ];
                 #funcao inserir
-                Inserir('usuario', $dados);
+            Inserir('usuario', $dados);
                 break;
 
 
@@ -132,5 +135,5 @@
 
 
     }
-    header ('Location: ../index.php');
+    //header ('Location: ../index.php');
 ?>

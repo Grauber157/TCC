@@ -22,7 +22,7 @@
         <aside class="form-flex">
         <div class="form-container">
             <p class="title">Cadastre-se</p>
-            <form class="form" action="../php/cadastro.php" method="post">
+            <form class="form" action="../core/usuario_repositorio.php" method="post">
                 <div class="input-group">
                     <label for="name">Nome Completo</label>
                     <input type="text" name="name" id="name" placeholder="Nome" required>
@@ -57,6 +57,8 @@
                         <option value="Professor">Professor</option>
                     </select>
                 </div>
+                <!-- valor para insert -->
+                <input type="hidden" name="acao" value="insert">
                 <div class="input-group">
                     <label for="name">Nome da Escola</label>
                     <input type="text" name="nome_escola" id="name" placeholder="Nome da escola">
