@@ -31,11 +31,11 @@
     $senha = $_POST['senha'];
 
     #'Include()' para puxar os comandos do arquivo 'conexao.php'
-    include("include/conexao.php");
+    include("../core/conexao_mysql.php");
 
     #'mysqli_prepare()' prepara o código SQL para ser enviado
     #podendo ser armazenado em uma variável
-    $stmt = mysqli_prepare($link, "SELECT email, apelido_usuario, senha, nome_usuario FROM usuario WHERE email = ? or apelido_usuario = ?");
+    $stmt = mysqli_prepare($conexao, "SELECT email, apelido_usuario, senha, nome_usuario FROM usuario WHERE email = ? or apelido_usuario = ?");
     
     if($stmt)
     {
@@ -67,7 +67,7 @@
     }
     else
     {
-        echo "Erro" . mysqli_error($link);
+        echo "Erro" . mysqli_error($conexao);
     }
 
     //echo("<p><a href='login.php'</a></p>");

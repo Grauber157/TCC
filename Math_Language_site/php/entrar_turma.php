@@ -8,8 +8,8 @@
     $codigo_turma = $_POST["cod_turma"];
     $senha = $_POST["senha"];
 
-    include('include/conexao.php');
-    if (!$link) 
+    include("../core/conexao_mysql.php");
+    if (!$conexao) 
     {
         die("Conexão mal sucedida: " . mysqli_connect_error());
     }
@@ -19,7 +19,7 @@
     #Função 'mysqli_prepare()' para preparar o comando SQL;
     #Comando para pegar o codigo, senha e nome da turma. De acordo com os dados fornecidos;
     #Os caracteres '?', são posições no comando SQL a ser preenchido na função 'mysqli_stmt_bind_param()';
-    $stmt = mysqli_prepare($link, "SELECT codigo, senha_turma, nome_turma FROM turma WHERE codigo = ?");
+    $stmt = mysqli_prepare($conexao, "SELECT codigo, senha_turma, nome_turma FROM turma WHERE codigo = ?");
 
     if($stmt)
     {
@@ -36,7 +36,7 @@
         {
             mysqli_stmt_close($stmt);
 
-            $stmt = mysqli_prepare($link, "UPDATE usuario SET turma_codigo = ? WHERE nome_usuario = ?");
+            $stmt = mysqli_prepare($conexao, "UPDATE usuario SET turma_codigo = ? WHERE nome_usuario = ?");
             
             mysqli_stmt_bind_param($stmt, "ss", $codigo_banco, $usuario);
             mysqli_stmt_execute($stmt);
@@ -53,7 +53,7 @@
             echo "Erro ao entrar na turma!<br>";
         }
         
-        mysqli_close($link);
+        mysqli_close($conexao);
     }
 
     header("Location: turma.php");
