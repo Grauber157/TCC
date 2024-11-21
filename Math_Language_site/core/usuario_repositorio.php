@@ -61,7 +61,7 @@
                 ['email', '=', $email]
             ];
         #retorno da busca para checagem de dados
-        $retorno = Buscar('usuario', ['id_usuario', 'email', 'senha'], $criterio);
+        $retorno = Buscar('usuario', ['id_aluno', 'email', 'senha'], $criterio);
 
         #CRITERIO 1) se obter um retorno na busca maior que 0
         if(count($retorno) > 0) 
