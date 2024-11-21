@@ -25,16 +25,6 @@ session_start();
   
   <?php include '../php/include/menu.php'; ?>
 
-    <ul>
-      <a href="home.php"><li>Home</li></a>
-      <a href="games.php"><li>Jogos</li></a>
-      <a href="cont.php"><li>Conteúdos</li></a>
-      <a href="turma.php"><li>Turmas</li></a>
-      <a href="contact.php"><li>Contatos</li></a>
-      <!-- teste de $_SESSION -->
-      <a href="#" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
-    </ul>
-  </header>
   <main>
     <h1>Jogos</h1>
 

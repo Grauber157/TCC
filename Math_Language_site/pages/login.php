@@ -1,3 +1,6 @@
+<?php 
+    require_once '../core/usuario_repositorio.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
