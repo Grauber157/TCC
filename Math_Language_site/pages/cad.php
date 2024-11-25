@@ -63,6 +63,7 @@
                     <label for="name">Nome da Escola</label>
                     <input type="text" name="nome_escola" id="name" placeholder="Nome da escola">
                 </div>
+                <!-- botao para enviar -->
                 <input class="sign" type="submit" value="Cadastrar">
             </form>
             <p class="signup">Ja tem conta?
