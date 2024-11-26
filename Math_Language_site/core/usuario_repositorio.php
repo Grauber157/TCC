@@ -24,7 +24,7 @@
     switch($acao)
     {
         //CADASTRA-INSERE O USUARIO NO BANCO
-        case 'insert':
+        case 'criar':
             #atribuicao de dados
             $dados = [
                 'email' => $email,

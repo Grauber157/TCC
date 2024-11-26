@@ -57,8 +57,8 @@
                         <option value="Professor">Professor</option>
                     </select>
                 </div>
-                <!-- valor para insert -->
-                <input type="hidden" name="acao" value="insert">
+                <!-- valor para criar -->
+                <input type="hidden" name="acao" value="criar">
                 <div class="input-group">
                     <label for="name">Nome da Escola</label>
                     <input type="text" name="nome_escola" id="name" placeholder="Nome da escola">
