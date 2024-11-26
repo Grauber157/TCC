@@ -1,7 +1,7 @@
 <?php
     session_start();
     //Função limpar dados
-    require_once '../php/includes/funcoes.php';
+    require_once '../php/include/funcoes.php';
     //Função de conexão
     require_once 'conexao_mysql.php';
     //Comandos base sql
@@ -24,16 +24,20 @@
     switch($acao)
     {
         //CADASTRA-INSERE O USUARIO NO BANCO
-        case 'insert':
+        case 'criar':
             #atribuicao de dados
             $dados = [
-                'nome' => $nome,
                 'email' => $email,
                 #criptografa a senha
-                'senha' => crypt($senha, $salt)
+                'senha' => crypt($senha, $salt),
+                'nome_usuario' => $name,
+                'apelido_usuario' => $nickname,
+                'data_nascimento' => $data,
+                'ano_escolar' => $ano_escola,
+                'instituicao_escolar' => $nome_escola
                 ];
                 #funcao inserir
-                Inserir('usuario', $dados);
+            Inserir('usuario', $dados);
                 break;
 
 
@@ -61,7 +65,7 @@
                 ['email', '=', $email]
             ];
         #retorno da busca para checagem de dados
-        $retorno = Buscar('usuario', ['id_aluno', 'email', 'senha'], $criterio);
+        $retorno = Buscar('usuario', ['id_aluno', 'email', 'senha', 'nome_usuario'], $criterio);
 
         #CRITERIO 1) se obter um retorno na busca maior que 0
         if(count($retorno) > 0) 
@@ -69,14 +73,19 @@
             #CRITERIO 2) se o hash inserido for igual ao hash do banco
             if(crypt($senha,$salt) == $retorno[0]['senha']) 
             {
-                $_SESSION['login']['usuario'] = $retorno[0];
+                $_SESSION['login'] = $retorno[0]['nome_usuario'];
+                header ('Location: ../index.php');
+                exit;
+
+                //////descobrir oque significa esse 3ºcriterio///////
+
                 #CRITERIO 3) se a 'url_retorno' ????????????
-                if(!empty($_SESSION['url_retorno'])) 
-                {
-                    header('Location: ' . $_SESSION['url_retorno']);
-                    $_SESSION['url_retorno'] = '';
-                    exit;
-                }
+                //if(!empty($_SESSION['url_retorno'])) 
+                //{
+                //    header('Location: ' . $_SESSION['url_retorno']);
+                //    $_SESSION['url_retorno'] = '';
+                //    exit;
+                //}
             }
         }
         break;
@@ -87,7 +96,7 @@
             break;
 
 
-        //STATUS DO USUARIO
+        //STATUS DO USUARIO #nao vai ser usado
         case 'status':
             $id = (int)$id;
             $valor = (int)$valor;
@@ -107,7 +116,7 @@
             break;
 
 
-        //ADMINISTRADOR
+        //ADMINISTRADOR #talvez nao vá ser usado
         case 'adm':
             $id = (int)$id;
             $valor = (int)$valor;
@@ -132,5 +141,5 @@
 
 
     }
-    header ('Location: ../index.php');
+    #header ('Location: ../index.php');
 ?>

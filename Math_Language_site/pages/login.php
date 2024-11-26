@@ -1,6 +1,3 @@
-<?php 
-    require_once '../core/usuario_repositorio.php';
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,8 +21,9 @@
     <main>
         <aside class="form-aside">
             <div class="form-container">
-            <p class="title">Conecte-se</p>
-            <form class="form" action="../php/login_exe.php" method="post">
+            <p class="title">Conectar-se</p>
+            <!-- action="" para acionar o repositorio -->
+            <form class="form" action="../core/usuario_repositorio.php" method="post">
                 <div class="input-group">
                     <label for="username">Login</label>
                     <input type="text" name="email" id="email" placeholder="Email ou Nickname">
@@ -34,6 +32,8 @@
                     <label for="password">Senha</label>
                     <input type="password" name="senha" id="password" placeholder="Senha">
                 </div>
+                <!-- input type='hidden' para enviar a acao -->
+                <input type="hidden" name="acao" value="login">
                 <input class="sign" type="submit" value="Login">
             </form>
             <p class="signup">Não tem conta?

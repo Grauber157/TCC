@@ -1,4 +1,6 @@
 <?php
+    #puxa funções necessarias 'Buscar()'
+    require_once '../../core/mysql.php';
     #funcao 'chr()' para transformar numeros em 
     #string pela tabela ASCII
     $end = true;
@@ -19,8 +21,16 @@
         
         #implode para juntar as letras e numeros em uma só string
         $codigo_turma = implode("", $codigo);
-
-        $end = false;
+        
+        #criterio para a funcao Buscar()
+        $criterio = ['codigo', '=', $codigo_turma];
+        #validacao do codigo gerado
+        $retorno = Buscar('turma', ['codigo'], $criterio);
+        
+        if(count($retorno) == 0)
+        {
+            $end = false;
+        }
     }
     
 ?>

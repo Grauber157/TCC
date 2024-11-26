@@ -28,6 +28,7 @@
         <aside class="form-aside">
             <div class="form-container">
             <p class="title">Criar uma Turma</p>
+            <!-- action="turma_repositorio.php" -->
             <form class="form" action="../php/criar_turma.php" method="post">
                 <div class="input-group">
                     <label for="nome">Nome</label>
@@ -37,6 +38,8 @@
                     <label for="password">Senha</label>
                     <input type="password" name="senha" id="senha" placeholder="Senha da Turma (min 8 caracteres)">
                 </div>
+                <!-- valor que escolherá a ação do arquivo 'turma_repositorio.php' -->
+                <input type="hidden" name="acao" value="criar">
                 <input class="sign" type="submit" value="Criar">
             </form>
             <p class="signup">Ja esta em uma turma?
