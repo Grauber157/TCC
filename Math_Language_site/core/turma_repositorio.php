@@ -41,7 +41,7 @@
                     #criptografa a senha
                     'senha_turma' => crypt($senha, $salt),
                     ];
-                    #funcao inserir
+                #funcao inserir
                 Inserir('turma', $dados);
                 header('location: ../pages/entrarturma.php');
             }
@@ -62,7 +62,7 @@
                 'email' => $email
             ];
                 
-            $criterio = ['id', '-', $id];
+            $criterio = [['id', '-', $id]];
             #funcao atualiza
             Atualizar('turma', $dados, $criterio);
         break;
@@ -71,7 +71,7 @@
         //ENTRAR NA TURMA
         case 'entrar':
             #criterio para checagem
-            $criterio = ['codigo', '=', $codigo_turma];
+            $criterio = [['codigo', '=', $codigo_turma]];
             #retorno da busca para checagem de dados
             $retorno = Buscar('turma', ['codigo', 'nome_turma', 'senha'], $criterio);
 
