@@ -38,7 +38,8 @@
                 ];
                 #funcao inserir
             Inserir('usuario', $dados);
-                break;
+            header ('Location: ../index.php');
+        break;
 
 
         //ATUALIZA O PERFIL DO BANCO
@@ -55,7 +56,7 @@
             ];
             #funcao atualiza
             Atualizar('usuario', $dados, $criterio);
-            break;
+        break;
 
 
         //LOGIN USUARIO
@@ -63,37 +64,37 @@
             #criterio para checagem
             $criterio = [
                 ['email', '=', $email]
-            ];
-        #retorno da busca para checagem de dados
-        $retorno = Buscar('usuario', ['id_aluno', 'email', 'senha', 'nome_usuario'], $criterio);
+            ] ;
+            #retorno da busca para checagem de dados
+            $retorno = Buscar('usuario', ['id_aluno', 'email', 'senha', 'nome_usuario'], $criterio);
 
-        #CRITERIO 1) se obter um retorno na busca maior que 0
-        if(count($retorno) > 0) 
-        {
-            #CRITERIO 2) se o hash inserido for igual ao hash do banco
-            if(crypt($senha,$salt) == $retorno[0]['senha']) 
+            #CRITERIO 1) se obter um retorno na busca maior que 0
+            if(count($retorno) > 0) 
             {
-                $_SESSION['login'] = $retorno[0]['nome_usuario'];
-                header ('Location: ../index.php');
-                exit;
+                #CRITERIO 2) se o hash inserido for igual ao hash do banco
+                if(crypt($senha, $salt) == $retorno[0]['senha']) 
+                {
+                    $_SESSION['login'] = $retorno[0]['nome_usuario'];
+                    header ('Location: ../index.php');
+                    exit;
 
-                //////descobrir oque significa esse 3ºcriterio///////
+                    //////descobrir oque significa esse 3ºcriterio///////
 
-                #CRITERIO 3) se a 'url_retorno' ????????????
-                //if(!empty($_SESSION['url_retorno'])) 
-                //{
-                //    header('Location: ' . $_SESSION['url_retorno']);
-                //    $_SESSION['url_retorno'] = '';
-                //    exit;
-                //}
+                    #CRITERIO 3) se a 'url_retorno' ????????????
+                    //if(!empty($_SESSION['url_retorno'])) 
+                    //{
+                    //    header('Location: ' . $_SESSION['url_retorno']);
+                    //    $_SESSION['url_retorno'] = '';
+                    //    exit;
+                    //}
+                }
             }
-        }
         break;
 
         //LOG OUT DO USUARIO
         case 'logout':
             session_destroy();
-            break;
+        break;
 
 
         //STATUS DO USUARIO #nao vai ser usado
@@ -113,7 +114,7 @@
 
             header('Location: ../usuarios.php');
             exit;
-            break;
+        break;
 
 
         //ADMINISTRADOR #talvez nao vá ser usado
@@ -137,9 +138,9 @@
 
             header('Location: ../usuarios.php');
             exit;
-            break;
+        break;
 
 
     }
-    #header ('Location: ../index.php');
+    //header ('Location: ../index.php');
 ?>
