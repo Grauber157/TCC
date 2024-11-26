@@ -25,17 +25,31 @@
     {
         //CADASTRA-INSERE A TURMA NO BANCO
         case 'criar':
-            //Gera o $codigo_turma
-            require_once '../php/include/gerador_codigo_turma.php';
-            #atribuicao de dados
-            $dados = [
-                'codigo' => $codigo_turma,
-                'nome' => $nome_turma,
-                #criptografa a senha
-                'senha' => crypt($senha, $salt),
-                ];
-                #funcao inserir
-            Inserir('turma', $dados);
+            #criterio para a verificacao
+            $criterio = [['nome_turma', '=', $nome_turma]];
+            #verifica se já existe uma turma com mesmo nome
+            $retorno = Buscar('turma', ['nome_turma'], $criterio);
+            if(!count($retorno) > 0)
+            {
+                //Gera o $codigo_turma
+                require_once 'gerador_codigo_turma.php';
+                #atribuicao de dados
+                $dados = [
+                    #funcao 'GerarCodigo()' gera o codigo da turma
+                    'codigo' => GerarCodigo(),
+                    'nome_turma' => $nome_turma,
+                    #criptografa a senha
+                    'senha_turma' => crypt($senha, $salt),
+                    ];
+                    #funcao inserir
+                Inserir('turma', $dados);
+                header('location: ../pages/entrarturma.php');
+            }
+            #em caso do nome já estar em uso
+            else
+            {
+                $erro = 'Nome de turma já está em uso!';
+            }
         break;
 
 
@@ -98,6 +112,10 @@
             //header('Location: ../usuarios.php'); #trocar a 'location:'
             exit;
         break;
+    }
+    if($erro <> null)
+    {
+        echo "<span>$erro</span>";
     }
     #header ('Location: ../index.php');
 ?>
