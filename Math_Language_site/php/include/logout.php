@@ -7,5 +7,6 @@
     session_destroy();
     
     //Volta para página inicial
-    header('Location: ../index.php');
+    header('Location: http://localhost/TCC/Math_Language_site/pages/login.php');
+
 ?>

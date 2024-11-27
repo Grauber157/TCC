@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(empty($_SESSION['login']))
+    if(empty($_SESSION['id']))
     {
         header("Location: login.php");
     }
@@ -33,7 +33,7 @@
           <a href="turma.php"><li>Turmas</li></a>
           <a href="contact.php"><li>Contatos</li></a>
           <!-- teste de $_SESSION -->
-          <a href="#" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['login']."</h3>"; ?></li></a>
+          <a href="#" id="inscreva-se-btn"><li><?php echo "<h3>".$_SESSION['nome_usuario']."</h3>"; ?></li></a>
           <a href="../php/include/logout.php"><li>Desconectar</li></a>
       </ul>
     </header>

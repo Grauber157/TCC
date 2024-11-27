@@ -26,40 +26,60 @@
         //CADASTRA-INSERE A TURMA NO BANCO
         case 'criar':
             #criterio para a verificacao
-            $criterio = [['nome_turma', '=', $nome_turma]];
-            #verifica se já existe uma turma com mesmo nome
-            $retorno = Buscar('turma', ['nome_turma'], $criterio);
-            if(!count($retorno) > 0)
+            $criterio = [['id', '=', $_SESSION['id']]];
+            #verifica se o usuario já esta em uma turma
+            $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
+            var_dump($retorno);
+            if(!isset($retorno[0]['turma_codigo']) || is_null($retorno[0]['turma_codigo']))
             {
-                //Gera o $codigo_turma
-                require_once 'gerador_codigo_turma.php';
-                #atribuicao de dados
-                $dados = [
-                    #funcao 'GerarCodigo()' gera o codigo da turma
-                    'codigo' => GerarCodigo(),
-                    'nome_turma' => $nome_turma,
-                    #criptografa a senha
-                    'senha_turma' => crypt($senha, $salt),
-                    ];
-                #funcao inserir
-                Inserir('turma', $dados);
-                header('location: ../pages/entrarturma.php');
+                #criterio para a verificacao
+                $criterio = [['nome_turma', '=', $nome_turma]];
+                #verifica se já existe uma turma com mesmo nome
+                $retorno = Buscar('turma', ['nome_turma'], $criterio);
+                if(!count($retorno) > 0)
+                {
+                    //Gera o $codigo_turma
+                    require_once 'gerador_codigo_turma.php';
+                    $codigo = GerarCodigo();
+                    #atribuicao de dados
+                    $dados = [
+                        #funcao 'GerarCodigo()' gera o codigo da turma
+                        'codigo' => $codigo,
+                        'nome_turma' => $nome_turma,
+                        #criptografa a senha
+                        'senha_turma' => crypt($senha, $salt),
+                        'administrador' => $_SESSION['id'],
+                        ];
+                    #funcao inserir
+                    Inserir('turma', $dados);
+                    #funcao atualizar
+                    $criterio = [['id', '=', $_SESSION['id']]];
+                    Atualizar('usuario', ['turma_codigo' => $codigo], $criterio);
+                    header('location: ../pages/entrarturma.php');
+                    #encerra o script
+                    exit;
+                }
+                #em caso do nome já estar em uso
+                else
+                {
+                    $erro = 'Nome de turma já está em uso!';
+                }
             }
-            #em caso do nome já estar em uso
+            #em caso do usuario já estar em uma turma
             else
             {
-                $erro = 'Nome de turma já está em uso!';
+                $erro = 'Você já está em uma turma!';
             }
+            
         break;
-
 
         //ATUALIZA A TURMA NO BANCO #improvavel de mexer
         case 'update':
             #id para identificar a turma na tabela
             $id = (int)$id;
             $dados = [
-                'nome' => $nome,
-                'email' => $email
+                'nome_turma' => $nome,
+                'descricao_turma' => $descricao_turma,
             ];
                 
             $criterio = [['id', '-', $id]];
@@ -95,23 +115,6 @@
             session_destroy();
         break;
 
-
-        //ADMINISTRADOR #provavelmente vai ser usado nas turmas
-        case 'adm':
-            $id = (int)$id;
-            $valor = (int)$valor;
-            
-            $dados = [
-                'adm'=> $valor
-            ];
-
-            $criterio = ['id', '=', $id];
-            #funcao para dar permissao ADM para o usuario
-            Atualizar('turma', $dados, $criterio);
-
-            //header('Location: ../usuarios.php'); #trocar a 'location:'
-            exit;
-        break;
     }
     if($erro <> null)
     {

@@ -66,7 +66,7 @@
                 ['email', '=', $email]
             ] ;
             #retorno da busca para checagem de dados
-            $retorno = Buscar('usuario', ['id_aluno', 'email', 'senha', 'nome_usuario'], $criterio);
+            $retorno = Buscar('usuario', ['id', 'email', 'senha', 'nome_usuario', 'turma_codigo'], $criterio);
 
             #CRITERIO 1) se obter um retorno na busca maior que 0
             if(count($retorno) > 0) 
@@ -74,7 +74,13 @@
                 #CRITERIO 2) se o hash inserido for igual ao hash do banco
                 if(crypt($senha, $salt) == $retorno[0]['senha']) 
                 {
-                    $_SESSION['login'] = $retorno[0]['nome_usuario'];
+                    $_SESSION['id'] = $retorno[0]['id'];
+                    $_SESSION['nome_usuario'] = $retorno[0]['nome_usuario'];
+                    #verifica se o usuario está em uma turma
+                    //if($_SESSION['0']['turma_codigo'] <> null)
+                    //{
+                    //    $_SESSION['turma_codigo'] = $retorno[0]['turma_codigo'];
+                    //}
                     header ('Location: ../index.php');
                     exit;
 
@@ -96,51 +102,7 @@
             session_destroy();
         break;
 
-
-        //STATUS DO USUARIO #nao vai ser usado
-        case 'status':
-            $id = (int)$id;
-            $valor = (int)$valor;
-
-            $dados = [
-                'ativo'=> $valor
-            ];
-
-            $criterio = [
-                ['id','=', $id]
-            ];
-            #funcao para ATIVAR o usuario
-            Atualizar('usuario', $dados, $criterio);
-
-            header('Location: ../usuarios.php');
-            exit;
-        break;
-
-
-        //ADMINISTRADOR #talvez nao vá ser usado
-        case 'adm':
-            $id = (int)$id;
-            $valor = (int)$valor;
-            
-            $dados = [
-                'adm'=> $valor
-            ];
-
-            $criterio = [
-                ['id', '=', $id] 
-            ];
-            #funcao para dar permissao ADM para o usuario
-            Atualizar(
-                'usuario',
-                $dados,
-                $criterio
-            );
-
-            header('Location: ../usuarios.php');
-            exit;
-        break;
-
-
     }
+    
     //header ('Location: ../index.php');
 ?>
