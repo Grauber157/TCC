@@ -28,15 +28,18 @@
         <aside class="form-aside">
             <div class="form-container">
             <p class="title">Entrar em uma Turma</p>
-            <form class="form" action="../php/entrar_turma.php" method="post">
+            <!-- formulario -->
+            <form class="form" action="../core/turma_repositorio.php" method="post">
                 <div class="input-group">
                     <label for="codigo">Codigo</label>
-                    <input type="text" name="cod_turma" id="cod_turma" placeholder="Codigo da Turma">
+                    <input type="text" name="codigo" id="cod_turma" placeholder="Codigo da Turma">
                 </div>
                 <div class="input-group">
                     <label for="password">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="Senha da Turma (min 8 caracteres)">
+                    <input type="password" name="senha_turma" id="senha" placeholder="Senha da Turma (min 8 caracteres)">
                 </div>
+                <!-- input hidden -->
+                 <input type="hidden" name="acao" value="entrar">
                 <input class="sign" type="submit" value="Entrar">
             </form>
             <p class="signup">Nao esta em nenhuma turma?
@@ -47,6 +50,6 @@
     </main>
     
     <?php include '../php/include/rodape.php'; ?>
-
+    
 </body>
 </html>

@@ -76,23 +76,8 @@
                 {
                     $_SESSION['id'] = $retorno[0]['id'];
                     $_SESSION['nome_usuario'] = $retorno[0]['nome_usuario'];
-                    #verifica se o usuario está em uma turma
-                    //if($_SESSION['0']['turma_codigo'] <> null)
-                    //{
-                    //    $_SESSION['turma_codigo'] = $retorno[0]['turma_codigo'];
-                    //}
                     header ('Location: ../index.php');
                     exit;
-
-                    //////descobrir oque significa esse 3ºcriterio///////
-
-                    #CRITERIO 3) se a 'url_retorno' ????????????
-                    //if(!empty($_SESSION['url_retorno'])) 
-                    //{
-                    //    header('Location: ' . $_SESSION['url_retorno']);
-                    //    $_SESSION['url_retorno'] = '';
-                    //    exit;
-                    //}
                 }
             }
         break;

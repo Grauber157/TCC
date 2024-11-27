@@ -55,7 +55,7 @@
                     #funcao atualizar
                     $criterio = [['id', '=', $_SESSION['id']]];
                     Atualizar('usuario', ['turma_codigo' => $codigo], $criterio);
-                    header('location: ../pages/entrarturma.php');
+                    header('location: ../index.php');
                     #encerra o script
                     exit;
                 }
@@ -73,8 +73,9 @@
             
         break;
 
+
         //ATUALIZA A TURMA NO BANCO #improvavel de mexer
-        case 'update':
+        case 'atualizar':
             #id para identificar a turma na tabela
             $id = (int)$id;
             $dados = [
@@ -90,32 +91,43 @@
 
         //ENTRAR NA TURMA
         case 'entrar':
-            #criterio para checagem
-            $criterio = [['codigo', '=', $codigo_turma]];
-            #retorno da busca para checagem de dados
-            $retorno = Buscar('turma', ['codigo', 'nome_turma', 'senha'], $criterio);
-
-            #CRITERIO 1) se obter um retorno na busca maior que 0
-            if(count($retorno) > 0) 
+            #criterio para a verificacao
+            $criterio = [['id', '=', $_SESSION['id']]];
+            #verifica se o usuario já esta em uma turma
+            $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
+            if(!isset($retorno[0]['turma_codigo']) || is_null($retorno[0]['turma_codigo']))
             {
-                #CRITERIO 2) se o hash inserido for igual ao hash do banco
-                if(crypt($senha,$salt) == $retorno[0]['senha']) 
+                #criterio para checagem
+                $criterio = [['codigo', '=', $codigo]];
+                #retorno da busca para checagem de dados
+                $retorno = Buscar('turma', ['codigo', 'nome_turma', 'senha_turma'], $criterio);
+                #CRITERIO 1) se obter um retorno na busca maior que 0
+                if(count($retorno) > 0)
                 {
-                    #muda a coluna 'codigo_turma' do USUARIO, adicionando o codigo da turma
-                    Inserir('usuario', [$codigo_turma]);
-                    header ('Location: ../index.php');
-                    exit;
+                    #CRITERIO 2) se o hash inserido for igual ao hash do banco
+                    if(crypt($senha_turma, $salt) == $retorno[0]['senha_turma'])
+                    {
+                        #muda a coluna 'codigo_turma' do 'USUARIO', adicionando o codigo da turma
+                        Atualizar('usuario', ['turma_codigo' => $codigo], [['id', '=', $_SESSION['id']]]);
+                        header ('Location: ../index.php');
+                        exit;
+                    }
                 }
+            }
+            else
+            {
+                $erro = 'Você já está em uma turma!';
             }
         break;
 
 
         //LOG OUT DO USUARIO #precisa adaptar para as turmas
         case 'sair':
-            session_destroy();
+            #anular o campo 'turma_codigo' da tabela 'usuario' do BnD
         break;
 
     }
+
     if($erro <> null)
     {
         echo "<span>$erro</span>";

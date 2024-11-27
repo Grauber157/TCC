@@ -27,7 +27,7 @@
     
     <main class="dashboard">
         <section class="ranking">
-            <h2>Top 10 Usuários</h2>
+            <h2>Top 10 Turmas</h2>
             <ul>
                 <li><span>nome 1</span><span>clan 1</span><span>2000</span></li>
                 <li><span>nome 2</span><span>clan 1</span><span>2000</span></li>
