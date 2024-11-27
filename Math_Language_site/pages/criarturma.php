@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(empty($_SESSION['login']))
+    if(empty($_SESSION['id']))
     {
         header("Location: login.php");
     }
@@ -29,7 +29,7 @@
             <div class="form-container">
             <p class="title">Criar uma Turma</p>
             <!-- action="turma_repositorio.php" -->
-            <form class="form" action="../php/criar_turma.php" method="post">
+            <form class="form" action="../core/turma_repositorio.php" method="post">
                 <div class="input-group">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome_turma" id="nome_turma" placeholder="Nome da Turma">
@@ -42,7 +42,7 @@
                 <input type="hidden" name="acao" value="criar">
                 <input class="sign" type="submit" value="Criar">
             </form>
-            <p class="signup">Ja esta em uma turma?
+            <p class="signup">Quer fazer parte de uma turma?
                 <a rel="noopener noreferrer" href="entrarturma.php" class="">Entrar em uma turma</a>
             </p>
         </div>

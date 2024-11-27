@@ -1,1 +1,8 @@
 - Inserir sistema de validação de codigo no 'gerador_codigo_turma.php'
+
+- Adaptar o PHP do turma_repositorio
+{
+  -- Criar turma (Usuario criador entra como adm)
+  -- Entrar turma (Por meio do código e senha) (adicionar forma de blacklist ou banimento)
+}
+

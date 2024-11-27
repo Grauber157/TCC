@@ -2,40 +2,44 @@
 
 CREATE DATABASE math_language;
 USE math_language;
-CREATE TABLE usuario (
-	id_aluno INT AUTO_INCREMENT,
-    email VARCHAR(255),
-    senha VARCHAR(255),
-    nome_usuario VARCHAR(50),
-    apelido_usuario VARCHAR(50),
-    descricao VARCHAR(250),
-    data_nascimento DATE,
-    pontuacao INT(10),
-    ano_escolar VARCHAR(10),
-    instituicao_escolar VARCHAR(50),
-    turma_codigo VARCHAR(4),
-    PRIMARY KEY (id_aluno)
-);
 
-CREATE TABLE turma (
-	codigo VARCHAR(4),
-    nome_turma VARCHAR(50),
-    senha_turma VARCHAR(255),
-    descricao_turma VARCHAR(255),
-    pontuacao_geral INT(20),
-    PRIMARY KEY (codigo)
-);
-
-CREATE TABLE jogos (
-	id_usuario INT,
-	escolha_portas INT,
-    ache_o_x INT
-);
-
-
-ALTER TABLE jogos ADD FOREIGN KEY (id_usuario) REFERENCES usuario(id_aluno);
-
-ALTER TABLE usuario ADD FOREIGN KEY (turma_codigo) REFERENCES turma(codigo)
+CREATE TABLE IF NOT EXISTS usuario (
+  id INT NOT NULL AUTO_INCREMENT,
+  email VARCHAR(250) NOT NULL,
+  senha VARCHAR(250) NOT NULL,
+  nome_usuario VARCHAR(50) NOT NULL,
+  apelido_usuario VARCHAR(50) NULL,
+  descricao VARCHAR(250) NULL,
+  data_nascimento DATE NULL,
+  pontuacao INT NULL,
+  ano_escolar VARCHAR(5) NULL,
+  instituicao_escolar VARCHAR(100) NULL,
+  turma_codigo VARCHAR(4),
+  PRIMARY KEY (id));
+  
+CREATE TABLE IF NOT EXISTS turma (
+  codigo VARCHAR(4) NOT NULL,
+  nome_turma VARCHAR(50) NOT NULL,
+  senha_turma VARCHAR(250) NOT NULL,
+  descricao_turma VARCHAR(250) NULL,
+  pontuacao_geral INT NULL,
+  PRIMARY KEY (codigo));
+  
+  CREATE TABLE IF NOT EXISTS jogos (
+  id INT NOT NULL,
+  nome_jogo VARCHAR(50) NULL,
+  PRIMARY KEY (id));
+  
+  CREATE TABLE IF NOT EXISTS usuario_jogos (
+  id INT NOT NULL AUTO_INCREMENT,
+  id_usuario INT NOT NULL,
+  id_jogo INT NOT NULL,
+  pontuacao_jogo INT NOT NULL,
+  PRIMARY KEY (id));
+  
+  ALTER TABLE usuario ADD FOREIGN KEY (turma_codigo) REFERENCES turma(codigo);
+  ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_usuario) REFERENCES usuario(id);
+  ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_jogo) REFERENCES jogos(id);
 	
 //codigo de teste://
 INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, descricao, data_nascimento, pontuacao, ano_escolar, instituicao_escolar)
