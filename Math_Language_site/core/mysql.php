@@ -204,4 +204,31 @@
         $retorno = $retorno;
         return $retorno;
     }
+
+    function BuscarSql(string $sql) : array
+    {
+        $retorno = false;
+        $instrucao = $sql;
+        #conecta com o banco
+        $conexao = conectar();
+        #prepara o comando MySQL
+        $stmt = mysqli_prepare($conexao, $instrucao);
+
+        #executa o statement criado pelo 'eval()'
+        mysqli_stmt_execute($stmt);
+
+        if($result = mysqli_stmt_get_result($stmt))
+        {
+            $retorno = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            mysqli_free_result($result);
+        }
+
+        #armazena os erros na superglobal '$_SESSION'
+        $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
+        mysqli_stmt_close($stmt);
+        desconectar($conexao);
+        $retorno = $retorno;
+        return $retorno;
+    }
 ?>

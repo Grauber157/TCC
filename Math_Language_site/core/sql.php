@@ -79,7 +79,5 @@
         }
 
         return $instrucao;
-    }
-
-
+    }    
 ?>

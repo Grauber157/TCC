@@ -40,7 +40,15 @@ CREATE TABLE IF NOT EXISTS turma (
   ALTER TABLE turma ADD FOREIGN KEY (administrador) REFERENCES usuario(id);
   ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_usuario) REFERENCES usuario(id);
   ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_jogo) REFERENCES jogos(id);
-	
-//codigo de teste://
-INSERT INTO usuario(email, senha, nome_usuario, apelido_usuario, descricao, data_nascimento, pontuacao, ano_escolar, instituicao_escolar)
-VALUES ('daniels@hotmail.com', 'aaaaaaaa', 'Daniels Silva' ,'Jscdell', 'jogando vava', '1988-04-7', 51231, '3EM', 'IFSP Campus Birigui');
+
+
+
+
+
+
+//COMANDOS//
+
+SELECT t.codigo, t.nome_turma, SUM(j.pontuacao_jogo) pontuacao_total 
+FROM turma t
+left join usuario u on u.turma_codigo = t.codigo
+left join usuario_jogos j on j.id_usuario = u.id;
