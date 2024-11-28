@@ -31,8 +31,7 @@
                 <img src="components/images/daniel.jpg" alt="Usuário 1" class="contact-image">
                 <h2>Daniel Alves de Morais</h2>
                 <p>Responsável pelo back-end e documentação.</p>
-                <p>Responsável pelo conteúdos</p>
-                <p>Diretor de Pesquisa.</p>
+                <p>Diretor de Pesquisa e Integração dos conteúdos.</p>
                 <a href="">Instagram</a>
                 <a href="https://github.com/DanielAlvesMorais">GitHub</a>
             </div>

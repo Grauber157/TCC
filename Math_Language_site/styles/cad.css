@@ -35,8 +35,8 @@
     margin-bottom: 4px;
     margin-left: 16px;
   }
-  /* texBox do grupo input (caixas de texto) */
-  .input-group input{
+  /* texBox do grupo input (caixas de texto)*/
+  .input-group input,textarea{
     display: flex;
     align-items: center;
     justify-content: center;
