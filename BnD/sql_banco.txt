@@ -41,6 +41,10 @@ CREATE TABLE IF NOT EXISTS turma (
   ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_usuario) REFERENCES usuario(id);
   ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_jogo) REFERENCES jogos(id);
 
+  INSERT INTO jogos(id, nome_jogo) VALUES('1', 'Matemoria');
+  INSERT INTO jogos(id, nome_jogo) VALUES('2', 'Contra-Tempo');
+  INSERT INTO jogos(id, nome_jogo) VALUES('3', 'Planamente Espacial');
+  INSERT INTO jogos(id, nome_jogo) VALUES('4', 'Ache o X');
 
 
 
