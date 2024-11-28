@@ -39,42 +39,57 @@
                         GROUP BY t.codigo, t.nome_turma
                         ORDER BY 3 DESC";
                     $turmas = BuscarSql($sql);
-
                     foreach ($turmas as $turma):
                         echo '<p>$turma["codigo"]</p>';
                         echo $turma['nome_turma'];
                         echo $turma['pontuacao_total'];
                     endforeach;
-                    // for($x=0; $x > count($resultado); $x++)
-                    // {
-                        // echo '<li><span>$resultado["codigo"][$x]</span><span>$resultado["nome_turma"][$x]</span><span>$resultado["pontuacao"][$x]</span></li>';
-                    // }
-
-                    #<li><span>nome 2</span><span>clan 1</span><span>2000</span></li>
-                    #<li><span>nome 3</span><span>clan 1</span><span>2000</span></li>
-                    #<li><span>nome 4</span><span>clan 1</span><span>2000</span></li>
-                    #<li><span>nome 5</span><span>clan 1</span><span>2000</span></li>
-                    #<li><span>nome 6</span><span>clan 1</span><span>2000</span></li>
-                    // <li><span>nome 7</span><span>clan 1</span><span>2000</span></li>
-                    // <li><span>nome 8</span><span>clan 1</span><span>2000</span></li>
-                    // <li><span>nome 9</span><span>clan 1</span><span>2000</span></li>
-                    // <li><span>nome 10</span><span>clan 1</span><span>2000</span></li>
                 ?>
-                
-                
                 <!-- Repetir itens conforme necessário -->
             </ul>
         </section>
         
-        <section class="actions">
+        <!-----<section class="actions">----------------CRIAR OU ENTRAR
+            <div class="info">
+                <h3>O que são as Turmas?</h3>
+                <p>O sistema de turmas do nosso site é uma forma divertida de juntar pessoas para jogar e competir.
+                    Quando você entra no site, pode criar sua própria turma ou participar de uma existente, 
+                    mas só pode fazer isso uma vez. Depois de escolher, não será possível mudar de turma ou criar outra.</p>
+
+                <p>Se você criar uma turma, será o administrador e poderá banir qualquer membro que desrespeite as regras.
+                    Além disso, todas as turmas competem no ranking global, somando pontos nos jogos da plataforma. 
+                    Cada turma também tem seu ranking interno, onde os membros disputam para ver quem consegue a maior pontuação.</p>
+
+                <p>Participe da sua turma e comece a jogar para levar sua equipe ao topo dos rankings!</p>
+            </div>
+
             <div class="turma-options">
                 <a href="criarturma.php" class="btn">Criar</a>
                 <a href="entrarturma.php" class="btn">Entrar</a>
             </div>
+        </section>-->
+        <section class="actions">
             <div class="info">
-                <h3>O que são as Turmas?</h3>
-                <p>...</p>
-            </div>
+            <table class="">
+                    <thead>
+                        <tr>
+                            <td>Nome</td>
+                            <td>E-mail</td>
+                            <td>Data cadastro</td>
+                            <td>Ativo</td>
+                            <td>Administrador</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>ola</td>
+                        </tr>
+                    </tbody>
+                </table>
         </section>
     </main>
     

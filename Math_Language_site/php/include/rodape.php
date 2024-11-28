@@ -17,7 +17,7 @@
       <p id="copy">&copy; 2024 Ensino à Matemática. Todos os direitos reservados.</p></br>
       <div class="social-icons">
         <a href="https://github.com/Grauber157/TCC.git"><img src="http://localhost/TCC/Math_Language_site/Material/images/githubb.png" alt="Github"></a>
-        <a href="#"><img src="http://localhost/TCC/Math_Language_site/Material/images/twitterr.png" alt="Twitter"></a>
+        <a href="https://twitter.com/mathlanguagebri"><img src="http://localhost/TCC/Math_Language_site/Material/images/twitterr.png" alt="Twitter"></a>
         <a href="https://instagram.com/mathlanguage"><img src="http://localhost/TCC/Math_Language_site/Material/images/instagramm.png" alt="Instagram"></a>
       </div>
     </div>
