@@ -28,22 +28,22 @@
 
         <div class="contacts-container">
             <div class="contact-card">
-                <img src="../Material/images/user1.jpg" alt="Usuário 1" class="contact-image">
+                <img src="components/images/daniel.jpg" alt="Usuário 1" class="contact-image">
                 <h2>Usuário 1</h2>
                 <p>Descrição do usuário 1. Ele é responsável por XYZ.</p>
             </div>
             <div class="contact-card">
-                <img src="../Material/images/user2.jpg" alt="Usuário 2" class="contact-image">
+                <img src="components/images/faria.jpg" alt="Usuário 2" class="contact-image">
                 <h2>Usuário 2</h2>
                 <p>Descrição do usuário 2. Ele é especialista em ABC.</p>
             </div>
             <div class="contact-card">
-                <img src="../Material/images/user3.jpg" alt="Usuário 3" class="contact-image">
+                <img src="components/images/duardo.jpg" alt="Usuário 3" class="contact-image">
                 <h2>Usuário 3</h2>
                 <p>Descrição do usuário 3. Ela cuida de LMN.</p>
             </div>
             <div class="contact-card">
-                <img src="../Material/images/user4.jpg" alt="Usuário 4" class="contact-image">
+                <img src="components/images/nicolas.jpg" alt="Usuário 4" class="contact-image">
                 <h2>Usuário 4</h2>
                 <p>Descrição do usuário 4. Ele é responsável pelo suporte técnico.</p>
             </div>
