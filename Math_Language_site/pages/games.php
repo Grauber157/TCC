@@ -63,6 +63,11 @@ session_start();
           para passar nas portas antes que o tempo acabe.</p>
       </div>
 
+      </div>
+
+      <!--seção teste-->
+    <div class="game-container">
+
       <!--PLANAMENTE ESPACIAL-->
       <div class="game-section">
         <div class="game-section-img">
@@ -76,12 +81,6 @@ session_start();
           matemáticas enquanto desvenda as propriedades espaciais de cada figura.</p>
       </div>
 
-    </div>
-
-
-    <!--seção teste-->
-    <div class="game-container">
-
       <!--ACHE O X-->
       <div class="game-section">
         <div class="game-section-img">
@@ -93,28 +92,6 @@ session_start();
 
         <p class="game-description">Você tem uma missão amigo! Nesse jogo de quem eu sou, fornecerei 3 dicas para você
           descobrir qual algarismo sou dentre as infinitas possibilidades .</p>
-      </div>
-
-      <!--...-->
-      <div class="game-section">
-        <div class="game-section-img">
-          <a href="#"><img src="" alt="" class="game-image"></a>
-        </div>
-
-        <h3 class="game-title">...</h3>
-
-        <p class="game-description">...</p>
-      </div>
-
-      <!--...-->
-      <div class="game-section">
-        <div class="game-section-img">
-          <a href="games/"><img src="" alt="" class="game-image"></a>
-        </div>
-
-        <h3 class="game-title">...</h3>
-
-        <p class="game-description">...</p>
       </div>
 
     </div>

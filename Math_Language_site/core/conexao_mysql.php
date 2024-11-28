@@ -4,7 +4,7 @@
     {
         $servidor = 'localhost';
         $banco = 'math_language';
-        $port = 3306;
+        $port = 3307;
         $usuario = 'root';
         $senha = '';
         $conexao = mysqli_connect($servidor, $usuario, $senha, $banco, $port);

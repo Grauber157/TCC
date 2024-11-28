@@ -95,6 +95,10 @@ body{
   width: 30px;
   height: 30px;
 }
+.social-icons img{
+  width: 30px;
+  height: 30px;
+}
 
 /* Links */
 .footer-content a {
