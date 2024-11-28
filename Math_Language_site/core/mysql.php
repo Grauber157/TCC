@@ -12,12 +12,12 @@
         }
 
         $instrucao = Insert($entidade, $coringa);
-
+        #atribui valor a variavel '$conexao'
         $conexao = conectar();
-
+        #cria o statement
         $stmt = mysqli_prepare($conexao, $instrucao);
-
-        eval('mysqli_stmt_bind_param($stmt, \'' . implode('', $tipo) . '\',$' . implode(', $', array_keys($dados)) . ');');
+        echo('mysqli_stmt_bind_param($stmt, \'' . implode('', $tipo) . '\', $' . implode(', $', array_keys($dados)) . ');');
+        eval('mysqli_stmt_bind_param($stmt, \'' . implode('', $tipo) . '\', $' . implode(', $', array_keys($dados)) . ');');
 
         mysqli_stmt_execute($stmt);
 
