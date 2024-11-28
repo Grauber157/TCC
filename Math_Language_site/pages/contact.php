@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/cabeça.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style/contact.css">
+    <link rel="stylesheet" href="../styles/contact.css">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
@@ -29,23 +29,35 @@
         <div class="contacts-container">
             <div class="contact-card">
                 <img src="components/images/daniel.jpg" alt="Usuário 1" class="contact-image">
-                <h2>Usuário 1</h2>
-                <p>Descrição do usuário 1. Ele é responsável por XYZ.</p>
+                <h2>Daniel Alves de Morais</h2>
+                <p>Responsável pelo back-end e documentação.</p>
+                <p>Diretor de Pesquisa e Integração dos conteúdos.</p>
+                <a href="">Instagram</a>
+                <a href="https://github.com/DanielAlvesMorais">GitHub</a>
             </div>
             <div class="contact-card">
                 <img src="components/images/faria.jpg" alt="Usuário 2" class="contact-image">
-                <h2>Usuário 2</h2>
-                <p>Descrição do usuário 2. Ele é especialista em ABC.</p>
+                <h2>Gabriel Faria Dias</h2>
+                <p>Responsável pelo back-end</p>
+                <p>Criação e Aplicação do Bando de Dados</p>
+                <a href="">Instagram</a>
+                <a href="https://github.com/Grauber157">GitHub</a>
             </div>
             <div class="contact-card">
                 <img src="components/images/duardo.jpg" alt="Usuário 3" class="contact-image">
-                <h2>Usuário 3</h2>
-                <p>Descrição do usuário 3. Ela cuida de LMN.</p>
+                <h2>Eduardo Pereira Xavier</h2>
+                <p>Responsável pelo front-end e Design.</p>
+                <p>Desenvolvimento dos jogos</p>
+                <a href="">Instagram</a>
+                <a href="https://github.com/Dinodup">GitHub</a>
             </div>
             <div class="contact-card">
                 <img src="components/images/nicolas.jpg" alt="Usuário 4" class="contact-image">
-                <h2>Usuário 4</h2>
-                <p>Descrição do usuário 4. Ele é responsável pelo suporte técnico.</p>
+                <h2>Nícolas Eduardo S. Almeida</h2>
+                <p>Responsável pelo front-end</p>
+                <p>Desenvolvimento do site</p>
+                <a href="https://instagram.com/sainttcs">Instagram</a>
+                <a href="https://github.com/stdudu">GitHub</a>
             </div>
         </div>
     </main>
