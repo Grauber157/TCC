@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once '../core/mysql.php';
 
     if(empty($_SESSION['id']))
     {
@@ -29,16 +30,26 @@
         <section class="ranking">
             <h2>Top 10 Turmas</h2>
             <ul>
-                <li><span>nome 1</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 2</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 3</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 4</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 5</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 6</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 7</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 8</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 9</span><span>clan 1</span><span>2000</span></li>
-                <li><span>nome 10</span><span>clan 1</span><span>2000</span></li>
+                <?php
+
+                    $resultado = Buscar('turma', ['codigo', 'nome_turma', 'pontuacao'], [['']]);
+                    for($x=0; $x > count($resultado); $x++)
+                    {
+                        echo '<li><span>$resultado["codigo"][$x]</span><span>$resultado["nome_turma"][$x]</span><span>$resultado["pontuacao"][$x]</span></li>';
+                    }
+
+                    #<li><span>nome 2</span><span>clan 1</span><span>2000</span></li>
+                    #<li><span>nome 3</span><span>clan 1</span><span>2000</span></li>
+                    #<li><span>nome 4</span><span>clan 1</span><span>2000</span></li>
+                    #<li><span>nome 5</span><span>clan 1</span><span>2000</span></li>
+                    #<li><span>nome 6</span><span>clan 1</span><span>2000</span></li>
+                    // <li><span>nome 7</span><span>clan 1</span><span>2000</span></li>
+                    // <li><span>nome 8</span><span>clan 1</span><span>2000</span></li>
+                    // <li><span>nome 9</span><span>clan 1</span><span>2000</span></li>
+                    // <li><span>nome 10</span><span>clan 1</span><span>2000</span></li>
+                ?>
+                
+                
                 <!-- Repetir itens conforme necessário -->
             </ul>
         </section>

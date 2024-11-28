@@ -43,7 +43,7 @@
 
 
         //ATUALIZA O PERFIL DO BANCO
-        case 'update':
+        case 'atualizar':
             #id para identificar o usuario na tabela
             $id = (int)$id;
             $dados = [
