@@ -51,13 +51,19 @@
                 <!-- Repetir itens conforme necessário -->
         </section>
         <?php
-            $criterio = [['id', '=', $_SESSION['id']]];
-            #$retorno = Buscar('usuario', ['turma_codigo'], $criterio);
-            #com turma
-            #if($retorno <> null)
-            #require_once '../php/include/com_turma.php';
+            $sql = 'SELECT turma_codigo FROM usuario WHERE id='.$_SESSION["id"];
+            $retorno = BuscarSql($sql);
             #sem turma
-            require_once '../php/include/sem_turma.php';
+            if(!isset($retorno[0]['turma_codigo']) || is_null($retorno[0]['turma_codigo']))
+            {
+                require_once '../php/include/sem_turma.php';
+            }
+            #com turma
+            else
+            {
+                require_once '../php/include/com_turma.php';
+            }
+            
         ?>
     </main>
     

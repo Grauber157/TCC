@@ -1,23 +1,34 @@
+<?php
+    require_once '../core/mysql.php';
+    $sql = 'SELECT u.nome_usuario, SUM(uj.pontuacao_jogo) AS pontuacao 
+        FROM usuario u 
+        JOIN turma AS t ON u.turma_codigo = t.codigo
+        JOIN usuario_jogos AS uj ON uj.id_usuario = u.id
+        WHERE u.turma_codigo = "TG77"
+        GROUP BY u.nome_usuario
+        ORDER BY pontuacao DESC;';
+    $membros = BuscarSql($sql);
+?>
 <section class="actions">
             <div class="info">
             <table class="">
                     <thead>
                         <tr>
                             <td>Nome</td>
-                            <td>E-mail</td>
-                            <td>Data cadastro</td>
-                            <td>Ativo</td>
-                            <td>Administrador</td>
+                            <td>Pontuação</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>6</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>ola</td>
-                        </tr>
+                        <?php
+                            foreach($membros as $membro)
+                            {
+                                echo '<td>'.$membro['nome_usuario'].'</td><td>'.$membro['pontuacao'].'</td>';
+                            }
+                            
+                        ?>
                     </tbody>
                 </table>
         </section>
+
+
+        
