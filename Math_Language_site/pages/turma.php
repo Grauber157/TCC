@@ -31,12 +31,24 @@
             <h2>Top 10 Turmas</h2>
             <ul>
                 <?php
+                    require_once '../core/conexao_mysql.php';
+                    $sql = "SELECT t.codigo, t.nome_turma, SUM(j.pontuacao_jogo) pontuacao_total 
+                        FROM turma t
+                        left join usuario u on u.turma_codigo = t.codigo
+                        left join usuario_jogos j on j.id_usuario = u.id
+                        GROUP BY t.codigo, t.nome_turma
+                        ORDER BY 3 DESC";
+                    $turmas = BuscarSql($sql);
 
-                    $resultado = Buscar('turma', ['codigo', 'nome_turma', 'pontuacao'], [['']]);
-                    for($x=0; $x > count($resultado); $x++)
-                    {
-                        echo '<li><span>$resultado["codigo"][$x]</span><span>$resultado["nome_turma"][$x]</span><span>$resultado["pontuacao"][$x]</span></li>';
-                    }
+                    foreach ($turmas as $turma):
+                        echo '<p>$turma["codigo"]</p>';
+                        echo $turma['nome_turma'];
+                        echo $turma['pontuacao_total'];
+                    endforeach;
+                    // for($x=0; $x > count($resultado); $x++)
+                    // {
+                        // echo '<li><span>$resultado["codigo"][$x]</span><span>$resultado["nome_turma"][$x]</span><span>$resultado["pontuacao"][$x]</span></li>';
+                    // }
 
                     #<li><span>nome 2</span><span>clan 1</span><span>2000</span></li>
                     #<li><span>nome 3</span><span>clan 1</span><span>2000</span></li>

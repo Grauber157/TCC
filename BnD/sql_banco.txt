@@ -41,7 +41,12 @@ CREATE TABLE IF NOT EXISTS turma (
   ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_usuario) REFERENCES usuario(id);
   ALTER TABLE usuario_jogos ADD FOREIGN KEY (id_jogo) REFERENCES jogos(id);
 
-//CODIGOS
+
+
+
+
+
+//COMANDOS//
 
 SELECT t.codigo, t.nome_turma, SUM(j.pontuacao_jogo) pontuacao_total 
 FROM turma t
