@@ -32,7 +32,7 @@
                 <h2>Daniel Alves de Morais</h2>
                 <p>Responsável pelo back-end e documentação.</p>
                 <p>Diretor de Pesquisa e Integração dos conteúdos.</p>
-                <a href="">Instagram</a>
+                <a href="https://instagram.com/daniel_alves_de_morais_15">Instagram</a>
                 <a href="https://github.com/DanielAlvesMorais">GitHub</a>
             </div>
             <div class="contact-card">
@@ -40,7 +40,7 @@
                 <h2>Gabriel Faria Dias</h2>
                 <p>Responsável pelo back-end</p>
                 <p>Criação e Aplicação do Bando de Dados</p>
-                <a href="">Instagram</a>
+                <a href="https://instagram.com/gabrielfaria_1608">Instagram</a>
                 <a href="https://github.com/Grauber157">GitHub</a>
             </div>
             <div class="contact-card">
@@ -48,7 +48,7 @@
                 <h2>Eduardo Pereira Xavier</h2>
                 <p>Responsável pelo front-end e Design.</p>
                 <p>Desenvolvimento dos jogos</p>
-                <a href="">Instagram</a>
+                <a href="https://instagram.com/dudup2626">Instagram</a>
                 <a href="https://github.com/Dinodup">GitHub</a>
             </div>
             <div class="contact-card">
