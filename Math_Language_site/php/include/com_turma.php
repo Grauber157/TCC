@@ -2,9 +2,13 @@
     #require_once '../../core/mysql.php';
     require_once '../core/mysql.php';
     
-    #por meio do id, identifica a turma do usuario e os mostra logo abaixo
+    #por meio do id, identifica a turma do usuario e mostra os parcipantes logo abaixo
     $criterio = [['id', '=', $_SESSION['id']]];
     $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
+
+    #pega o nome da turma, aproveitando a já existente variavel '$retorno'
+    $criterio = [['codigo', '=', $retorno[0]['turma_codigo']]];
+    $nome_turma = Buscar('turma', ['nome_turma'], $criterio);
 
 
     #seleciona os membros da turma
@@ -20,11 +24,15 @@
 <section class="actions">
             <div class="info">
             <table class="">
-                <h2></h2>
+                <h2>
+                    <?php
+                        echo $nome_turma[0]['nome_turma'];
+                    ?>
+                </h2>
                     <thead>
                         <tr>
-                            <td>Nome</td>
-                            <td>Pontuação</td>
+                            <td><strong>Nomes</strong></td>
+                            <td><strong>Pontuação</strong></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,16 +41,15 @@
                             {
                                 echo '<tr><td>'.$membros[$x]['nome_usuario'].'</td><td>'.$membros[$x]['pontuacao'].'</td></tr>';
                             }
-                            
                         ?>
                     </tbody>
                 </table>
+
             <div class="turma-options">
                 <form action="../core/turma_repositorio.php" method="post">
                     <input type="hidden" name="acao" value="sair">
-                    <input type="submit" value="sair">
+                    <input type="submit" value="sair da turma">
                 </form>
-                <!-- <a href="criarturma.php" class="btn">Sair da Turma</a> -->
             </div>
         </section>
 

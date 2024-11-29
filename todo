@@ -1,4 +1,6 @@
 - Adaptar o PHP do turma_repositorio
 {
-  -- Entrar turma (Por meio do código e senha) (adicionar forma de blacklist ou banimento)
+  -- (adicionar forma de blacklist ou banimento)
 }
+
+- Alteração de dados do usuario no 'usuario.php'

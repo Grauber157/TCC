@@ -45,17 +45,20 @@
         //ATUALIZA O PERFIL DO BANCO
         case 'atualizar':
             #id para identificar o usuario na tabela
-            $id = (int)$id;
             $dados = [
-                'nome' => $nome,
-                'email' => $email
+                'apelido_usuario' => $nickname,
+                'descricao' => $descricao,
+                'ano_escolar' => $ano_escola,
+                'instituicao_escolar' => $nome_escola
                 ];
                 
             $criterio = [
-                ['id', '-', $id]
+                ['id', '=', $_SESSION['id']]
             ];
             #funcao atualiza
             Atualizar('usuario', $dados, $criterio);
+            header('Location: ../index.php');
+            exit;
         break;
 
 

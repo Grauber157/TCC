@@ -74,7 +74,7 @@
         break;
 
 
-        //ATUALIZA A TURMA NO BANCO #improvavel de mexer
+        //ATUALIZA A TURMA NO BANCO 
         case 'atualizar':
             #id para identificar a turma na tabela
             $id = (int)$id;
@@ -121,7 +121,7 @@
         break;
 
 
-        //SAIR DA TURMA #precisa adaptar para as turmas
+        //SAIR DA TURMA 
         case 'sair':
             // $criterio = [['id', '=', $_SESSION['id']]];
             $sql = 'UPDATE usuario SET turma_codigo = null WHERE id = '.$_SESSION['id'];

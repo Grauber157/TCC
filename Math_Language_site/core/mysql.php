@@ -77,8 +77,6 @@
             $comando .= ', $' . implode(', $', $campos_criterio);
             $comando .= ');';
 
-            var_dump($comando);
-
             eval($comando);
         }
 
