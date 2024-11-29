@@ -121,9 +121,13 @@
         break;
 
 
-        //LOG OUT DO USUARIO #precisa adaptar para as turmas
+        //SAIR DA TURMA #precisa adaptar para as turmas
         case 'sair':
-            #anular o campo 'turma_codigo' da tabela 'usuario' do BnD
+            // $criterio = [['id', '=', $_SESSION['id']]];
+            $sql = 'UPDATE usuario SET turma_codigo = null WHERE id = '.$_SESSION['id'];
+            DeletarSql($sql);
+            header ('Location: ../index.php');
+            exit;
         break;
 
     }
