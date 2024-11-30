@@ -167,12 +167,51 @@ function resetBoard() {
     lockBoard = false;
 }
 
-// Função para finalizar o jogo
+// Cálculo da pontuação -> 20s tempo para os 10 pontos, diminui a cada 10s no 'facil'
 function gameOver() {
     stopTimer(); // Para o timer
     gameOverScreen.classList.remove('hidden'); // Exibe a tela de fim de jogo
-    finalTimeDisplay.textContent = timeElapsed * 3; // Calcula e exibe a pontuação
+
+    // Parâmetros baseados no nível de dificuldade
+    let maxTime, penaltyInterval, maxScore, penaltyPoints;
+    switch (selectedDifficulty) {
+        case 'facil':
+            maxTime = 20;
+            penaltyInterval = 15;
+            maxScore = 10;
+            penaltyPoints = 1;
+            break;
+        case 'medio':
+            maxTime = 20;
+            penaltyInterval = 10;
+            maxScore = 20;
+            penaltyPoints = 2;
+            break;
+        case 'dificil':
+            maxTime = 20;
+            penaltyInterval = 5;
+            maxScore = 30;
+            penaltyPoints = 3;
+            break;
+        default:
+            maxTime = 20; // Default para 'fácil'
+            penaltyInterval = 15;
+            maxScore = 10;
+            penaltyPoints = 1;
+            break;
+    }
+
+    // Cálculo da pontuação
+    const finalScore = Math.max(
+        0, 
+        maxScore - Math.floor(Math.max(0, timeElapsed - maxTime) / penaltyInterval) * penaltyPoints
+    );
+
+    // Exibindo a pontuação final
+    finalTimeDisplay.textContent = `${finalScore}`;
 }
+
+
 
 // Embaralha as cartas
 function shuffle(array) {

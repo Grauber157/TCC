@@ -37,9 +37,9 @@
     <h1><?php echo isset($titulo) ? $titulo : 'Escolha o Jogo'; ?></h1>
     <p>Escolha a dificuldade</p>
     <form action="<?php echo isset($action) ? $action : '#'; ?>" method="post">
-      <button type="submit" name="dificuldade" value="facil">Fácil</button>
-      <button type="submit" name="dificuldade" value="medio">Médio</button>
-      <button type="submit" name="dificuldade" value="dificil">Difícil</button>
+      <button class="botao" type="submit" name="dificuldade" value="facil">Fácil</button>
+      <button class="botao" type="submit" name="dificuldade" value="medio">Médio</button>
+      <button class="botao" type="submit" name="dificuldade" value="dificil">Difícil</button>
     </form>
   </div>
 </div>
