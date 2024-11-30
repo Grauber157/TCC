@@ -43,7 +43,6 @@ session_start();
         <p class="game-description">Use seus conhecimentos em contas matemáticas e sua memória para acertar as cartas
           que são correspondentes ao mesmo resultado.</p>
       </div>
-        
       <!-- Simulação do pop-up de dificuldades -->
       <!-- Topo -->
       <?php
@@ -53,7 +52,7 @@ session_start();
       <!--CONTRA TEMPO-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="games/contra-tempo.html"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo"
+          <a href="#popup2"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo"
               class="game-image"></a>
         </div>
 
@@ -62,8 +61,13 @@ session_start();
         <p class="game-description">Uma conta em cima e dois possíveis resultados embaixo, seja ágil e ache o resultado
           para passar nas portas antes que o tempo acabe.</p>
       </div>
+      <!-- Simulação do pop-up de dificuldades -->
+      <!-- Topo -->
+      <?php
+        include '../php/popup.php';
+      ?>
 
-      </div>
+    </div>
 
       <!--seção teste-->
     <div class="game-container">

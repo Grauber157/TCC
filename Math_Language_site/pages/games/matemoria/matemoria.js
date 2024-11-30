@@ -19,29 +19,42 @@ const cardValuesF = [
 ];
 
 const cardValuesM = [
-    { expression: '4', solution: '2*2' },
-    { expression: '2*2', solution: '4' },
-    { expression: '6', solution: '3*2' },
-    { expression: '3*2', solution: '6' },
-    { expression: '9', solution: '3^2' },
-    { expression: '3^2', solution: '9' },
-    { expression: '12', solution: '4*3' },
-    { expression: '4*3', solution: '12' }
+    { expression: '√16', solution: '4' },
+    { expression: '4', solution: '√16' },
+    { expression: '√64', solution: '8' },
+    { expression: '8', solution: '√64' },
+    { expression: '2⁵', solution: '32' },
+    { expression: '32', solution: '2⁵' },
+    { expression: '6²', solution: '36' },
+    { expression: '36', solution: '6²' },
+    { expression: '1.5', solution: '3/2' },
+    { expression: '3/2', solution: '1.5' },
+    { expression: '1/4', solution: '0.25' },
+    { expression: '0.25', solution: '1/4' },
+    { expression: '0-0.5', solution: '-0.5' },
+    { expression: '-0.5', solution: '0-0.5' },
+    { expression: '√25*0.5', solution: '2.5' },
+    { expression: '2.5', solution: '√25*0.5' }
 ];
 
 const cardValuesD = [
-    { expression: '16', solution: '4^2' },
-    { expression: '4^2', solution: '16' },
-    { expression: '25', solution: '5^2' },
-    { expression: '5^2', solution: '25' },
-    { expression: '36', solution: '6^2' },
-    { expression: '6^2', solution: '36' },
-    { expression: '49', solution: '7^2' },
-    { expression: '7^2', solution: '49' },
-    { expression: '64', solution: '8^2' },
-    { expression: '8^2', solution: '64' },
-    { expression: '81', solution: '9^2' },
-    { expression: '9^2', solution: '81' }
+    { expression: '2³', solution: '16-8' },
+    { expression: '16-8', solution: '2³' },
+    { expression: '5²+2²', solution: '58/2' },
+    { expression: '58/2', solution: '5²+2²' },
+    { expression: '√49', solution: '2³-1' },
+    { expression: '2³-1', solution: '√49' },
+    { expression: '³√27', solution: '3' },
+    { expression: '3', solution: '³√27' },
+    { expression: '√9/3', solution: '2⁰' },
+    { expression: '2⁰', solution: '√9/3' },
+    { expression: '4²*2', solution: '√100' },
+    { expression: '√100', solution: '4²*2' },
+    { expression: '10*0', solution: '5¹-5' },
+    { expression: '5¹-5', solution: '10*0' },
+    { expression: '0.5', solution: '√0.25' },
+    { expression: '√0.25', solution: '0.5' }
+
 ];
 
 // Escolhe a lista com base na dificuldade selecionada no PHP
