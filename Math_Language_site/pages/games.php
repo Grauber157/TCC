@@ -26,84 +26,89 @@ session_start();
   <?php include '../php/include/menu.php'; ?>
 
   <main>
-    <h1>Jogos</h1>
+  <h1>Jogos</h1>
 
-    <!--seção teste-->
-    <div class="game-container">
+  <!--seção teste-->
+  <div class="game-container">
 
-      <!--MATEMORIA-->
-      <div class="game-section">
-        <div class="game-section-img">
-          <a href="#popup1"><img src="components/images/capa_matemória.png" alt="Matememoria"
-              class="game-image"></a>
-        </div>
-
-        <h3 class="game-title">Matemória</h3>
-
-        <p class="game-description">Use seus conhecimentos em contas matemáticas e sua memória para acertar as cartas
-          que são correspondentes ao mesmo resultado.</p>
+    <!--MATEMORIA-->
+    <div class="game-section">
+      <div class="game-section-img">
+        <!-- Agora abrimos o pop-up com um POST para o jogo selecionado -->
+        <form action="#popup1" method="POST">
+          <input type="hidden" name="jogo" value="matemoria">
+          <button type="submit"><img src="components/images/capa_matemória.png" alt="Matememoria" class="game-image"></button>
+        </form>
       </div>
-      <!-- Simulação do pop-up de dificuldades -->
-      <!-- Topo -->
-      <?php
-        include '../php/popup.php';
-      ?>
-
-      <!--CONTRA TEMPO-->
-      <div class="game-section">
-        <div class="game-section-img">
-          <a href="#popup2"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo"
-              class="game-image"></a>
-        </div>
-
-        <h3 class="game-title">Contra-Tempo</h3>
-
-        <p class="game-description">Uma conta em cima e dois possíveis resultados embaixo, seja ágil e ache o resultado
-          para passar nas portas antes que o tempo acabe.</p>
-      </div>
-      <!-- Simulação do pop-up de dificuldades -->
-      <!-- Topo -->
-      <?php
-        include '../php/popup.php';
-      ?>
-
+      <h3 class="game-title">Matemória</h3>
+      <p class="game-description">Use seus conhecimentos em contas matemáticas e sua memória para acertar as cartas
+        que são correspondentes ao mesmo resultado.</p>
     </div>
 
-      <!--seção teste-->
-    <div class="game-container">
+    <!-- Pop-up para todos os jogos -->
+    <?php include '../php/popup.php'; ?>
 
-      <!--PLANAMENTE ESPACIAL-->
-      <div class="game-section">
-        <div class="game-section-img">
-          <a href="games/planamente-espacial.html"><img src="components/images/capa_planamenteespacial.png"
-              alt="Planamente Espacial" class="game-image"></a>
-        </div>
-
-        <h3 class="game-title">Planamente Espacial</h3>
-
-        <p class="game-description">Você é desafiado a explorar formas 3D e calcular suas medidas, teste suas habilidades
-          matemáticas enquanto desvenda as propriedades espaciais de cada figura.</p>
+    <!--CONTRA TEMPO-->
+    <div class="game-section">
+      <div class="game-section-img">
+        <!-- Passando o nome do jogo como parâmetro -->
+        <form action="#popup1" method="POST">
+          <input type="hidden" name="jogo" value="contratempo">
+          <button type="submit"><img src="components/images/capa_contratempo.png" alt="Contra-Tempo" class="game-image"></button>
+        </form>
       </div>
-
-      <!--ACHE O X-->
-      <div class="game-section">
-        <div class="game-section-img">
-          <!--Trocar o href desse jogo-->
-          <a href="games/ache-x.html"><img src="components/images/capa_achex.png" alt="Ache o X" class="game-image"></a>
-        </div>
-
-        <h3 class="game-title">Ache o X</h3>
-
-        <p class="game-description">Você tem uma missão amigo! Nesse jogo de quem eu sou, fornecerei 3 dicas para você
-          descobrir qual algarismo sou dentre as infinitas possibilidades .</p>
-      </div>
-
+      <h3 class="game-title">Contra-Tempo</h3>
+      <p class="game-description">Uma conta em cima e dois possíveis resultados embaixo, seja ágil e ache o resultado
+        para passar nas portas antes que o tempo acabe.</p>
     </div>
 
-  </main>
+    <!-- Pop-up para todos os jogos -->
+    <?php include '../php/popup.php'; ?>
+
+  </div>
+
+  <!--seção teste-->
+  <div class="game-container">
+
+    <!--PLANAMENTE ESPACIAL-->
+    <div class="game-section">
+      <div class="game-section-img">
+        <form action="#popup1" method="POST">
+          <input type="hidden" name="jogo" value="planamenteespacial">
+          <button type="submit"><img src="components/images/capa_planamenteespacial.png" alt="Planamente Espacial" class="game-image"></button>
+        </form>
+      </div>
+      <h3 class="game-title">Planamente Espacial</h3>
+      <p class="game-description">Você é desafiado a explorar formas 3D e calcular suas medidas, teste suas habilidades
+        matemáticas enquanto desvenda as propriedades espaciais de cada figura.</p>
+    </div>
+
+    <!-- Pop-up para todos os jogos -->
+    <?php include '../php/popup.php'; ?>
+
+    <!--ACHE O X-->
+    <div class="game-section">
+      <div class="game-section-img">
+        <form action="#popup1" method="POST">
+          <input type="hidden" name="jogo" value="acheox">
+          <button type="submit"><img src="components/images/capa_achex.png" alt="Ache o X" class="game-image"></button>
+        </form>
+      </div>
+      <h3 class="game-title">Ache o X</h3>
+      <p class="game-description">Você tem uma missão amigo! Nesse jogo de quem eu sou, fornecerei 3 dicas para você
+        descobrir qual algarismo sou dentre as infinitas possibilidades.</p>
+    </div>
+
+    <!-- Pop-up para todos os jogos -->
+    <?php include '../php/popup.php'; ?>
+
+  </div>
+
+</main>
+
+
   
   <?php include '../php/include/rodape.php'; ?>
 
 </body>
-
 </html>
