@@ -24,6 +24,7 @@ body {
 h1 {
     color: white;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Controle dos botões e temporizador */

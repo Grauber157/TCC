@@ -11,21 +11,30 @@
   }
   
   .popup-content {
-    background-color: purple;
+    background-color: #333;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border-radius: 10px;
     width: 30%;
     text-align: center;
     position: relative;
-    border-radius: 10px;
-}
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra suave */
+  }
   
   button {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    background-color: #6c2d91;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
   }
+
+  button:hover {
+    background-color: #4d2d61; /* Tonalidade mais escura no hover */
+}
   
   /* Mostra o popup quando o hash (#popup1) é acionado */
   #popup1:target {
@@ -41,6 +50,6 @@
     text-decoration: none;
   }
 
-  h2{
-    color: black;
+  p{
+    color: white;
   }
