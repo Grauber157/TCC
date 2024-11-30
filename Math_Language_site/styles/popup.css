@@ -11,14 +11,15 @@
   }
   
   .popup-content {
-    background-color: #fff;
+    background-color: purple;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
     text-align: center;
     position: relative;
-  }
+    border-radius: 10px;
+}
   
   button {
     margin: 10px;
@@ -40,6 +41,6 @@
     text-decoration: none;
   }
 
-  h2{
+  h1{
     color: black;
   }
