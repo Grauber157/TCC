@@ -11,20 +11,48 @@
   }
   
   .popup-content {
-    background-color: #fff;
+    background-color: #333;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border-radius: 10px;
     width: 30%;
     text-align: center;
     position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra suave */
   }
   
-  button {
+  .botao {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    background-color: #6c2d91;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
   }
+
+  .botaohide {
+    padding: 0; /* Remove o padding para que a imagem ocupe toda a área do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 20px;
+    width: 100%; /* O botão ocupará toda a largura disponível */
+    height: 100%; /* O botão ocupará toda a altura disponível */
+    display: flex; /* Usando flexbox para alinhar a imagem */
+    justify-content: center; /* Alinha a imagem horizontalmente */
+    align-items: center; /* Alinha a imagem verticalmente */
+    cursor: pointer;
+}
+
+.botaohide img {
+    width: 100%; /* A imagem ocupará 100% da largura do botão */
+    height: 100%; /* A imagem ocupará 100% da altura do botão */
+    object-fit: cover; /* A imagem cobrirá a área do botão sem distorcer */
+}
+
+  button:hover {
+    background-color: #4d2d61; /* Tonalidade mais escura no hover */
+}
   
   /* Mostra o popup quando o hash (#popup1) é acionado */
   #popup1:target {
@@ -40,6 +68,6 @@
     text-decoration: none;
   }
 
-  h2{
-    color: black;
+  p{
+    color: white;
   }

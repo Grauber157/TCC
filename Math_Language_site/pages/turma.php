@@ -66,7 +66,6 @@
             {
                 require_once '../php/include/com_turma.php';
             }
-            
         ?>
     </main>
     

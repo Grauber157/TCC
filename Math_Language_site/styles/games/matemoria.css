@@ -18,32 +18,39 @@ body {
 /* Container principal do jogo */
 .container {
     text-align: center;
+    padding: 10px;
 }
 
 /* Título do jogo */
 h1 {
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.5rem; /* Tamanho reduzido para caber melhor em telas pequenas */
 }
 
 /* Controle dos botões e temporizador */
 .controls {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     align-items: center;
     color: #fff;
+    flex-wrap: wrap; /* Permite que os controles se ajustem em telas pequenas */
 }
 
 /* Estilização dos botões de reiniciar e voltar */
 button {
-    padding: 10px 20px;
+    padding: 8px 16px;
     background-color: #6c2d91;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Tamanho de fonte reduzido */
+    margin: 5px;
+    width: 45%; /* Reduz a largura dos botões */
+    box-sizing: border-box; /* Evita que o padding aumente a largura total */
 }
 
 /* Mudança de cor do botão ao passar o mouse */
@@ -53,28 +60,28 @@ button:hover {
 
 /* Estilização do temporizador */
 #timer {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reduzido para telas pequenas */
 }
 
 /* Estilização da grade de cartas, criando uma grade de 4x4 */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 140px);
-    gap: 20px;
+    grid-template-columns: repeat(4, 80px); /* Cartas menores */
+    grid-template-rows: repeat(4, 100px); /* Cartas menores */
+    gap: 10px;
     justify-content: center;
 }
 
 /* Estilização das cartas do jogo */
 .card {
-    width: 100px;
-    height: 140px;
+    width: 80px;
+    height: 100px;
     background-color: #6c2d91;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Reduzido para que as cartas fiquem menores */
     color: #fff;
     font-weight: bold;
     cursor: pointer;
@@ -109,11 +116,56 @@ button:hover {
 
 /* Mensagem de fim de jogo */
 #game-over {
-    margin-top: 20px;
+    margin-top: 15px;
     color: #fff;
 }
 
 /* Esconde elementos, como a tela de game over */
 .hidden {
     display: none;
+}
+
+/* Media Queries para dispositivos móveis e tablets */
+
+/* Para telas menores que 768px (como tablets ou telas pequenas) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.3rem; /* Tamanho do título ainda menor */
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 70px); /* Reduz o número de colunas e tamanho das cartas */
+        grid-template-rows: repeat(3, 90px); /* Cartas menores */
+    }
+
+    .controls {
+        flex-direction: column; /* Coloca os controles em coluna */
+        justify-content: center;
+    }
+
+    button {
+        width: 90%; /* Ajusta o tamanho dos botões */
+        font-size: 0.85rem; /* Reduz o tamanho da fonte nos botões */
+    }
+}
+
+/* Para telas menores que 480px (como smartphones) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem; /* Tamanho do título ainda mais reduzido */
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 60px); /* Diminui ainda mais o tamanho das cartas */
+        grid-template-rows: repeat(3, 80px); /* Cartas ainda menores */
+    }
+
+    #timer {
+        font-size: 0.9rem; /* Reduz o tamanho do temporizador */
+    }
+
+    button {
+        width: 90%; /* Ajusta a largura dos botões para a tela inteira */
+        font-size: 0.8rem; /* Menor tamanho de fonte nos botões */
+    }
 }

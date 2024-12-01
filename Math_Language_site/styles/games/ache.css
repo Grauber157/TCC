@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2a1e4f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.bodyy{
+    text-align: center;
+}
+
+.container {
+    background-color: #4f3b71;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 700px;
+    margin-bottom: 20px;
+}
+
+/* Controle dos botões e temporizador */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    color: #fff;
+}
+
+/* Estilização dos botões de reiniciar e voltar */
+button {
+    padding: 10px 20px;
+    background-color: #6c2d91;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Mudança de cor do botão ao passar o mouse */
+button:hover {
+    background-color: #4d2d61;
+}
+
+.info-section {
+    background-color: #674085;
+    padding: 10px;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.info-btn {
+    background-color: #7d63a3;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
+.info-btn:hover {
+    background-color: #a389d4;
+}
+
+.display-area {
+    background-color: #3d215c;
+    height: 380px;
+    margin-top: 35px;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4f3b71;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #7d63a3;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.submit-btn {
+    background-color: #7d63a3;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #a389d4;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Garante um layout uniforme */
+    gap: 5px; /* Reduz o espaçamento entre os botões */
+    padding: 10px; /* Margem interna */
+    background-color: #4f3b71;
+    border-radius: 10px;
+}
+
+#k {
+    width: 100%; /* Faz os botões preencherem a célula */
+    height: 60px;
+    font-size: 1.5rem;
+    background-color: #7d63a3;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#k:hover, .delete:active {
+    background-color: #a389d4;
+}
+
+#k:active, .delete:active {
+    background-color: #5a4271;
+}
+
+.delete {
+    grid-column: span 2; /* Faz o botão "delete" ocupar duas colunas */
+    width: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #3d215c;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* Mensagem de fim de jogo */
+#game-over {
+    margin-top: 20px;
+    color: #fff;
+}
+
+/* Esconde elementos, como a tela de game over */
+.hidden {
+    display: none;
+}

@@ -194,3 +194,23 @@ input:focus {
 .btn-entrar:hover {
   background-color: #5c558f;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+}
+
+th {
+  background-color: #252852ca;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
