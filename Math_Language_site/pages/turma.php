@@ -1,7 +1,8 @@
 <?php
     session_start();
     require_once '../core/mysql.php';
-
+    require_once '../core/sql.php';
+    require_once '../core/conexao_mysql.php';
     if(empty($_SESSION['id']))
     {
       header("Location: login.php");
@@ -29,9 +30,7 @@
     <main class="dashboard">
         <section class="ranking">
             <h2>Top 10 Turmas</h2>
-            <ul>
                 <?php
-                    require_once '../core/conexao_mysql.php';
                     $sql = "SELECT t.codigo, t.nome_turma, SUM(j.pontuacao_jogo) pontuacao_total 
                         FROM turma t
                         left join usuario u on u.turma_codigo = t.codigo
@@ -39,37 +38,35 @@
                         GROUP BY t.codigo, t.nome_turma
                         ORDER BY 3 DESC";
                     $turmas = BuscarSql($sql);
+                    $x = 0;
                     foreach ($turmas as $turma):
-                        echo '<p>$turma["codigo"]</p>';
-                        echo $turma['nome_turma'];
-                        echo $turma['pontuacao_total'];
+                        if($x > 10)
+                        {
+                            break;
+                        }
+                        $x++;
+                        echo '<li><span><strong>'.$turma["codigo"].' / '.$turma['nome_turma'].' / '.$turma['pontuacao_total'].'</strong></span></li>';
                     endforeach;
+                    echo $x;
                 ?>
-            </ul>
+                <!-- Repetir itens conforme necessário -->
         </section>
-        
-        <!-----<section class="actions">----------------CRIAR OU ENTRAR
-            <div class="info">
-                <h3>O que são as Turmas?</h3>
-                <p>O sistema de turmas do nosso site é uma forma divertida de juntar pessoas para jogar e competir.
-                    Quando você entra no site, pode criar sua própria turma ou participar de uma existente, 
-                    mas só pode fazer isso uma vez. Depois de escolher, não será possível mudar de turma ou criar outra.</p>
-
-                <p>Se você criar uma turma, será o administrador e poderá banir qualquer membro que desrespeite as regras.
-                    Além disso, todas as turmas competem no ranking global, somando pontos nos jogos da plataforma. 
-                    Cada turma também tem seu ranking interno, onde os membros disputam para ver quem consegue a maior pontuação.</p>
-
-                <p>Participe da sua turma e comece a jogar para levar sua equipe ao topo dos rankings!</p>
-            </div>
-
-            <div class="turma-options">
-                <a href="criarturma.php" class="btn">Criar</a>
-                <a href="entrarturma.php" class="btn">Entrar</a>
-            </div>
-        </section>-->
-
-        
-
+        <?php
+            #por meio do id, identifica a turma do usuario e os mostra logo abaixo
+            $criterio = [['id', '=', $_SESSION['id']]];
+            $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
+            
+            #sem turma
+            if(!isset($retorno[0]['turma_codigo']) || is_null($retorno[0]['turma_codigo']))
+            {
+                require_once '../php/include/sem_turma.php';
+            }
+            #com turma
+            else
+            {
+                require_once '../php/include/com_turma.php';
+            }
+        ?>
     </main>
     
     <?php include '../php/include/rodape.php'; ?>

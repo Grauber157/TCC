@@ -74,7 +74,7 @@
         break;
 
 
-        //ATUALIZA A TURMA NO BANCO #improvavel de mexer
+        //ATUALIZA A TURMA NO BANCO 
         case 'atualizar':
             #id para identificar a turma na tabela
             $id = (int)$id;
@@ -121,9 +121,13 @@
         break;
 
 
-        //LOG OUT DO USUARIO #precisa adaptar para as turmas
+        //SAIR DA TURMA 
         case 'sair':
-            #anular o campo 'turma_codigo' da tabela 'usuario' do BnD
+            // $criterio = [['id', '=', $_SESSION['id']]];
+            $sql = 'UPDATE usuario SET turma_codigo = null WHERE id = '.$_SESSION['id'];
+            DeletarSql($sql);
+            header ('Location: ../index.php');
+            exit;
         break;
 
     }
