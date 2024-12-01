@@ -18,7 +18,7 @@
           break;
         case 'planamenteespacial':
           $titulo = 'Planamente Espacial';
-          $action = '../pages/games/planamente-espacial/planamente.php';
+          $action = '../pages/games/planamente/planamente.php';
           break;
         case 'acheox':
           $titulo = 'Ache o X';
