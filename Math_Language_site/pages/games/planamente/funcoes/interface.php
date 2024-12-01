@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Matemória</title>
     <!--<link rel="stylesheet" href="../../styles/games/diff.css">-->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../../styles/games/planamente.css">
     <link rel="stylesheet" href="../../../styles/cabeça.css">
     <link rel="stylesheet" href="../../../styles/fonts.css">
     <link rel="stylesheet" href="../../../styles/media.css">
