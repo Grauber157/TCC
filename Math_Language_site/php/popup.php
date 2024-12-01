@@ -22,7 +22,7 @@
           break;
         case 'acheox':
           $titulo = 'Ache o X';
-          $action = '../pages/games/ache-x/achex.php';
+          $action = '../pages/games/acheox/ache.php';
           break;
         default:
           $titulo = 'Jogo Desconhecido';
