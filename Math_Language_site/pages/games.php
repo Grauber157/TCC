@@ -19,7 +19,7 @@ session_start();
   <link href="../styles/games.css" rel="stylesheet">
   <link href="../styles/popup.css" rel="stylesheet">
   <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
-  <title>Math Language</title>
+  <title>Math Language - Jogos</title>
 </head>
 <body>
   

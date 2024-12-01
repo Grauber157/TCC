@@ -17,7 +17,7 @@
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
-    <title>Math Language</title>
+    <title>Math Language - Contatos</title>
 </head>
 <body>
 

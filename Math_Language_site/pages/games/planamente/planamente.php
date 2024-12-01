@@ -2,7 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Jogo - Nível Selecionado</title>
+    <title>Planamente Espacial</title>
+    <link rel="shortcut icon" type="imagex/png" href="../../../Material/images/favicon.ico">
 </head>
 <body>
     <?php
