@@ -130,13 +130,17 @@ body{
 /* Responsividade */
 @media (max-width: 768px) {
   header{
-    display: flex;
     flex-direction: column;
-    align-content: center;
     background-color: #252852ca;
     border-radius: 24px;
-    padding: 1%;
   }
+  .navbar {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente (se necessário) */
+    gap: 20px;              /* Espaçamento entre os links */
+    flex-wrap: wrap;
+}
   #title{
     line-height: 5px;
     text-align: center;
@@ -144,7 +148,7 @@ body{
   /* barra de enderecos (lista) */
   li{
     display: inline-block;
-    margin: 10px;
+    margin: 20px;
   }
   /*  barra de enderecos (hyperlinks)*/
   a{
@@ -154,24 +158,41 @@ body{
     border-radius: 15px;
     margin: 10px;
   }
-  /* efeito de transicao nos hyperlinks */
-  a:hover{
-    transition: 0.3s all;
-    color: rgb(132, 14, 201);
-  }
-  /* botao de cadastro caso a conta ja exista */
-  #inscreva-se-btn{
-    border: 2px solid rgb(132, 14, 201);
-    padding: 10px;
-    border-radius: 15px;
-  }
-  /* efeito de transicao para o botao-link de cadastro */
-  #inscreva-se-btn:hover{
-    background-color: rgb(132, 14, 201);
-    color: white;
+  ul{
+    padding: 0px;
+    margin: 0px;
   }
 }
-
-@media (max-width: 320px) {
-  
+@media (max-width: 360px) {
+  header{
+    flex-direction: column;
+    background-color: #252852ca;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente (se necessário) */
+    flex-wrap: wrap;
+}
+  #title{
+    line-height: 5px;
+    text-align: center;
+  }
+  /* barra de enderecos (lista) */
+  li{
+    display: inline-block;
+    margin: 5px;
+  }
+  /*  barra de enderecos (hyperlinks)*/
+  a{
+    color: white;
+    border: none;
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+  }
+  ul{
+    padding: 0px;
+    margin: 0px;
+  }
 }
