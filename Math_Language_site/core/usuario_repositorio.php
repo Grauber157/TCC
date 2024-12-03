@@ -90,6 +90,12 @@
             session_destroy();
         break;
 
+
+        //DELETA O USUARIO
+        case 'deletar':
+            Deletar('usuario', [['id', '=', $_SESSION['id']]]);
+            Deletar('usuario_jogos', [['id_usuario', '=', $_SESSION['id']]]);
+        break;
     }
     
     //header ('Location: ../index.php');

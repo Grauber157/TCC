@@ -121,15 +121,47 @@
         break;
 
 
-        //SAIR DA TURMA 
+        //SAIR DA TURMA
         case 'sair':
-            // $criterio = [['id', '=', $_SESSION['id']]];
-            $sql = 'UPDATE usuario SET turma_codigo = null WHERE id = '.$_SESSION['id'];
-            DeletarSql($sql);
-            header ('Location: ../index.php');
+            $criterio = [['administrador', '=', $_SESSION['id']]];
+            $adm = Buscar('turma', ['administrador'], $criterio);
+            if($adm[0]['administrador'] == $_SESSION['id'])
+            {
+                echo 'Você é o administrador da turma, para sair delete a turma!';
+            }
+            else
+            {
+                $sql = 'UPDATE usuario SET turma_codigo = null WHERE id = '.$_SESSION['id'];
+                DeletarSql($sql);
+                echo 'Deletado';
+                header ('Location: ../index.php');
+            }
             exit;
         break;
 
+
+        //DELETAR TURMA
+        case 'deletar':
+            #verifica se o id logado é administrador de alguma turma
+            $criterio = [['id', '=', $_SESSION['id']]];
+            $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
+            
+            $criterio = [['codigo', '=', $retorno[0]['turma_codigo']]];
+            $retorno = Buscar('turma', ['administrador', 'codigo'], $criterio);
+            #caso não volte vazio, ele ira excluir a turma do adm pertencente
+            if($retorno[0]['administrador'] == $_SESSION['id'])
+            {
+                #deleta o codigo dos membros da turma
+                $sql = 'UPDATE usuario SET turma_codigo = null WHERE turma_codigo = "'.$retorno[0]['codigo'].'"';
+                #funcao que força comandos SQL
+                ComandoSql($sql);
+
+                #deleta a turma
+                $sql = 'DELETE FROM turma WHERE codigo = "'.$retorno[0]['codigo'].'"';
+                DeletarSql($sql);
+                exit;
+            }
+        break;
     }
 
     if($erro <> null)
