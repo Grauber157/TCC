@@ -55,7 +55,6 @@
             #por meio do id, identifica a turma do usuario e os mostra logo abaixo
             $criterio = [['id', '=', $_SESSION['id']]];
             $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
-            
             #sem turma
             if(!isset($retorno[0]['turma_codigo']) || is_null($retorno[0]['turma_codigo']))
             {

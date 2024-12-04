@@ -1,5 +1,6 @@
 <?php
-    #require_once '../../core/mysql.php';
+    //require_once '../../core/mysql.php';
+    require_once '../core/sql.php';
     require_once '../core/mysql.php';
     
     #por meio do id, identifica a turma do usuario e mostra os parcipantes logo abaixo
@@ -8,8 +9,7 @@
 
     #pega o nome da turma, aproveitando a já existente variavel '$retorno'
     $criterio = [['codigo', '=', $retorno[0]['turma_codigo']]];
-    $nome_turma = Buscar('turma', ['nome_turma'], $criterio);
-
+    $nome_turma = Buscar('turma', ['nome_turma', 'administrador'], $criterio);
 
     #seleciona os membros da turma
     $sql = 'SELECT u.nome_usuario, SUM(uj.pontuacao_jogo) AS pontuacao 
@@ -50,6 +50,14 @@
                     <input type="hidden" name="acao" value="sair">
                     <input type="submit" value="sair da turma">
                 </form>
+            
+            <!-- Caso o usuario seja Administrador da turma, ele pode ter a opção de deletar a turma -->
+            <?php
+                if($nome_turma[0]['administrador'] == $_SESSION['id'])
+                {
+                    echo '<form action="../core/turma_repositorio.php" method="post"><input type="hidden" name="acao" value="deletar"><input type="submit" value="Deletar Turma"></form>';
+                }
+            ?>
             </div>
         </section>
 
