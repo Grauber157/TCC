@@ -7,12 +7,9 @@
     $criterio = [['id', '=', $_SESSION['id']]];
     $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
 
-    var_dump($retorno);
-
     #pega o nome da turma, aproveitando a já existente variavel '$retorno'
     $criterio = [['codigo', '=', $retorno[0]['turma_codigo']]];
     $nome_turma = Buscar('turma', ['nome_turma', 'administrador'], $criterio);
-
 
     #seleciona os membros da turma
     $sql = 'SELECT u.nome_usuario, SUM(uj.pontuacao_jogo) AS pontuacao 
