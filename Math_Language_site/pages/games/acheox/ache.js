@@ -51,12 +51,6 @@ const prompts = [
         ],
         resposta: "12"
     },
-    {
-        dicas: [
-            ""
-
-        ],
-    }
 ];
 
 // Variáveis globais
