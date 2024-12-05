@@ -34,7 +34,7 @@
       <!--Geometria Plana-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="conteudos/1.php"><img src="components/images/geometriaplana-capa.png" alt="#"
+          <a href="conteudos/geometria-plana.php"><img src="components/images/geometriaplana-capa.png" alt="#"
               class="game-image"></a>
         </div>
 
@@ -46,7 +46,7 @@
       <!--Geometria Espacial-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="#"><img src="components/images/geometriaespacial-capa.png" alt="#"
+          <a href="conteudos/geometria-espacial.php"><img src="components/images/geometriaespacial-capa.png" alt="#"
               class="game-image"></a>
         </div>
 
@@ -61,7 +61,7 @@
       <!--Equações do Primeiro Grau-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="#"><img src="components/images/equacao1-capa.png" alt="#"
+          <a href="conteudos/equacoes-lineares.php"><img src="components/images/equacao1-capa.png" alt="#"
               class="game-image"></a>
         </div>
 
@@ -73,7 +73,7 @@
       <!--Equações do Segundo Grau-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="#"><img src="components/images/equação2-capa.png" alt="#"
+          <a href="conteudos/equacoes-quadraticas.php"><img src="components/images/equação2-capa.png" alt="#"
               class="game-image"></a>
         </div>
 
@@ -87,7 +87,7 @@
       <!--Potencialização-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="#"><img src="components/images/ponteciação-capa.png" alt="#"
+          <a href="conteudos/potencializacao.php"><img src="components/images/ponteciação-capa.png" alt="#"
               class="game-image"></a>
         </div>
 
@@ -99,7 +99,7 @@
       <!--Radiciação-->
       <div class="game-section">
         <div class="game-section-img">
-          <a href="#"><img src="components/images/radiciação-capa.png" alt="#"
+          <a href="conteudos/radiciacao.php"><img src="components/images/radiciação-capa.png" alt="#"
               class="game-image"></a>
         </div>
 

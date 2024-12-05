@@ -37,7 +37,7 @@ const prompts = [
     },
     {
         dicas: [
-            "A conta 5 - x - 20 resulta em -25.",
+            "5 - x - 20 = -25.",
             "Está entre 0 e 10",
             "É um número positivo."
         ],
@@ -50,6 +50,12 @@ const prompts = [
             "Não é um número primo"
         ],
         resposta: "12"
+    },
+    {
+        dicas: [
+            ""
+
+        ],
     }
 ];
 
