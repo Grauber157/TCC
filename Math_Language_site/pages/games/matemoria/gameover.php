@@ -3,7 +3,7 @@ function gameOver($timeElapsed, $difficulty) {
     // Parâmetros baseados no nível de dificuldade
     switch ($difficulty) {
         case 'facil':
-            $maxTime = 20;
+            $maxTime = 2;
             $penaltyInterval = 15;
             $maxScore = 10;
             $penaltyPoints = 1;
@@ -28,10 +28,11 @@ function gameOver($timeElapsed, $difficulty) {
             break;
     }
 
-    // Cálculo da pontuação final
-    $excessTime = max(0, $timeElapsed - $maxTime);
-    $penalties = floor($excessTime / $penaltyInterval) * $penaltyPoints;
-    $finalScore = max(0, $maxScore - $penalties);
+    // Calculando o tempo excedente
+    $finalScore = max(
+        0, 
+        $maxScore - floor(max(0, $timeElapsed - $maxTime) / $penaltyInterval) * $penaltyPoints
+    );    
 
     return $finalScore;
 }

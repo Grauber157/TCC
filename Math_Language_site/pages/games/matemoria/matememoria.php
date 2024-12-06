@@ -1,5 +1,5 @@
 <?php
-include 'gameover.php'; // Inclui o arquivo com a função gameOver
+include 'gameover.php'; // Inclua o arquivo com a função gameOver
 
 // Verifica o nível de dificuldade e o tempo (exemplo fictício)
 $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil';
@@ -16,6 +16,7 @@ $finalScore = gameOver($timeElapsed, $difficulty);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Matemória</title>
+    <!--<link rel="stylesheet" href="../../styles/games/diff.css">-->
     <link rel="stylesheet" href="../../../styles/games/matemoria.css">
     <link rel="stylesheet" href="../../../styles/cabeça.css">
     <link rel="stylesheet" href="../../../styles/fonts.css">
@@ -35,7 +36,7 @@ $finalScore = gameOver($timeElapsed, $difficulty);
             <!-- Cartas do jogo, cada uma com um valor único -->
         </div>
         <div id="game-over" class="hidden">
-            <h2>Parabéns! Você ganhou <span id="final-time"><?php echo $finalScore; ?></span> pontos.</h2>
+            <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
         </div>
     </div>
 

@@ -2,18 +2,7 @@
 const cardValuesF = [
     { expression: '13', solution: '5+8' },
     { expression: '5+8', solution: '13' },
-    { expression: '0', solution: '9*0' },
-    { expression: '9*0', solution: '0' },
-    { expression: '3', solution: '21/7' },
-    { expression: '21/7', solution: '3' },
-    { expression: '21', solution: '7*3' },
-    { expression: '7*3', solution: '21' },
-    { expression: '-12', solution: '6-18' },
-    { expression: '6-18', solution: '-12' },
-    { expression: '12', solution: '24/2' },
-    { expression: '24/2', solution: '12' },
-    { expression: '0.5', solution: '1/2' },
-    { expression: '1/2', solution: '0.5' },
+
     { expression: '15', solution: '8+7' },
     { expression: '8+7', solution: '15' }
 ];
@@ -90,7 +79,7 @@ let timeElapsed = 0;
 function startTimer() {
     timer = setInterval(() => {
         timeElapsed++;
-        timerDisplay.textContent = `Tempo: ${timeElapsed}s`;
+        timerDisplay.textContent = 'Tempo: ${timeElapsed}s';
     }, 1000);
 }
 
@@ -103,7 +92,7 @@ function stopTimer() {
 function createCard(value) {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML = `<span>${value.expression}</span>`;
+    card.innerHTML = <span>${value.expression}</span>;
     card.dataset.solution = value.solution;
     card.addEventListener('click', flipCard);
     grid.appendChild(card);
