@@ -255,4 +255,18 @@
         mysqli_stmt_close($stmt);
         desconectar($conexao);
     }
+
+    //COMANDO MYSQL DIRETO
+    function ComandoSql($sql)
+    {
+        $instrucao = $sql;
+        #conecta com o banco
+        $conexao = conectar();
+        #prepara o comando MySQL
+        $stmt = mysqli_prepare($conexao, $instrucao);
+        #executa o statement
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        desconectar($conexao);
+    }
 ?>
