@@ -11,16 +11,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conteudo</title>
+    
     <link href="../styles/cabeça.css" rel="stylesheet">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/cont.css">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
-    <link
-      rel="shortcut icon"
-      type="imagex/png"
-      href="../Material/images/favicon.ico">
+    <title>Math Language - Conteúdos</title>
   </head>
   <body>
     

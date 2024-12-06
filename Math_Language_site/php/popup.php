@@ -18,7 +18,7 @@
           break;
         case 'planamenteespacial':
           $titulo = 'Planamente Espacial';
-          $action = '../pages/games/planamente-espacial/planamente.php';
+          $action = '../pages/games/planamente/planamente.php';
           break;
         case 'acheox':
           $titulo = 'Ache o X';
@@ -33,7 +33,7 @@
 
 <div id="popup1" class="popup">
   <div class="popup-content">
-    <a href="#" class="close">&times;</a> <!-- Link para fechar o pop-up -->
+    <a href="" class="close">&times;</a> <!-- Link para fechar o pop-up -->
     <h1><?php echo isset($titulo) ? $titulo : 'Escolha o Jogo'; ?></h1>
     <p>Escolha a dificuldade</p>
     <form action="<?php echo isset($action) ? $action : '#'; ?>" method="post">

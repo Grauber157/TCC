@@ -1,6 +1,12 @@
 <?php
-// Verifica o nível de dificuldade selecionado (por exemplo, via GET)
-$difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; // Default: 'easy'
+include 'gameover.php'; // Inclua o arquivo com a função gameOver
+
+// Verifica o nível de dificuldade e o tempo (exemplo fictício)
+$difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil';
+$timeElapsed = isset($_POST['tempo']) ? intval($_POST['tempo']) : 0;
+
+// Calcula a pontuação final
+$finalScore = gameOver($timeElapsed, $difficulty);
 ?>
 
 <!DOCTYPE html>
