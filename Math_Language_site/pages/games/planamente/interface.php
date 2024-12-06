@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Planamente Espacial</title>
-    <link rel="stylesheet" href="../../../styles/games/planamente.css">
+    <link rel="stylesheet" href="http://localhost:8080/TCC/Math_Language_site/styles/games/planamente.css">
     <link rel="stylesheet" href="../../../styles/cabeça.css">
     <link rel="stylesheet" href="../../../styles/fonts.css">
     <link rel="stylesheet" href="../../../styles/media.css">
