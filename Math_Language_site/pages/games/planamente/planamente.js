@@ -103,7 +103,7 @@ const perguntasD = [
             areaTotal: "A = πr(r + l)"
         },
         dados: "Um cone tem raio (r) = 4 cm e altura (h) = 9 cm. Utilize π = 3,14. Primeiro, calcule o volume do cone. Em seguida, use o valor do volume para calcular a área lateral, e finalmente calcule a área total do cone.",
-        imagem: "URL/IMAGEM_CONE",
+        imagem: "imagens/cone.png",
         resposta: 207,  // Resultado final arredondado para um número inteiro
     },
 
@@ -116,7 +116,7 @@ const perguntasD = [
             circunferencia: "C = 2πr"
         },
         dados: "Uma esfera tem raio (r) = 6 cm. Utilize π = 3,14. Primeiramente, calcule o volume da esfera. Depois, use esse valor para calcular a área da esfera e, por fim, calcule a circunferência da esfera.",
-        imagem: "URL/IMAGEM_ESFERA",
+        imagem: "imagens/esfera.png",
         resposta: 452,  // Resultado final arredondado para um número inteiro
     },
 
@@ -129,7 +129,7 @@ const perguntasD = [
             areaTotal: "A = 2πr² + 2πrh"
         },
         dados: "Um cilindro tem raio (r) = 5 cm e altura (h) = 12 cm. Utilize π = 3,14. Primeiramente, calcule o volume do cilindro. Depois, use esse valor para calcular a área lateral e, finalmente, calcule a área total do cilindro.",
-        imagem: "URL/IMAGEM_CILINDRO",
+        imagem: "imagens/cilindro.png",
         resposta: 678,  // Resultado final arredondado para um número inteiro
     },
 
@@ -142,7 +142,7 @@ const perguntasD = [
             diagonal: "d = √(a² + b² + c²)"
         },
         dados: "Um paralelepípedo tem comprimento (a) = 8 cm, largura (b) = 6 cm e altura (c) = 4 cm. Primeiramente, calcule o volume do paralelepípedo. Em seguida, use esse valor para calcular a área total e, por fim, calcule a diagonal do paralelepípedo.",
-        imagem: "URL/IMAGEM_PARALELEPIPEDO",
+        imagem: "imagens/paralelepipedo.png",
         resposta: 10,  // Resultado final arredondado para um número inteiro
     },
 
@@ -155,7 +155,7 @@ const perguntasD = [
             perimetro: "P = 12a"
         },
         dados: "Um cubo tem aresta (a) = 3 cm. Utilize π = 3,14. Primeiramente, calcule o volume do cubo. Depois, use esse valor para calcular a área e, por fim, calcule o perímetro do cubo.",
-        imagem: "URL/IMAGEM_CUBO",
+        imagem: "imagens/cubo.png",
         resposta: 54,  // Resultado final arredondado para um número inteiro
     },
 
@@ -171,9 +171,9 @@ const perguntasD = [
         imagem: "URL/IMAGEM_TETRAEDRO",
         resposta: 43,  // Resultado final arredondado para um número inteiro
     },
+
+    //Adicionar até 15 prompts
 ];
-
-
 
 
 // Elementos HTML
@@ -224,20 +224,29 @@ function carregarPergunta() {
     const index = Math.floor(Math.random() * perguntasSelecionadas.length);
     perguntaAtual = perguntasSelecionadas[index];
 
+    // Atualizar as fórmulas no HTML, mas escondendo as indefinidas
     formulaDiv.innerHTML = `
         <strong>${perguntaAtual.solido}</strong><br>
-        Volume: ${perguntaAtual.formula.volume}<br>
-        Área: ${perguntaAtual.formula.area}
+        ${perguntaAtual.formula.volume ? `${perguntaAtual.formula.volume}<br>` : ''}
+        ${perguntaAtual.formula.area ? `${perguntaAtual.formula.area}<br>` : ''}
+        ${perguntaAtual.formula.circunferencia ? `${perguntaAtual.formula.circunferencia}<br>` : ''}
+        ${perguntaAtual.formula.areaLateral ? `${perguntaAtual.formula.areaLateral}<br>` : ''}
+        ${perguntaAtual.formula.areaTotal ? `${perguntaAtual.formula.areaTotal}<br>` : ''}
+        ${perguntaAtual.formula.diagonal ? `${perguntaAtual.formula.diagonal}<br>` : ''}
+        ${perguntaAtual.formula.perimetro ? `${perguntaAtual.formula.perimetro}<br>` : ''}
     `;
     dadosDiv.innerText = perguntaAtual.dados;
     imagemSolido.src = perguntaAtual.imagem;
 
+    // Limpar o input de resultado e esconder a tela de game over
     resultadoInput.value = "";
     gameOverScreen.classList.add("hidden");
 
+    // Reiniciar o cronômetro
     stopTimer();
     startTimer();
 }
+
 
 // Verificar a resposta
 document.getElementById('submit-btn').addEventListener('click', () => {
