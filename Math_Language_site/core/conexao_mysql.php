@@ -6,7 +6,7 @@
         $banco = 'math_language';
         $port = 3308; //3308 é do edu
         $usuario = 'root';
-        $senha = '';
+        $senha = 'DIno2626';
         $conexao = mysqli_connect($servidor, $usuario, $senha, $banco, $port);
 
         //ERRO DE CONEXAO
