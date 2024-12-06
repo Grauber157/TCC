@@ -199,3 +199,79 @@ h1 {
 .hidden {
     display: none;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Reduz o tamanho do container */
+    .container {
+        width: 90%; /* Tamanho menor */
+        padding: 15px;
+        margin: 0 auto; /* Centraliza o container */
+        margin-bottom: 20px;
+    }
+
+    /* Botões de controle e área de resposta (empilhados) */
+    .controls,
+    .buttons {
+        flex-direction: column; /* Empilha os botões */
+        gap: 15px; /* Espaçamento entre os botões */
+        width: 94%;
+    }
+
+    .controls button,
+    .info-btn {
+        width: 100%; /* Botões ocupando toda a largura do container */
+        font-size: 1.2rem; /* Tamanho maior dos botões */
+        height: 50px; /* Ajuste de altura */
+    }
+
+    .display-area {
+        width: 100%; /* Área de exibição ocupa toda a largura */
+        font-size: 1.2rem; /* Tamanho do texto ajustado */
+        margin-top: 200px;
+        padding: 10px;
+    }
+
+    .input-section {
+        flex-direction: column; /* Empilha os botões */
+    }
+
+    /* Botão de envio (fica embaixo da área de resposta) */
+    .submit-btn {
+        width: 115%;
+        height: 50px; /* Altura do botão */
+        font-size: 1.2rem;
+    }
+    
+    /* Ajustando o teclado para grid 4x5 */
+    .keyboard {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+        grid-template-rows: repeat(5, 2fr); /* 5 linhas */
+        gap: 2px; /* Espaçamento entre os botões */
+        width: 90%;
+        margin: 0 auto; 
+    }
+
+    /* Estilo dos botões do teclado */
+    #k {
+        font-size: 1.2rem;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Botão ⌫ ocupando 4 colunas */
+    .delete {
+        grid-column: span 4; /* Cobre 4 colunas */
+    }
+
+    /* Ajustando os botões de digitação para cobrir o espaço */
+    .keyboard button {
+        width: 100%; /* Cada botão ocupa toda a largura da célula */
+        height: 50px; /* Aumenta a altura */
+        font-size: 1.2rem;
+    }
+}

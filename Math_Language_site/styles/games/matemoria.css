@@ -1,11 +1,11 @@
-/* Reset básico */
+/* Reset básico para garantir margem e preenchimento padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Corpo do site */
+/* Estilização básica do corpo, centralizando o conteúdo */
 body {
     display: flex;
     justify-content: center;
@@ -15,103 +15,105 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Container principal */
+/* Container principal do jogo */
 .game-container {
     text-align: center;
-    width: 90%;
-    max-width: 600px;
 }
 
-/* Título */
+/* Título do jogo */
 h1 {
     color: white;
     margin-bottom: 20px;
 }
 
-/* Controles */
+/* Controle dos botões e temporizador */
 .controls {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     align-items: center;
     color: #fff;
-    flex-wrap: wrap; /* Permite que os elementos se ajustem em dispositivos menores */
 }
 
-/* Botões */
+/* Estilização dos botões de reiniciar e voltar */
 button {
     padding: 10px 20px;
     background-color: #6c2d91;
     color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    margin: 5px;
 }
 
+/* Mudança de cor do botão ao passar o mouse */
 button:hover {
     background-color: #4d2d61;
 }
 
-/* Timer */
+/* Estilização do temporizador */
 #timer {
     font-size: 1.2rem;
-    flex: 1 100%; /* Garante que o timer ocupe toda a largura quando necessário */
-    text-align: center;
 }
 
-/* Grade de cartas */
+/* Estilização da grade de cartas, criando uma grade de 4x4 */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 140px);
+    gap: 20px;
     justify-content: center;
 }
 
-/* Cartas */
+/* Estilização das cartas do jogo */
 .card {
-    width: 70px;
-    height: 100px;
+    width: 100px;
+    height: 140px;
     background-color: #6c2d91;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.6s;
+    transition: transform 0.6s; /* Suave rotação da carta */
     transform-style: preserve-3d;
-    perspective: 1000px;
+    perspective: 1000px; /* Dando uma perspectiva 3D */
     position: relative;
 }
 
-/* Oculta o conteúdo até virar */
+/* Oculta o conteúdo da carta até que ela seja virada */
 .card span {
     backface-visibility: hidden;
     position: absolute;
+    transform: rotateY(180deg); /* O conteúdo fica escondido até que a carta vire */
+}
+
+/* Quando a carta é virada, ela gira no eixo Y */
+.card.flip {
     transform: rotateY(180deg);
 }
 
-/* Quando virada */
-.card.flip {
+/* Após virar, o conteúdo da carta fica visível */
+.card.flip span {
     transform: rotateY(180deg);
 }
 
 /* Cartas inativas */
 .card.inactive {
     background-color: #333;
-    cursor: default;
+    cursor: default; /* Remove o cursor de interação */
 }
 
-/* Fim do jogo */
+/* Mensagem de fim de jogo */
 #game-over {
     margin-top: 20px;
     color: #fff;
 }
 
+/* Esconde elementos, como a tela de game over */
 .hidden {
     display: none;
 }
@@ -119,7 +121,9 @@ button:hover {
 /* Responsividade */
 @media (max-width: 768px) {
     .grid {
-        gap: 10px;
+        gap: 5px;
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: repeat(4, 100px);    
     }
 
     .card {
@@ -128,9 +132,14 @@ button:hover {
         font-size: 0.8rem;
     }
 
-    button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+     .controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .controls button {
+        width: 100%;
     }
 
     #timer {
@@ -139,6 +148,11 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+    .grid {
+        gap: 5px;
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: repeat(4, 80px);    
+    }
     .card {
         width: 50px;
         height: 70px;
