@@ -162,7 +162,21 @@ body{
     padding: 0px;
     margin: 0px;
   }
+
+  .footer-content {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center;
+  }
+  
+  .footer-content div {
+    text-align: center; /* Centraliza os textos */
+  }
+  
+  .footer-content img {
+    margin-right: 10px;
+  }
 }
+
 @media (max-width: 360px) {
   header{
     flex-direction: column;
@@ -194,5 +208,17 @@ body{
   ul{
     padding: 0px;
     margin: 0px;
+  }
+  .footer-content p {
+    font-size: 0.85em;
+  }
+  
+  .footer-content img, .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .footer-content h3 {
+    font-size: 1.2em;
   }
 }
