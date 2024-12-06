@@ -76,16 +76,17 @@
 
         //ATUALIZA A TURMA NO BANCO 
         case 'atualizar':
-            #id para identificar a turma na tabela
-            $id = (int)$id;
             $dados = [
                 'nome_turma' => $nome,
-                'descricao_turma' => $descricao_turma,
+                'descricao_turma' => $descricao,
             ];
+            $retorno = Buscar('usuario', ['turma_codigo'], [['id', '=', $_SESSION['id']]]);
                 
-            $criterio = [['id', '-', $id]];
+            $criterio = [['codigo', '=', $retorno[0]['turma_codigo']]];
             #funcao atualiza
             Atualizar('turma', $dados, $criterio);
+            header('Location: ../pages/turma.php');
+            exit;
         break;
 
 

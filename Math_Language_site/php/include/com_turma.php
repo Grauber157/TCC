@@ -48,13 +48,14 @@
             <div class="turma-options">
                 <form action="../core/turma_repositorio.php" method="post">
                     <input type="hidden" name="acao" value="sair">
-                    <input type="submit" value="sair da turma">
+                    <input type="submit" value="Sair da Turma">
                 </form>
             
             <!-- Caso o usuario seja Administrador da turma, ele pode ter a opção de deletar a turma -->
             <?php
                 if($nome_turma[0]['administrador'] == $_SESSION['id'])
                 {
+                    echo '<form action="alterar_turma.php" method="post"><input type="hidden" name="acao" value="atualizar"><input type="submit" value="Alterar Dados da Turma"></form>';
                     echo '<form action="../core/turma_repositorio.php" method="post"><input type="hidden" name="acao" value="deletar"><input type="submit" value="Deletar Turma"></form>';
                 }
             ?>
