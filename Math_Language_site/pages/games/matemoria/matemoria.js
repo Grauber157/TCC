@@ -167,6 +167,13 @@
         lockBoard = false;
     }
 
+    function gameOver() {
+        stopTimer(); // Para o timer
+        const finalScore = "<?php echo $finalScore; ?>"; // Puxa a pontuação calculada no PHP
+        finalTimeDisplay.textContent = `${finalScore}`;
+        gameOverScreen.classList.remove('hidden');
+    }
+    
 
     // Embaralha as cartas
     function shuffle(array) {

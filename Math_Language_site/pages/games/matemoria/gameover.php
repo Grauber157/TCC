@@ -23,7 +23,7 @@ function gameOver($timeElapsed, $difficulty) {
             $penaltyPoints = 3;
             break;
         default:
-            $maxTime = 20; // Default para 'fácil'
+            $maxTime = 20; // Default para 'facil'
             $penaltyInterval = 15;
             $maxScore = 10;
             $penaltyPoints = 1;
