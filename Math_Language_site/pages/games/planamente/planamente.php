@@ -7,30 +7,10 @@
 </head>
 <body>
     <?php
-    // Verificar se a dificuldade foi passada pela URL
+    // Verificar se a dificuldade foi enviada
     if (isset($_POST['dificuldade'])) {
-        $dificuldade = $_POST['dificuldade'];
-
-        // Carregar o script correspondente ao nível escolhido
-        switch ($dificuldade) {
-            case 'facil':
-                include 'funcoes/interface.php';
-                //include 'funcoes/facil.php';
-                break;
-
-            case 'medio':
-              include 'funcoes/interface.php';
-              //include 'funcoes/medio.php';
-              break;
-
-            case 'dificil':
-              include 'funcoes/interface.php';
-              //include 'funcoes/dificil.php';
-              break;
-
-            default:
-                echo "<h1>Dificuldade não reconhecida</h1>";
-        }
+        $dificuldade = $_POST['dificuldade']; // Receber dificuldade via POST
+        include 'interface.php'; // Carregar interface
     } else {
         echo "<h1>Nenhuma dificuldade selecionada</h1>";
     }

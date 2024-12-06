@@ -1,35 +1,32 @@
-// Array de perguntas
-const perguntas = [
+// Arrays de perguntas por nível
+const perguntasF = [
     {
         solido: "Cubo",
-        formula: {
-            volume: "V = a³",
-            area: "A = 6a²",
-        },
+        formula: { volume: "V = a³", area: "A = 6a²" },
         dados: "Aresta (a) = 5",
         imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/cubo.png",
-        resposta: 125 // Resposta correta
+        resposta: 125,
     },
+];
+
+const perguntasM = [
     {
-        solido: "Esfera",
-        formula: {
-            volume: "V = (4/3)πr³",
-            area: "A = 4πr²",
-        },
-        dados: "Raio (r) = 3",
-        imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/esfera.png",
-        resposta: (4 * Math.PI * Math.pow(3, 2)).toFixed(2) // Resposta correta
+        solido: "Cone",
+        formula: { volume: "V = (1/3)πr²h", area: "A = πr(r + l)" },
+        dados: "Raio (r) = 4, Altura (h) = 7",
+        imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/cone.png",
+        resposta: (1 / 3 * Math.PI * Math.pow(4, 2) * 7).toFixed(2),
     },
+];
+
+const perguntasD = [
     {
-        solido: "Cilindro",
-        formula: {
-            volume: "V = πr²h",
-            area: "A = 2πr(r + h)",
-        },
-        dados: "Raio (r) = 2, Altura (h) = 5",
-        imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/cilindro.png",
-        resposta: (Math.PI * Math.pow(2, 2) * 5).toFixed(2) // Resposta correta
-    }
+        solido: "Tetraedro",
+        formula: { volume: "V = (1/6) * a³ * √2", area: "A = √3 * a²" },
+        dados: "Aresta (a) = 6",
+        imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/tetraedro.png",
+        resposta: (1 / 6 * Math.pow(6, 3) * Math.sqrt(2)).toFixed(2),
+    },
 ];
 
 // Elementos HTML
@@ -41,13 +38,13 @@ const timerDisplay = document.getElementById('timer');
 const gameOverScreen = document.getElementById('game-over');
 const finalTimeDisplay = document.getElementById('final-time');
 
-let timer; // Referência do cronômetro
-let timeElapsed = 0; // Tempo decorrido
-let perguntaAtual; // Armazena a pergunta atual
+let timer;
+let timeElapsed = 0;
+let perguntaAtual;
 
 // Função para iniciar o timer
 function startTimer() {
-    timeElapsed = 0; // Zera o tempo
+    timeElapsed = 0;
     timer = setInterval(() => {
         timeElapsed++;
         timerDisplay.textContent = `Tempo: ${timeElapsed}s`;
@@ -59,12 +56,27 @@ function stopTimer() {
     clearInterval(timer);
 }
 
-// Carregar uma pergunta
+// Função para carregar perguntas de acordo com a dificuldade
 function carregarPergunta() {
-    const index = Math.floor(Math.random() * perguntas.length);
-    perguntaAtual = perguntas[index]; // Salva a pergunta atual
+    let perguntasSelecionadas;
 
-    // Atualizar o HTML
+    switch (dificuldade) {
+        case 'facil':
+            perguntasSelecionadas = perguntasF;
+            break;
+        case 'medio':
+            perguntasSelecionadas = perguntasM;
+            break;
+        case 'dificil':
+            perguntasSelecionadas = perguntasD;
+            break;
+        default:
+            perguntasSelecionadas = perguntasF;
+    }
+
+    const index = Math.floor(Math.random() * perguntasSelecionadas.length);
+    perguntaAtual = perguntasSelecionadas[index];
+
     formulaDiv.innerHTML = `
         <strong>${perguntaAtual.solido}</strong><br>
         Volume: ${perguntaAtual.formula.volume}<br>
@@ -73,13 +85,9 @@ function carregarPergunta() {
     dadosDiv.innerText = perguntaAtual.dados;
     imagemSolido.src = perguntaAtual.imagem;
 
-    // Limpar input de resposta
     resultadoInput.value = "";
-
-    // Ocultar mensagem de game over
     gameOverScreen.classList.add("hidden");
 
-    // Reiniciar o cronômetro
     stopTimer();
     startTimer();
 }
@@ -90,33 +98,17 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     const respostaCorreta = parseFloat(perguntaAtual.resposta);
 
     if (respostaUsuario === respostaCorreta) {
-        stopTimer(); // Para o cronômetro
-        const pontos = Math.max(30 - timeElapsed, 0); // Cálculo da pontuação
-
-        // Exibir mensagem de sucesso com a pontuação
-        finalTimeDisplay.textContent = pontos; 
-        gameOverScreen.classList.remove("hidden"); // Exibe o elemento
-
-        setTimeout(carregarPergunta, 3000); // Carrega próxima pergunta após 3 segundos
+        stopTimer();
+        const pontos = Math.max(30 - timeElapsed, 0);
+        finalTimeDisplay.textContent = pontos;
+        gameOverScreen.classList.remove("hidden");
+        setTimeout(carregarPergunta, 3000);
     } else {
         alert("Resposta incorreta. Tente novamente.");
     }
 });
 
-// Função para reiniciar o jogo
-function reiniciarJogo() {
-    window.location.reload(); // Recarrega a página
-}
-
-// Função para voltar à página inicial
-function voltarPagina() {
-    window.location.href = '../../games.php';
-}
-
-// Configurar o estado inicial da div
+// Configurar a página inicial
 document.addEventListener("DOMContentLoaded", () => {
-    gameOverScreen.classList.add("hidden");
+    carregarPergunta();
 });
-
-// Carregar a primeira pergunta ao iniciar a página
-carregarPergunta();
