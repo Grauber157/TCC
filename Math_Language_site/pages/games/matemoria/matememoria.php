@@ -1,5 +1,5 @@
 <?php
-//include 'gameover.php'; // Inclua o arquivo com a função gameOver
+include 'gameover.php'; // Inclua o arquivo com a função gameOver
 
 // Verifica o nível de dificuldade e o tempo (exemplo fictício)
 $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil';
