@@ -15,7 +15,7 @@
     </script>
 </head>
 <body class="<?= $dificuldade ?>">
-    <h1>Planamente Espacial - Dificuldade: <?= ucfirst($dificuldade) ?></h1>
+    <h1>Planamente Espacial</h1>
     <div class="controls">
         <button onclick="reiniciarJogo()">Reiniciar Jogo</button>
         <button onclick="voltarPagina()">Voltar</button>
@@ -49,5 +49,16 @@
     </div>
 
     <script src="planamente.js"></script>
+    <script>
+        function reiniciarJogo() {
+        // Lógica para reiniciar o jogo
+        window.location.reload();
+        }
+  
+        function voltarPagina() {
+        // Redireciona para a página inicial
+        window.location.href = '../../games.php';
+        }
+    </script>
 </body>
 </html>
