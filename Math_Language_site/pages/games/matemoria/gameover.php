@@ -1,11 +1,9 @@
 <?php
-// gameover.php
-
 function gameOver($timeElapsed, $difficulty) {
-    // Configurações baseadas no nível de dificuldade
+    // Parâmetros baseados no nível de dificuldade
     switch ($difficulty) {
         case 'facil':
-            $maxTime = 20;
+            $maxTime = 2;
             $penaltyInterval = 15;
             $maxScore = 10;
             $penaltyPoints = 1;
@@ -30,11 +28,11 @@ function gameOver($timeElapsed, $difficulty) {
             break;
     }
 
-    // Cálculo da pontuação
+    // Calculando o tempo excedente
     $finalScore = max(
-        0,
+        0, 
         $maxScore - floor(max(0, $timeElapsed - $maxTime) / $penaltyInterval) * $penaltyPoints
-    );
+    );    
 
     return $finalScore;
 }
