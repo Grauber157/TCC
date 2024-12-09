@@ -1,12 +1,17 @@
 <?php
-include 'gameover.php'; // Inclua o arquivo com a função gameOver
+    session_start();
+    include 'gameover.php'; // Inclua o arquivo com a função gameOver
+    require_once '../../../core/sql.php';
+    require_once '../../../core/mysql.php';
 
-// Verifica o nível de dificuldade e o tempo (exemplo fictício)
-$difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil';
-$timeElapsed = isset($_POST['tempo']) ? intval($_POST['tempo']) : 0;
+    // Verifica o nível de dificuldade e o tempo (exemplo fictício)
+    $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil';
+    $timeElapsed = isset($_POST['tempo']) ? intval($_POST['tempo']) : 0;
 
-// Calcula a pontuação final
-$finalScore = gameOver($timeElapsed, $difficulty);
+    // Calcula a pontuação final
+    $finalScore = gameOver($timeElapsed, $difficulty);
+
+    
 ?>
 
 <!DOCTYPE html>
