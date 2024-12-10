@@ -15,7 +15,7 @@
     <link href="../styles/cabeça.css" rel="stylesheet">
     <link href="../styles/fonts.css" rel="stylesheet">
     <link href="../styles/media.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/cont.css">
+    <link rel="stylesheet" href="../styles/games.css">
     <link rel="shortcut icon" type="imagex/png" href="../Material/images/favicon.ico">
     <title>Math Language - Conteúdos</title>
   </head>

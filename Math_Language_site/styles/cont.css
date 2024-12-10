@@ -1,10 +1,5 @@
-.game-container{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 15px;
-  }
-  .game-section {
-    width: 50%;
+main {
+    width: 80vw;
     padding: 20px;
     background-color: #252852ca;
     border-radius: 15px;
@@ -13,42 +8,8 @@
     margin: 20px auto;
     transition: transform 0.3s;
   }
-  .game-section:hover {
-    transform: translateY(-10px);
-  }
-  
-  .image-container {
-    position: relative;
-  }
-  
-  .game-image {
-    width: 90%;
-    height: auto;
-    border-radius: 15px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .enlarged .game-image {
-    transform: scale(1.2);
-  }
-  
-  .game-title {
-    font-size: 1.5em;
-    margin: 15px 0 10px;
-    color: white;
-    transition: color 0.3s;
-  }
-  
-  .game-description {
-    font-size: 1em;
-    color: white;
-    transition: color 0.3s;
-  }
-  
-  .game-section:hover .game-title {
-    color: whitesmoke;
-  }
-  
-  .game-section:hover .game-description {
-    color: whitesmoke;
+
+  p{
+    text-align: left;
+    font-size: 2rem;
   }

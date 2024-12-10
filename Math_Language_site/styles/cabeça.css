@@ -2,13 +2,16 @@ body{
     background-color: rgb(25, 28, 53);
     color: white;
     font-family: poppinsregular;
-    max-width: 74vw;
+    max-width: 80vw;
     margin: 0 auto;
     padding: 15px;
     background-image: url('../Material/images/bgcerto.png');
     background-size: cover; /* Faz a imagem cobrir toda a área do body */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita a repetição da imagem */
+  }
+  body h1{
+    text-align: center;
   }
   /* cabecalho do site [all pages] */
   header{
@@ -175,6 +178,7 @@ body{
   .footer-content img {
     margin-right: 10px;
   }
+  
 }
 
 @media (max-width: 360px) {
@@ -195,13 +199,12 @@ body{
   /* barra de enderecos (lista) */
   li{
     display: inline-block;
-    margin: 5px;
+    margin: 3px;
   }
   /*  barra de enderecos (hyperlinks)*/
   a{
     color: white;
     border: none;
-    font-size: 10px;
     margin: 0px;
     padding: 0px;
   }
