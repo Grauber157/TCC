@@ -1,4 +1,4 @@
-main {
+aside {
     width: 80vw;
     padding: 20px;
     background-color: #252852ca;
@@ -9,7 +9,11 @@ main {
     transition: transform 0.3s;
   }
 
-  p{
+  aside p{
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  img{
+    width: 20%;
+    border-radius: 10px
   }
