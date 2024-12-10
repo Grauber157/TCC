@@ -9,7 +9,7 @@ const perguntasF = [
             area: "A = 6a²" 
         },
         dados: "Um cubo mágico tem aresta (a) = 2 cm. Qual o volume dele?",
-        imagem: "URL/IMAGEM_CUBO",
+        imagem: "imagens/cubo.png",
         resposta: 8,
     },
     {
@@ -19,7 +19,7 @@ const perguntasF = [
             area: "A = 2(ab + ac + bc)" 
         },
         dados: "Uma caixa tem comprimento = 4 cm, largura = 3 cm e altura = 2 cm. Qual o volume da caixa?",
-        imagem: "URL/IMAGEM_PARALELEPIPEDO",
+        imagem: "imagens/paralelepipedo.png",
         resposta: 24,
     },
     {
@@ -29,7 +29,7 @@ const perguntasF = [
             area: "A = 4πr²" 
         },
         dados: "Uma bola de futebol tem raio (r) = 3 cm. Qual a área da superfície da bola? (Use π = 3,14)",
-        imagem: "URL/IMAGEM_ESFERA",
+        imagem: "imagens/esfera.png",
         resposta: (4 * 3.14 * Math.pow(3, 2)).toFixed(2),
     },
     {
@@ -39,7 +39,7 @@ const perguntasF = [
             area: "A = base + área lateral" 
         },
         dados: "Uma pirâmide tem base = 9 cm² e altura = 6 cm. Qual o volume dela?",
-        imagem: "URL/IMAGEM_PIRAMIDE",
+        imagem: "imagens/piramide.png",
         resposta: 18,
     },
     {
@@ -49,7 +49,7 @@ const perguntasF = [
             area: "A = πr(r + l)" 
         },
         dados: "Um cone de sorvete tem raio (r) = 2 cm e altura (h) = 6 cm. Qual o volume dele? (Use π = 3,14)",
-        imagem: "URL/IMAGEM_CONE",
+        imagem: "imagens/cone.png",
         resposta: ((1 / 3) * 3.14 * Math.pow(2, 2) * 6).toFixed(2),
     },
     // Crie perguntas parecidas para completar as 15 fáceis
@@ -65,7 +65,7 @@ const perguntasM = [
             area: "A = 2πr(h + r)" 
         },
         dados: "Qual a área lateral de um cilindro com raio (r) = 4 e altura (h) = 8?",
-        imagem: "URL/IMAGEM_CILINDRO",
+        imagem: "imagens/cilindro.png",
         resposta: (2 * Math.PI * 4 * 8).toFixed(2),
     },
     {
@@ -75,7 +75,7 @@ const perguntasM = [
             area: "A = πr(r + l)" 
         },
         dados: "Qual o volume de um cone com raio (r) = 3 e altura (h) = 7?",
-        imagem: "URL/IMAGEM_CONE",
+        imagem: "imagens/cone.png",
         resposta: ((1 / 3) * Math.PI * Math.pow(3, 2) * 7).toFixed(2),
     },
     {
@@ -85,7 +85,7 @@ const perguntasM = [
             area: "A = Ab + Al" 
         },
         dados: "Qual o volume de uma pirâmide com base (Ab) = 10 e altura (h) = 9?",
-        imagem: "URL/IMAGEM_PIRAMIDE",
+        imagem: "imagens/piramide.png",
         resposta: (1 / 3 * 10 * 9).toFixed(2),
     },
     // (Adicione mais 12 perguntas similares para o nível médio...)
@@ -157,19 +157,6 @@ const perguntasD = [
         dados: "Um cubo tem aresta (a) = 3 cm. Utilize π = 3,14. Primeiramente, calcule o volume do cubo. Depois, use esse valor para calcular a área e, por fim, calcule o perímetro do cubo.",
         imagem: "imagens/cubo.png",
         resposta: 54,  // Resultado final arredondado para um número inteiro
-    },
-
-    //Pergunta 6
-    {
-        solido: "Tetraedro",
-        formula: { 
-            volume: "V = (1/6)a³√2",
-            area: "A = √3a²",
-            perimetro: "P = 6a"
-        },
-        dados: "Um tetraedro tem aresta (a) = 5 cm. Utilize π = 3,14. Primeiramente, calcule o volume do tetraedro. Depois, use esse valor para calcular a área do tetraedro e, por fim, calcule o perímetro do tetraedro.",
-        imagem: "URL/IMAGEM_TETRAEDRO",
-        resposta: 43,  // Resultado final arredondado para um número inteiro
     },
 
     //Adicionar até 15 prompts
