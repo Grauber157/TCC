@@ -2,7 +2,18 @@
 const cardValuesF = [
     { expression: '13', solution: '5+8' },
     { expression: '5+8', solution: '13' },
-
+    { expression: '0', solution: '9*0' },
+    { expression: '9*0', solution: '0' },
+    { expression: '3', solution: '21/7' },
+    { expression: '21/7', solution: '3' },
+    { expression: '21', solution: '7*3' },
+    { expression: '7*3', solution: '21' },
+    { expression: '-12', solution: '6-18' },
+    { expression: '6-18', solution: '-12' },
+    { expression: '12', solution: '24/2' },
+    { expression: '24/2', solution: '12' },
+    { expression: '0.5', solution: '1/2' },
+    { expression: '1/2', solution: '0.5' },
     { expression: '15', solution: '8+7' },
     { expression: '8+7', solution: '15' }
 ];
@@ -79,7 +90,7 @@ let timeElapsed = 0;
 function startTimer() {
     timer = setInterval(() => {
         timeElapsed++;
-        timerDisplay.textContent = 'Tempo: ${timeElapsed}s';
+        timerDisplay.textContent = `Tempo: ${timeElapsed}s`;
     }, 1000);
 }
 
@@ -92,7 +103,7 @@ function stopTimer() {
 function createCard(value) {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML = <span>${value.expression}</span>;
+    card.innerHTML = `<span>${value.expression}</span>`;
     card.dataset.solution = value.solution;
     card.addEventListener('click', flipCard);
     grid.appendChild(card);
@@ -156,11 +167,51 @@ function resetBoard() {
     lockBoard = false;
 }
 
-// Para o jogo
+// Cálculo da pontuação -> 20s tempo para os 10 pontos, diminui a cada 10s no 'facil'
 function gameOver() {
     stopTimer(); // Para o timer
     gameOverScreen.classList.remove('hidden'); // Exibe a tela de fim de jogo
+
+    // Parâmetros baseados no nível de dificuldade
+    let maxTime, penaltyInterval, maxScore, penaltyPoints;
+    switch (selectedDifficulty) {
+        case 'facil':
+            maxTime = 20;
+            penaltyInterval = 15;
+            maxScore = 10;
+            penaltyPoints = 1;
+            break;
+        case 'medio':
+            maxTime = 20;
+            penaltyInterval = 10;
+            maxScore = 20;
+            penaltyPoints = 2;
+            break;
+        case 'dificil':
+            maxTime = 20;
+            penaltyInterval = 5;
+            maxScore = 30;
+            penaltyPoints = 3;
+            break;
+        default:
+            maxTime = 20; // Default para 'fácil'
+            penaltyInterval = 15;
+            maxScore = 10;
+            penaltyPoints = 1;
+            break;
+    }
+
+    // Cálculo da pontuação
+    const finalScore = Math.max(
+        0, 
+        maxScore - Math.floor(Math.max(0, timeElapsed - maxTime) / penaltyInterval) * penaltyPoints
+    );
+
+    // Exibindo a pontuação final
+    finalTimeDisplay.textContent = `${finalScore}`;
 }
+
+
 
 // Embaralha as cartas
 function shuffle(array) {

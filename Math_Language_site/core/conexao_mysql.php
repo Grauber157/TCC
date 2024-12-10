@@ -4,9 +4,9 @@
     {
         $servidor = 'localhost';
         $banco = 'math_language';
-        $port = 3306; //3308 é do edu
+        $port = 3308; //3308 é do edu
         $usuario = 'root';
-        $senha = '';
+        $senha = 'DIno2626'; //Senha mudade pelo edu
         $conexao = mysqli_connect($servidor, $usuario, $senha, $banco, $port);
 
         //ERRO DE CONEXAO
