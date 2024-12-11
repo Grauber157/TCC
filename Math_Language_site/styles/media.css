@@ -21,8 +21,9 @@
         align-self: center;
     }
 
-    img{
-        display: none;
+    img {
+        display: block;  /* Certifica que as imagens sejam exibidas */
+        height: auto;  /* Mantém a proporção das imagens */
     }
 
     ul{
