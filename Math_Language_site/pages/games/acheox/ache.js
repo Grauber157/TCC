@@ -259,8 +259,6 @@ const promptsD = [
     },
 ];
 
-
-
 // Variáveis globais
 let currentLevel = 1; // Nível inicial
 let totalTime = 0;  // Tempo total em segundos (iniciado em 0)
@@ -318,13 +316,17 @@ btn3.addEventListener('click', () => {
 // Verifica a resposta do jogador
 submitBtn.addEventListener('click', () => {
     const resposta = responseInput.value.trim();
-    if (resposta === prompts[currentPrompt].resposta) {
+    
+    // Verifica se a resposta está correta (agora acessando currentPrompts)
+    if (resposta === currentPrompts[currentPrompt].resposta) {
         nextLevel(); // Avança para o próximo nível
     } else {
-        alert("Resposta incorreta. Tente novamente!");
+        alert("Resposta incorreta. Tente novamente!"); // Alerta de resposta incorreta
     }
-    responseInput.value = ""; // Limpa o campo
+    
+    responseInput.value = ""; // Limpa o campo de resposta
 });
+
 
 // Captura o teclado virtual
 const keyboardButtons = document.querySelectorAll('.keyboard button');
@@ -344,14 +346,31 @@ keyboardButtons.forEach(button => {
     });
 });
 
+// Função para calcular a pontuação baseada no tempo
+function calculateScore() {
+    let score = 0;
+
+    // Se o tempo for menor que 30 segundos, o jogador ganha 10 pontos
+    if (totalTime < 30) {
+        score = 10;
+    } else {
+        // A cada 15 segundos acima de 30, perde 1 ponto
+        const extraTime = totalTime - 30;
+        const penalty = Math.floor(extraTime / 15);
+        score = Math.max(10 - penalty, 0);  // Garante que a pontuação não seja negativa
+    }
+
+    return score;
+}
+
 // Função para finalizar o jogo
 function gameOver() {
     clearInterval(timerInterval); // Para o cronômetro
     gameOverScreen.classList.remove('hidden'); // Exibe a tela de fim de jogo
-    document.getElementById('final-time').textContent = `${totalTime}`; // Exibe o tempo final
-    //Envia valor para o PHP
-    const valor = totalTime;
-    document.getElementById('pontuacao').value = valor;
+    document.getElementById('final-time').textContent = `${score}`; // Exibe o tempo final
+
+    // Envia valor para o PHP
+    document.getElementById('pontuacao').value = score; // Passa a pontuação para o backend
 }
 
 // Inicia o jogo assim que a página carrega
