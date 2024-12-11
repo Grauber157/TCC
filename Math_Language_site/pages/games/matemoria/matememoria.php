@@ -36,7 +36,6 @@
 
             <form action="gameover.php" method="post">
                 <input type="hidden" name="pontuacao" id="pontuacao">
-                <input type="hidden" name="acao" value="">
                 <input type="submit" value="Terminar">
             </form>
 

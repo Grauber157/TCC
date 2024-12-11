@@ -208,6 +208,8 @@ function endGame() {
 
     document.getElementById('final-time').innerText = score;
     document.getElementById('game-over').classList.remove('hidden'); // Mostra a tela de "game-over"
+    const valor = score;
+    document.getElementById('pontuacao').value = valor;
 }
 
 // Adiciona eventos aos botões
