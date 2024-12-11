@@ -1,6 +1,9 @@
 <?php
-// Verifica o nível de dificuldade selecionado (por exemplo, via GET)
-$difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; // Default: 'easy'
+    session_start();
+    // Verifica o nível de dificuldade selecionado (por exemplo, via GET)
+    $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; // Default: 'easy'
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +32,19 @@ $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; //
         <div class="grid">
             <!-- Cartas do jogo, cada uma com um valor único -->
         </div>
+
         <div id="game-over" class="hidden">
-            <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
+            <!-- <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2> -->
+
+            <form action="gameover.php" method="post">
+                <input type="hidden" name="pontuacao" id="pontuacao">
+                <input type="submit" value="Terminar">
+            </form>
+
+            <script src="script.js"></script>
+
         </div>
+
     </div>
 
     <script>

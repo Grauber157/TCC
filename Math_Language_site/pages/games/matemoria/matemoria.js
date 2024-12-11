@@ -1,3 +1,5 @@
+export default finalScore;
+
 // Listas de cartas para cada dificuldade
 const cardValuesF = [
     { expression: '13', solution: '5+8' },
@@ -87,7 +89,8 @@ let timer;
 let timeElapsed = 0;
 
 // Função para iniciar o timer
-function startTimer() {
+function startTimer() 
+{
     timer = setInterval(() => {
         timeElapsed++;
         timerDisplay.textContent = `Tempo: ${timeElapsed}s`;
@@ -202,16 +205,13 @@ function gameOver() {
     }
 
     // Cálculo da pontuação
-    const finalScore = Math.max(
-        0, 
-        maxScore - Math.floor(Math.max(0, timeElapsed - maxTime) / penaltyInterval) * penaltyPoints
-    );
+    const finalScore = Math.max(0, maxScore - Math.floor(Math.max(0, timeElapsed - maxTime) / penaltyInterval) * penaltyPoints);
 
     // Exibindo a pontuação final
     finalTimeDisplay.textContent = `${finalScore}`;
+
+    
 }
-
-
 
 // Embaralha as cartas
 function shuffle(array) {
@@ -230,3 +230,4 @@ function startGame() {
 
 // Inicia o jogo automaticamente
 document.addEventListener('DOMContentLoaded', startGame);
+
