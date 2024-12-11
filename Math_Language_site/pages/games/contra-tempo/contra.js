@@ -81,26 +81,20 @@ const promptsD = [
     { question: 'x^2 - 4x + 3 = 0', answer: 3 }
 ];
 
-// Função para carregar perguntas de acordo com a dificuldade
-function carregarPergunta() {
-    let promptsSelecionados;
-
-    switch (dificuldade) {
-        case 'facil':
-            promptsSelecionados = promptsF;
-            break;
-        case 'medio':
-            promptsSelecionados = promptsM;
-            break;
-        case 'dificil':
-            promptsSelecionados = promptsD;
-            break;
-        default:
-            promptsSelecionados = promptsF;
-    }
-
-    const index = Math.floor(Math.random() * promptsSelecionados.length);
-    perguntaAtual = promptsSelecionados[index];
+// Escolhe a lista com base na dificuldade selecionada no PHP
+let selectedPrompts;
+switch (selectedDifficulty) {
+    case 'facil':
+        selectedPrompts = promptsF;
+        break;
+    case 'medio':
+        selectedPrompts = promptsM;
+        break;
+    case 'dificil':
+        selectedPrompts = promptsD;
+        break;
+    default:
+        selectedPrompts = promptsF; // Default para 'easy'
 }
 
 // Variáveis globais do jogo
