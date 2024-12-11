@@ -79,7 +79,7 @@ session_start();
       </div>
       <h3 class="game-title">Planamente Espacial</h3>
       <p class="game-description">Você é desafiado a explorar formas 3D e calcular suas medidas, teste suas habilidades
-        matemáticas enquanto desvenda as propriedades espaciais de cada figura.</p>
+        matemáticas enquanto desvenda as propriedades espaciais de cada figura. Lembre-se de responder com valores inteiros aproximados!</p>
     </div>
 
     <!--ACHE O X-->
