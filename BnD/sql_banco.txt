@@ -1,5 +1,3 @@
-//CODIGO//
-
 CREATE DATABASE math_language;
 USE math_language;
 
@@ -46,6 +44,8 @@ CREATE TABLE IF NOT EXISTS turma (
   INSERT INTO jogos(id, nome_jogo) VALUES('2', 'Contra-Tempo');
   INSERT INTO jogos(id, nome_jogo) VALUES('3', 'Planamente Espacial');
   INSERT INTO jogos(id, nome_jogo) VALUES('4', 'Ache o X');
+
+
 
 
 //COMANDOS//

@@ -74,7 +74,19 @@
     <aside class="form-flex">
         <div class="form-container">
             <p class="title">Opções da conta</p>
-            <a href="http://localhost/TCC/Math_Language_site/php/include/logout.php"><li>Desconectar</li></a>
+            <!-- <a href="http://localhost/TCC/Math_Language_site/php/include/logout.php"><li>Desconectar</li></a> -->
+            <li>
+                <form action="../core/usuario_repositorio.php" method="post">
+                    <input type="hidden" name="acao" value="logout">
+                    <input type="submit" value="Desconectar">
+                </form>
+            </li>
+            <li>
+                <form action="../core/usuario_repositorio.php" method="post">
+                    <input type="hidden" name="acao" value="deletar">
+                    <input type="submit" value="Deletar Conta">
+                </form>
+            </li>
         </div>
     </aside>
     </main>
