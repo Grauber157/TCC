@@ -550,6 +550,10 @@ function concluirNivel() {
     const pontosGanhos = Math.max(0, pontos - (tentativas - 3) * 2);
     gameOverScreen.classList.remove('hidden');
     finalTimeDisplay.textContent = `${pontosGanhos}`;
+    
+    // Envia os valores para o PHP
+    const valor = pontosGanhos;
+    document.getElementById('pontuacao').value = valor;
 
     // Atualizar o nível e verificar se já completou todos os níveis
     if (nivelAtual < 3) {
