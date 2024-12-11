@@ -47,7 +47,7 @@
     </script>
 
     <script src="contra.js"></script>
-    
+
     <script>
         function reiniciarJogo() {
             window.location.reload();
