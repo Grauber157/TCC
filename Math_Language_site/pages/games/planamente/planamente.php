@@ -15,17 +15,14 @@
         switch ($dificuldade) {
             case 'facil':
                 include 'funcoes/interface.php';
-                include 'funcoes/facil.php';
                 break;
 
             case 'medio':
               include 'funcoes/interface.php';
-              include 'funcoes/medio.php';
               break;
 
             case 'dificil':
               include 'funcoes/interface.php';
-              include 'funcoes/dificil.php';
               break;
 
             default:
