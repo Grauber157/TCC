@@ -81,8 +81,24 @@ const promptsD = [
     { question: 'x^2 - 4x + 3 = 0', answer: 3 }
 ];
 
+// Escolhe a lista com base na dificuldade selecionada no PHP
+let selectedPrompts;
+switch (selectedDifficulty) {
+    case 'facil':
+        selectedPrompts = promptsF;
+        break;
+    case 'medio':
+        selectedPrompts = promptsM;
+        break;
+    case 'dificil':
+        selectedPrompts = promptsD;
+        break;
+    default:
+        selectedPrompts = promptsF; // Default para 'easy'
+}
+
 let level = 1; // Nível inicial
-let startTime; // Tempo inicial do jogo
+let startTime = new Date().getTime(); // Marca o tempo de início
 let interval; // Controle do cronômetro
 let currentPrompt; // Armazena o prompt atual
 let score = 0; // Pontuação inicial
@@ -91,23 +107,21 @@ let isProcessing = false; // Variável para evitar múltiplos cliques
 // Função para iniciar o jogo
 function startGame() {
     level = 1;
-    score = 0; // Reseta a pontuação ao iniciar o jogo
+    score = 0; // Reseta a pontuação ao reiniciar o jogo
     updateLevel(level);
-    startTime = new Date().getTime();
-    startTimer();
-    generateQuestion();
+    generateQuestion(); // Gera a primeira pergunta
     clearResult();
-    document.getElementById('game-over').classList.add('hidden'); // Garante que a div game-over comece oculta
+    document.getElementById('game-over').classList.add('hidden'); // Esconde a tela de "game-over"
 }
 
-// Atualiza o nível na tela
+// Função para atualizar o nível na tela
 function updateLevel(level) {
     document.getElementById('level').innerText = level;
 }
 
-// Exibe o próximo prompt
+// Função para gerar perguntas
 function generateQuestion() {
-    currentPrompt = promptsF[level - 1];
+    currentPrompt = selectedPrompts[level - 1];
     document.getElementById('question').innerText = currentPrompt.question;
     generateOptions(currentPrompt.answer);
 }
@@ -124,57 +138,63 @@ function generateOptions(correctAnswer) {
 
 // Verifica se a resposta está correta
 function checkAnswer(selectedAnswer) {
-    if (isProcessing) return; // Impede múltiplos cliques
+    if (isProcessing) return; // Evita múltiplos cliques
     isProcessing = true;
 
     const resultElement = document.getElementById('result');
     const isCorrect = parseInt(selectedAnswer) === currentPrompt.answer;
 
     if (isCorrect) {
-        showSuccess(resultElement);
-        if (level < 10) {
+        showSuccess(resultElement); // Exibe mensagem de sucesso
+        if (level < 10) { // Avança para o próximo nível se houver mais níveis
             level++;
             updateLevel(level);
             setTimeout(() => {
                 clearResult();
                 generateQuestion();
-                isProcessing = false; // Libera cliques após o processamento
+                isProcessing = false;
             }, 1000);
         } else {
             endGame();
         }
     } else {
-        showFailure(resultElement);
+        showFailure(resultElement); // Exibe mensagem de erro
         setTimeout(() => {
             clearResult();
-            startGame(); // Reinicia o jogo após erro
-            isProcessing = false; // Libera cliques após o processamento
+            startGame(); // Reinicia o jogo sem zerar o cronômetro
+            isProcessing = false;
         }, 2000);
     }
 }
 
-// Exibe mensagem de sucesso
+// Inicia o cronômetro no carregamento da página
+function startTimer() {
+    interval = setInterval(() => {
+        const timeElapsed = Math.floor((new Date().getTime() - startTime) / 1000);
+        document.getElementById('timer').innerText = timeElapsed;
+    }, 1000);
+}
+
+// Funções auxiliares de exibição
 function showSuccess(element) {
     element.innerText = 'Correto!';
     element.classList.remove('fail');
     element.classList.add('success');
 }
 
-// Exibe mensagem de erro
 function showFailure(element) {
     element.innerText = 'Resposta errada, tente novamente!';
     element.classList.remove('success');
     element.classList.add('fail');
 }
 
-// Limpa a mensagem de resultado
 function clearResult() {
     const resultElement = document.getElementById('result');
     resultElement.innerText = '';
     resultElement.classList.remove('success', 'fail');
 }
 
-// Finaliza o jogo e calcula a pontuação
+// Finaliza o jogo
 function endGame() {
     clearInterval(interval);
     const totalTime = Math.floor((new Date().getTime() - startTime) / 1000);
@@ -186,23 +206,11 @@ function endGame() {
         score = Math.max(0, 10 - Math.floor((totalTime - 20) / 10)); // Perde 1 ponto a cada 10 segundos adicionais
     }
 
-    // Exibe a pontuação final
     document.getElementById('final-time').innerText = score;
-
-    // Exibe a div de "game-over"
-    document.getElementById('game-over').classList.remove('hidden');
+    document.getElementById('game-over').classList.remove('hidden'); // Mostra a tela de "game-over"
 }
 
-// Inicia o cronômetro
-function startTimer() {
-    clearInterval(interval);
-    interval = setInterval(() => {
-        const timeElapsed = Math.floor((new Date().getTime() - startTime) / 1000);
-        document.getElementById('timer').innerText = timeElapsed;
-    }, 1000);
-}
-
-// Adiciona eventos de clique aos botões
+// Adiciona eventos aos botões
 const optionButtons = document.querySelectorAll('.option');
 optionButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -210,5 +218,6 @@ optionButtons.forEach((button) => {
     });
 });
 
-// Inicia o jogo ao carregar a página
+// Inicia o jogo e o cronômetro ao carregar a página
 startGame();
+startTimer();

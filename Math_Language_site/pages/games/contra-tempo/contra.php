@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    // Verifica o nível de dificuldade selecionado (por exemplo, via POST)
+    $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; // Default: 'easy'  
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,10 +15,6 @@
     <link rel="stylesheet" href="../../../styles/fonts.css">
     <link rel="stylesheet" href="../../../styles/media.css">
     <link rel="shortcut icon" type="imagex/png" href="../../../Material/images/favicon.ico">
-    <script>
-        // Passar a dificuldade do PHP para o JavaScript como variável global
-        const dificuldade = '<?= $dificuldade ?>';
-    </script>
 </head>
 <body>
     <h1>Contra Tempo</h1>
@@ -37,12 +38,16 @@
         <div id="result"></div>
     </div>
 
-    
     <div id="game-over" class="hidden">
         <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
     </div>
 
+    <script>
+        const selectedDifficulty = "<?php echo $difficulty; ?>";
+    </script>
+
     <script src="contra.js"></script>
+
     <script>
         function reiniciarJogo() {
             window.location.reload();

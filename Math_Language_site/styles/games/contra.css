@@ -154,3 +154,17 @@ button:hover {
 .hidden {
     display: none;
 }
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    /* Outros ajustes */
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .controls button {
+        width: 100%;
+    }
+}

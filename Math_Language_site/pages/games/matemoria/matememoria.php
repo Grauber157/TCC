@@ -1,6 +1,6 @@
 <?php
     session_start();
-    // Verifica o nível de dificuldade selecionado (por exemplo, via GET)
+    // Verifica o nível de dificuldade selecionado (por exemplo, via POST)
     $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; // Default: 'easy'
 ?>
 
