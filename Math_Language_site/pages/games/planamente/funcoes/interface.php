@@ -49,7 +49,7 @@
         
         <form action="gameover.php" method="post">
             <input type="hidden" name="pontuacao" id="pontuacao">
-            <input type="submit" value="Terminar">
+            <input type="submit" value="Terminar" id="terminar">
         </form>
 
     </div>

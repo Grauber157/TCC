@@ -37,7 +37,7 @@ h1 {
     border-radius: 10px;
 }
 
-.controls button {
+.controls button, .terminar {
     background-color: #6c2d91;
     color: white;
     border: none;
@@ -47,7 +47,7 @@ h1 {
     font-size: 1rem;
 }
 
-.controls button:hover {
+.controls button:hover, .terminar:hover {
     background-color: #4d2d61;
 }
 

@@ -69,7 +69,7 @@ $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; //
             <!-- formulario para enviar valores para o banco de dados -->
             <form action="gameover.php" method="post">
                 <input type="hidden" name="pontuacao" id="pontuacao">
-                <input type="submit" value="Terminar">
+                <input type="submit" value="Terminar" class="terminar">
             </form>
         </div>
     </div>
