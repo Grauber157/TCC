@@ -450,7 +450,6 @@ const formulaDiv = document.getElementById('formula');
 const dadosDiv = document.getElementById('dados');
 const resultadoInput = document.getElementById('resultado');
 const imagemSolido = document.getElementById('imagem-solido');
-const timerDisplay = document.getElementById('timer');
 const gameOverScreen = document.getElementById('game-over');
 const finalTimeDisplay = document.getElementById('final-time');
 const levelDisplay = document.getElementById('level');
@@ -460,8 +459,6 @@ let pontos; // Armazena os pontos do jogador
 let tentativas; // Armazena o número de tentativas feitas
 let perguntasRespondidas = 0; // Contador de perguntas respondidas corretamente no nível atual
 let nivelAtual = 1; // Nível atual do jogador
-let timer; // Timer do jogo
-let tempoRestante = 30; // Tempo do jogo
 
 // Função para carregar perguntas de acordo com a dificuldade
 function carregarPergunta() {
@@ -501,30 +498,6 @@ function carregarPergunta() {
     // Limpar o input de resultado e esconder a tela de game over
     resultadoInput.value = "";
     gameOverScreen.classList.add("hidden");
-
-    // Reiniciar o cronômetro
-    tempoRestante = 30;
-    timerDisplay.innerText = tempoRestante;
-    stopTimer();
-    startTimer();
-}
-
-// Função para iniciar o cronômetro
-function startTimer() {
-    timer = setInterval(() => {
-        tempoRestante--;
-        timerDisplay.innerText = tempoRestante;
-        if (tempoRestante <= 0) {
-            clearInterval(timer);
-            alert('O tempo acabou! Tente novamente.');
-            reiniciarJogo();
-        }
-    }, 1000);
-}
-
-// Função para parar o cronômetro
-function stopTimer() {
-    clearInterval(timer);
 }
 
 // Função para inicializar o jogo de acordo com a dificuldade
@@ -543,9 +516,8 @@ function inicializarJogo() {
             pontos = 15;
     }
     tentativas = 0;
-    perguntasRespondidas = 0;
+    perguntasRespondidas = 5;
     carregarPergunta();
-    startTimer();
 }
 
 // Função para verificar a resposta do jogador
@@ -556,7 +528,7 @@ function verificarResposta() {
         tentativas++;
         resultadoInput.value = '';
 
-        if (perguntasRespondidas < 3) {
+        if (perguntasRespondidas < 1) {
             carregarPergunta();
         } else {
             concluirNivel();
@@ -575,20 +547,18 @@ function verificarResposta() {
 
 // Função para finalizar o nível
 function concluirNivel() {
-    stopTimer();
     const pontosGanhos = Math.max(0, pontos - (tentativas - 3) * 2);
     gameOverScreen.classList.remove('hidden');
     finalTimeDisplay.textContent = `${pontosGanhos}`;
 
-    // Atualizar o nível
+    // Atualizar o nível e verificar se já completou todos os níveis
     if (nivelAtual < 3) {
         nivelAtual++;
         levelDisplay.innerText = `${nivelAtual} / 3`;
         perguntasRespondidas = 0;
         carregarPergunta();
-        startTimer();
     } else {
-        alert('Parabéns! Você completou todos os níveis!');
+        // Finalizar o jogo após o último nível
     }
 }
 
