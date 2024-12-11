@@ -131,6 +131,9 @@ function gameOver() {
     clearInterval(timerInterval); // Para o cronômetro
     gameOverScreen.classList.remove('hidden'); // Exibe a tela de fim de jogo
     document.getElementById('final-time').textContent = `${totalTime}`; // Exibe o tempo final
+    //Envia valor para o PHP
+    const valor = totalTime;
+    document.getElementById('pontuacao').value = valor;
 }
 
 // Inicia o jogo assim que a página carrega

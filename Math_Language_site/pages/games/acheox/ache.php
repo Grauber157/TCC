@@ -19,7 +19,7 @@ $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; //
 </head>
 <body>
     <div class="bodyy">
-    <h1>Ache o X</h1>
+        <h1>Ache o X</h1>
         <div class="controls">
             <button id="func" onclick="reiniciarJogo()">Reiniciar Jogo</button>
             <button id="func" onclick="voltarPagina()">Voltar</button>
@@ -65,8 +65,13 @@ $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; //
         </div>
 
         <div id="game-over" class="hidden">
-        <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
-    </div>
+            <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
+            <!-- formulario para enviar valores para o banco de dados -->
+            <form action="gameover.php" method="post">
+                <input type="hidden" name="pontuacao" id="pontuacao">
+                <input type="submit" value="Terminar">
+            </form>
+        </div>
     </div>
 
     
