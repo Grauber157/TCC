@@ -195,22 +195,25 @@ function clearResult() {
 }
 
 // Finaliza o jogo
-function endGame() {
-    clearInterval(interval);
-    const totalTime = Math.floor((new Date().getTime() - startTime) / 1000);
+function gameOver() {
+    clearInterval(timerInterval); // Interrompe o cronômetro
+    const totalTime = Math.floor((new Date().getTime() - startTime) / 1000); // Calcula o tempo total em segundos
 
     // Calcula a pontuação baseada no tempo
+    let score;
     if (totalTime <= 20) {
         score = 10; // 10 pontos para 20 segundos ou menos
     } else {
         score = Math.max(0, 10 - Math.floor((totalTime - 20) / 10)); // Perde 1 ponto a cada 10 segundos adicionais
     }
 
-    document.getElementById('final-time').innerText = score;
-    document.getElementById('game-over').classList.remove('hidden'); // Mostra a tela de "game-over"
-    const valor = score;
-    document.getElementById('pontuacao').value = valor;
+    gameOverScreen.classList.remove('hidden'); // Mostra a tela de game over
+    document.getElementById('final-time').textContent = `${totalTime}s`; // Exibe o tempo total como texto
+    
+    // Exibe a pontuação como texto
+    document.getElementById('pontuacao').textContent = `Pontuação: ${score}`; //
 }
+
 
 // Adiciona eventos aos botões
 const optionButtons = document.querySelectorAll('.option');

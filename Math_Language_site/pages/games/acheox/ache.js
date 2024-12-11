@@ -1,13 +1,14 @@
-// Elementos da interface
-const levelSpan = document.getElementById('level');
-const timerSpan = document.getElementById('timer');
-const displayArea = document.getElementById('display-area');
+// Referências corrigidas aos elementos
+const timerElement = document.getElementById('timer');
+const levelElement = document.getElementById('level');
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
-const submitBtn = document.getElementById('submit-btn');
+const displayArea = document.getElementById('display-area');
 const responseInput = document.getElementById('response-input');
+const submitBtn = document.getElementById('submit-btn');
 const gameOverScreen = document.getElementById('game-over');
+const keyboardButtons = document.querySelectorAll('.keyboard button');
 
 // Lista de prompts (etapas)
 const promptsF = [
@@ -259,122 +260,104 @@ const promptsD = [
     },
 ];
 
-// Variáveis globais
 let currentLevel = 1; // Nível inicial
-let totalTime = 0; // Tempo total em segundos, ajustar conforme necessário
+let totalTime = 0;  // Tempo total em segundos (iniciado em 0)
 let currentPrompt = 0; // Índice do prompt atual
+let currentDifficulty;
+let timerInterval; // Referência para o intervalo do timer
+
+// Define as prompts de acordo com a dificuldade
+const difficulty = document.body.getAttribute('data-difficulty');
+if (difficulty === 'medio') {
+    currentDifficulty = promptsM.slice(0, 5);
+} else if (difficulty === 'dificil') {
+    currentDifficulty = promptsD.slice(0, 5);
+} else {
+    currentDifficulty = promptsF.slice(0, 5);
+}
 
 // Atualiza o tempo no formato SS
 function updateTimer() {
-    const seconds = totalTime; // Mostra apenas segundos
-    timerSpan.textContent = `Tempo: ${seconds}s`; // Atualiza o texto do timer
+    timerElement.textContent = `Tempo: ${totalTime}s`;
 }
 
-// Definir os prompts para cada nível de dificuldade
-const prompts = {
-    'facil': promptsF,
-    'medio': promptsM,
-    'dificil': promptsD
-};
+// Inicia o cronômetro
+function startGame() {
+    totalTime = 0;
+    updateTimer();
+    timerInterval = setInterval(() => {
+        totalTime++;
+        updateTimer();
+    }, 1000);
+}
 
-// Função para avançar para o próximo nível
+// Função para avançar o nível
 function nextLevel() {
-    if (currentLevel < 5) {
-        currentLevel++;  // Avança para o próximo nível
-        currentPrompt++; // Avança para o próximo prompt
-        levelSpan.textContent = `Nível: ${currentLevel} / 5`; // Atualiza o nível na interface
+    if (currentPrompt < currentDifficulty.length - 1) {
+        currentPrompt++;
+        levelElement.textContent = `Nível: ${currentPrompt + 1} / ${currentDifficulty.length}`;
         displayArea.textContent = "Clique nos botões para ver as dicas!";
     } else {
-        gameOver();  // Finaliza o jogo se todos os níveis forem concluídos
+        gameOver();
     }
 }
 
-// Função para iniciar o cronômetro
-function startGame() {
-    totalTime = 0; // Reseta o tempo
-    updateTimer(); // Atualiza a tela com o tempo
-    timerInterval = setInterval(() => {
-        totalTime++; // Incrementa o tempo a cada segundo
-        updateTimer();
-    }, 1000); // Atualiza o tempo a cada 1000ms (1 segundo)
+// Finaliza o jogo
+function gameOver() {
+    switch (totalTime) {
+        case 'facil':
+            totalTime = totalTime - totalTime + 10;
+            break;
+        case 'medio':
+            totalTime = totalTime - totalTime + 15;
+            break;
+        case 'dificil':
+            totalTime = totalTime - totalTime + 20;
+            break;
+        default:
+            totalTime = totalTime - totalTime + 10;
+    }
+    clearInterval(timerInterval);
+
+    // Exibe e envia o tempo final
+    gameOverScreen.classList.remove('hidden');
+    document.getElementById('final-time').textContent = `${totalTime}`;
+    document.getElementById('pontuacao').value = totalTime;
 }
 
-// Ajustar os prompts com base na dificuldade
-const currentPrompts = prompts[difficulty] || prompts['facil']; // Usa a dificuldade enviada pelo PHP
-
-// Atualizar as dicas no display ao clicar nos botões
+// Eventos para dicas
 btn1.addEventListener('click', () => {
-    displayArea.textContent = currentPrompts[currentPrompt].dicas[0];
+    displayArea.textContent = currentDifficulty[currentPrompt].dicas[0];
 });
 btn2.addEventListener('click', () => {
-    displayArea.textContent = currentPrompts[currentPrompt].dicas[1];
+    displayArea.textContent = currentDifficulty[currentPrompt].dicas[1];
 });
 btn3.addEventListener('click', () => {
-    displayArea.textContent = currentPrompts[currentPrompt].dicas[2];
-}); 
-
-// Verifica a resposta do jogador
-submitBtn.addEventListener('click', () => {
-    const resposta = responseInput.value.trim();
-    
-    // Verifica se a resposta está correta (agora acessando currentPrompts)
-    if (resposta === currentPrompts[currentPrompt].resposta) {
-        nextLevel(); // Avança para o próximo nível
-    } else {
-        alert("Resposta incorreta. Tente novamente!"); // Alerta de resposta incorreta
-    }
-    
-    responseInput.value = ""; // Limpa o campo de resposta
+    displayArea.textContent = currentDifficulty[currentPrompt].dicas[2];
 });
 
+// Verifica a resposta
+submitBtn.addEventListener('click', () => {
+    const resposta = responseInput.value.trim();
+    if (resposta === currentDifficulty[currentPrompt].resposta) {
+        nextLevel();
+    } else {
+        alert("Resposta incorreta. Tente novamente!");
+    }
+    responseInput.value = "";
+});
 
-// Captura o teclado virtual
-const keyboardButtons = document.querySelectorAll('.keyboard button');
-
-// Adiciona evento de clique aos botões do teclado
+// Eventos para o teclado virtual
 keyboardButtons.forEach(button => {
     button.addEventListener('click', () => {
         const key = button.textContent.trim();
-
-        // Caso seja um botão de número ou operador
         if (key !== '⌫') {
-            responseInput.value += key; // Adiciona o valor ao campo de entrada
+            responseInput.value += key;
         } else {
-            // Caso seja o botão "delete", remove o último caractere
             responseInput.value = responseInput.value.slice(0, -1);
         }
     });
 });
 
-// Função para calcular a pontuação baseada no tempo
-function calculateScore() {
-    let score = 0;
-
-    // Exemplo: ajustando a pontuação conforme o tempo gasto
-    if (totalTime <= 30) {
-        score = 10;  // Máxima pontuação se o tempo for 30 segundos ou menos
-    } else {
-        const penalty = Math.floor((totalTime - 30) / 15); // Penaliza a cada 15 segundos adicionais
-        score = Math.max(10 - penalty, 0);  // Garante que a pontuação não seja negativa
-    }
-
-    return score;
-}
-
-// Função para finalizar o jogo
-function gameOver() {
-    clearInterval(timerInterval); // Para o cronômetro
-    document.getElementById('game-over').classList.remove('hidden'); // Exibe a tela de fim de jogo
-
-    // Calcula a pontuação
-    const score = calculateScore();
-
-    // Exibe a pontuação no lugar do tempo final
-    document.getElementById('final-time').textContent = score; // Exibe a pontuação
-
-    // Passa a pontuação para o formulário
-    document.getElementById('pontuacao').value = score; // Passa a pontuação para o campo oculto
-}
-
-// Inicia o jogo assim que a página carrega
-startGame(); // Inicia o cronômetro quando o jogo começa
+// Inicia o jogo quando a página carrega
+startGame();
