@@ -26,16 +26,17 @@ h1 {
 
 .controls {
     width: 100%;
-    max-width: 910px;
+    max-width: 900px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 10px;
+    margin-left: 200px;
 }
 
-.controls button,.terminar {
+.controls button, .terminar {
     background-color: #6c2d91;
     color: white;
     border: none;
@@ -45,7 +46,7 @@ h1 {
     font-size: 1rem;
 }
 
-.controls button,.terminar:hover {
+.controls button:hover, .terminar:hover {
     background-color: #4d2d61;
 }
 
@@ -127,7 +128,6 @@ h1 {
     gap: 290px;
 }
 
-
 /* Resultado da interação */
 #result {
     position: absolute;
@@ -141,7 +141,6 @@ h1 {
     border-radius: 8px;
     color: #fff; /* Cor do texto */
 }
-
 
 #result.success {
     color: rgb(196, 11, 212);
@@ -157,6 +156,22 @@ h1 {
     display: none;
 }
 
+@media (max-width: 1500px) {
+    .controls {
+        margin-left: 0px;
+    }
+}
+@media (max-width: 1440px) {
+    .controls {
+        margin-left: 0px;
+    }
+}
+@media (max-width: 1024px) {
+    .controls {
+        margin-left: 0px;
+    }
+}
+
 /* Para telas menores que 768px */
 @media (max-width: 768px) {
     body {
@@ -164,9 +179,10 @@ h1 {
     }
 
     .controls {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Organiza os botões em coluna */
+        align-items: center; /* Centraliza os botões */
         gap: 10px;
+        margin-left: 0px;
     }
 
     .controls button {
@@ -175,6 +191,7 @@ h1 {
 
     .container {
         padding: 40px;
+        height: 400px;
     }
 
     .question {
@@ -188,7 +205,7 @@ h1 {
     }
 
     .option {
-        width: 100%; /* Faz os botões ocuparem toda a largura */
+        width: 91%; /* Faz os botões ocuparem toda a largura */
         height: 150px; /* Ajusta a altura dos botões */
         font-size: 2rem; /* Ajusta o tamanho da fonte */
     }
@@ -196,10 +213,10 @@ h1 {
     #result {
         font-size: 12px; /* Ajusta o tamanho da fonte do resultado */
         position: absolute;
-        bottom: 20%; /* Alinha o resultado a uma altura fixa em relação à tela */
+        bottom: 6%; /* Alinha o resultado a uma altura fixa em relação à tela */
         left: 50%;
         transform: translateX(-50%); /* Centraliza horizontalmente */
-        width: 80%; /* Garante que o resultado ocupe uma boa parte da tela */
+        width: 50%; /* Garante que o resultado ocupe uma boa parte da tela */
         text-align: center;
     }
 }
@@ -211,9 +228,10 @@ h1 {
     }
 
     .controls {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Organiza os botões em coluna */
+        align-items: center; /* Centraliza os botões */
         gap: 5px;
+        margin-left: 0px;
     }
 
     .controls button {
