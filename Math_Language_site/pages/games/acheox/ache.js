@@ -261,7 +261,7 @@ const promptsD = [
 
 // Variáveis globais
 let currentLevel = 1; // Nível inicial
-let totalTime = 0;  // Tempo total em segundos (iniciado em 0)
+let totalTime = 0; // Tempo total em segundos, ajustar conforme necessário
 let currentPrompt = 0; // Índice do prompt atual
 
 // Atualiza o tempo no formato SS
@@ -285,7 +285,7 @@ function nextLevel() {
         levelSpan.textContent = `Nível: ${currentLevel} / 5`; // Atualiza o nível na interface
         displayArea.textContent = "Clique nos botões para ver as dicas!";
     } else {
-        gameOver();  // Finaliza o jogo
+        gameOver();  // Finaliza o jogo se todos os níveis forem concluídos
     }
 }
 
@@ -350,13 +350,11 @@ keyboardButtons.forEach(button => {
 function calculateScore() {
     let score = 0;
 
-    // Se o tempo for menor que 30 segundos, o jogador ganha 10 pontos
-    if (totalTime < 30) {
-        score = 10;
+    // Exemplo: ajustando a pontuação conforme o tempo gasto
+    if (totalTime <= 30) {
+        score = 10;  // Máxima pontuação se o tempo for 30 segundos ou menos
     } else {
-        // A cada 15 segundos acima de 30, perde 1 ponto
-        const extraTime = totalTime - 30;
-        const penalty = Math.floor(extraTime / 15);
+        const penalty = Math.floor((totalTime - 30) / 15); // Penaliza a cada 15 segundos adicionais
         score = Math.max(10 - penalty, 0);  // Garante que a pontuação não seja negativa
     }
 
@@ -366,11 +364,16 @@ function calculateScore() {
 // Função para finalizar o jogo
 function gameOver() {
     clearInterval(timerInterval); // Para o cronômetro
-    gameOverScreen.classList.remove('hidden'); // Exibe a tela de fim de jogo
-    document.getElementById('final-time').textContent = `${score}`; // Exibe o tempo final
+    document.getElementById('game-over').classList.remove('hidden'); // Exibe a tela de fim de jogo
 
-    // Envia valor para o PHP
-    document.getElementById('pontuacao').value = score; // Passa a pontuação para o backend
+    // Calcula a pontuação
+    const score = calculateScore();
+
+    // Exibe a pontuação no lugar do tempo final
+    document.getElementById('final-time').textContent = score; // Exibe a pontuação
+
+    // Passa a pontuação para o formulário
+    document.getElementById('pontuacao').value = score; // Passa a pontuação para o campo oculto
 }
 
 // Inicia o jogo assim que a página carrega
