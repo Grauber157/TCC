@@ -34,14 +34,13 @@
         </div>
 
         <div id="game-over" class="hidden">
-            <!-- <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2> -->
+            <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
 
             <form action="gameover.php" method="post">
                 <input type="hidden" name="pontuacao" id="pontuacao">
+                <input type="hidden" name="acao" value="">
                 <input type="submit" value="Terminar">
             </form>
-
-            <script src="script.js"></script>
 
         </div>
 
