@@ -2,6 +2,7 @@
     session_start();
     //Função limpar dados
     require_once '../php/include/funcoes.php';
+    // require_once 'D:\wamp64\www\TCC\Math_Language_site\php\include\funcoes.php';
     //Função de conexão
     require_once 'conexao_mysql.php';
     //Comandos base sql
