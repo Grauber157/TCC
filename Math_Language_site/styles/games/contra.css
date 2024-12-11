@@ -24,32 +24,34 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Controles de reinício, navegação e temporizador */
 .controls {
+    width: 100%;
+    max-width: 910px;
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+    justify-content: space-between;
     align-items: center;
-    color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-button {
-    padding: 10px 20px;
+.controls button {
     background-color: #6c2d91;
-    color: #fff;
+    color: white;
     border: none;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
 }
 
-button:hover {
+.controls button:hover {
     background-color: #4d2d61;
 }
 
-/* Temporizador */
-#timer {
+.controls #timer {
     font-size: 1.2rem;
+    color: #fff;
 }
 
 /* Informações da questão */
@@ -157,7 +159,10 @@ button:hover {
 
 /* Para telas menores que 768px */
 @media (max-width: 768px) {
-    /* Outros ajustes */
+    body {
+        font-size: 14px; /* Ajusta a fonte para telas menores */
+    }
+
     .controls {
         flex-direction: column;
         align-items: flex-start;
@@ -166,5 +171,85 @@ button:hover {
 
     .controls button {
         width: 100%;
+    }
+
+    .container {
+        padding: 40px;
+    }
+
+    .question {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Faz os botões ficarem em coluna */
+        gap: 20px; /* Adiciona espaçamento entre os botões */
+    }
+
+    .option {
+        width: 100%; /* Faz os botões ocuparem toda a largura */
+        height: 150px; /* Ajusta a altura dos botões */
+        font-size: 2rem; /* Ajusta o tamanho da fonte */
+    }
+
+    #result {
+        font-size: 12px; /* Ajusta o tamanho da fonte do resultado */
+        position: absolute;
+        bottom: 20%; /* Alinha o resultado a uma altura fixa em relação à tela */
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        width: 80%; /* Garante que o resultado ocupe uma boa parte da tela */
+        text-align: center;
+    }
+}
+
+/* Para telas menores que 420px */
+@media (max-width: 420px) {
+    body {
+        font-size: 12px; /* Ajusta a fonte para telas muito pequenas */
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .controls button {
+        width: 100%;
+        font-size: 1rem; /* Ajusta o tamanho da fonte dos botões */
+    }
+
+    .container {
+        padding: 30px;
+        width: 80%;
+        height: 400px;
+    }
+
+    .question {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Os botões continuam em coluna */
+        gap: 15px; /* Menor espaçamento entre os botões */
+    }
+
+    .option {
+        width: 75%; /* Botões ocupando toda a largura */
+        height: 120px; /* Menor altura para caber melhor em telas pequenas */
+        font-size: 1.8rem; /* Ajusta a fonte para um tamanho adequado */
+    }
+
+    #result {
+        font-size: 10px; /* Ajusta o tamanho do texto do resultado */
+        position: absolute;
+        bottom: 15%; /* Ajuste para telas menores */
+        left: 52%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        width: 50%; /* Ocupa mais espaço na tela */
+        text-align: center;
     }
 }
