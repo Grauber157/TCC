@@ -18,6 +18,11 @@ $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; //
     <link rel="shortcut icon" type="imagex/png" href="../../../Material/images/favicon.ico">
 </head>
 <body>
+
+<script>
+    const difficulty = "<?php echo $difficulty; ?>";  // Passa a dificuldade para o JavaScript
+</script>
+
     <div class="bodyy">
         <h1>Ache o X</h1>
         <div class="controls">
