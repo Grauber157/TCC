@@ -1,5 +1,3 @@
-export default finalScore;
-
 // Listas de cartas para cada dificuldade
 const cardValuesF = [
     { expression: '13', solution: '5+8' },
@@ -209,8 +207,8 @@ function gameOver() {
 
     // Exibindo a pontuação final
     finalTimeDisplay.textContent = `${finalScore}`;
-
-    
+    const valor = finalScore;
+    document.getElementById('pontuacao').value = valor;
 }
 
 // Embaralha as cartas
@@ -230,4 +228,3 @@ function startGame() {
 
 // Inicia o jogo automaticamente
 document.addEventListener('DOMContentLoaded', startGame);
-
