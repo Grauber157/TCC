@@ -3,6 +3,7 @@
     require_once 'core/mysql.php';
     require_once 'core/sql.php';
     require_once 'core/conexao_mysql.php';
+    
     if(empty($_SESSION['id']))
     {
       header("Location: pages/login.php");
@@ -36,7 +37,6 @@
         </aside>
     </main>
 
-
     <main class="dashboard">
         <section class="ranking">
             <h3>Top 10 Alunos</h3>
@@ -65,7 +65,6 @@
         </section>
     </main>
 
-    
     <?php include 'php/include/rodape.php'; ?>
 
 </body>

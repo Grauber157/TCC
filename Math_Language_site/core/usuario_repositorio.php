@@ -2,7 +2,6 @@
     session_start();
     //Função limpar dados
     require_once '../php/include/funcoes.php';
-    // require_once 'D:\wamp64\www\TCC\Math_Language_site\php\include\funcoes.php';
     //Função de conexão
     require_once 'conexao_mysql.php';
     //Comandos base sql
@@ -107,13 +106,36 @@
         //LOG OUT DO USUARIO
         case 'logout':
             session_destroy();
+            header('Location: ../index.php');
+            exit;
         break;
 
 
         //DELETA O USUARIO
         case 'deletar':
-            Deletar('usuario', [['id', '=', $_SESSION['id']]]);
-            Deletar('usuario_jogos', [['id_usuario', '=', $_SESSION['id']]]);
+
+            $retorno = Buscar('turma', ['codigo', 'nome_turma'], [['administrador', '=', $_SESSION['id']]]);
+
+            if(!count($retorno))
+            {
+                #Deleta o usuario
+                $sql = 'DELETE FROM usuario WHERE id ="'. $_SESSION['id'].'"';
+                ComandoSql($sql);
+                #Deleta a pontuacao do usuario excluido
+                $sql = 'DELETE FROM usuario_jogos WHERE id_usuario ="'.$_SESSION['id'].'"';
+                ComandoSql($sql);
+                #Realiza o logout
+                session_destroy();
+                header('Location: ../index.php');
+            }
+            else
+            {
+                echo 'Você é administrador de uma turma! Exclua a turma antes de sair!';
+            }
+            
+
+            // header('Location: ../index.php');
+            exit;
         break;
     }
     
