@@ -7,7 +7,6 @@ const perguntasF = [
         solido: "Cubo",
         formula: { 
             volume: "V = a³",
-            area: "A = 6a²" 
         },
         dados: "Um cubo mágico tem aresta (a) = 2 cm. Qual o volume dele?",
         imagem: "imagens/cubo.png",
@@ -16,12 +15,11 @@ const perguntasF = [
     {
         solido: "Cubo",
         formula: { 
-            volume: "V = a³",
             area: "A = 6a²" 
         },
-        dados: "Um cubo tem aresta (a) = 5 cm. Qual o volume do cubo?",
+        dados: "Um cubo tem aresta (a) = 5 cm. Qual a área do cubo?",
         imagem: "imagens/cubo.png",
-        resposta: 125,
+        resposta: 150,
     },
     
 
@@ -30,7 +28,6 @@ const perguntasF = [
         solido: "Paralelepípedo",
         formula: { 
             volume: "V = a × b × c",
-            area: "A = 2(ab + ac + bc)" 
         },
         dados: "Uma caixa tem comprimento = 4 cm, largura = 3 cm e altura = 2 cm. Qual o volume da caixa?",
         imagem: "imagens/paralelepipedo.png",
@@ -39,14 +36,12 @@ const perguntasF = [
     {
         solido: "Paralelepípedo",
         formula: { 
-            volume: "V = a × b × c",
             area: "A = 2(ab + ac + bc)" 
         },
-        dados: "Uma caixa tem comprimento = 6 cm, largura = 4 cm e altura = 3 cm. Qual o volume da caixa?",
+        dados: "Uma caixa tem comprimento = 6 cm, largura = 4 cm e altura = 3 cm. Qual a area da caixa?",
         imagem: "imagens/paralelepipedo.png",
-        resposta: 72,
-    },
-    
+        resposta: 108,
+    },    
 
     // ESFERA
     {
@@ -55,19 +50,18 @@ const perguntasF = [
             volume: "V = (4/3)πr³",
             area: "A = 4πr²" 
         },
-        dados: "Uma bola de futebol tem raio (r) = 3 cm. Qual a área da superfície da bola? (Use π = 3,14)",
+        dados: "Uma bola de futebol tem raio (r) = 3 cm. Qual a área da superfície da bola? (Use π = 3)",
         imagem: "imagens/esfera.png",
-        resposta: 5,
+        resposta: 108,
     },
     {
         solido: "Esfera",
         formula: { 
             volume: "V = (4/3)πr³",
-            area: "A = 4πr²" 
         },
-        dados: "Uma bola tem raio (r) = 5 cm. Qual o volume da esfera? (Use π = 3,14)",
+        dados: "Uma bola tem raio (r) = 5 cm. Qual o volume da esfera? (Use π = 3)",
         imagem: "imagens/esfera.png",
-        resposta: 523,
+        resposta: 500,
     },
     
 
@@ -76,7 +70,6 @@ const perguntasF = [
         solido: "Pirâmide Quadrangular",
         formula: { 
             volume: "V = (1/3) × base × altura",
-            area: "A = base + área lateral" 
         },
         dados: "Uma pirâmide tem base = 9 cm² e altura = 6 cm. Qual o volume dela?",
         imagem: "imagens/piramide.png",
@@ -85,12 +78,11 @@ const perguntasF = [
     {
         solido: "Pirâmide Quadrangular",
         formula: { 
-            volume: "V = (1/3) × base × altura",
             area: "A = base + área lateral" 
         },
-        dados: "Uma pirâmide tem base = 16 cm² e altura = 10 cm. Qual o volume da pirâmide?",
+        dados: "Uma pirâmide tem base = 16 cm² e área lateral = 10 cm². Qual a área total da pirâmide?",
         imagem: "imagens/piramide.png",
-        resposta: 53,
+        resposta: 26,
     },
     
 
@@ -99,23 +91,20 @@ const perguntasF = [
         solido: "Cone",
         formula: { 
             volume: "V = (1/3)πr²h",
-            area: "A = πr(r + l)" 
         },
-        dados: "Um cone de sorvete tem raio (r) = 2 cm e altura (h) = 6 cm. Qual o volume dele? (Use π = 3,14)",
+        dados: "Um cone de sorvete tem raio (r) = 2 cm e altura (h) = 6 cm. Qual o volume dele? (Use π = 3)",
         imagem: "imagens/cone.png",
-        resposta: 113,
+        resposta: 24,
     },
     {
         solido: "Cone",
         formula: { 
-            volume: "V = (1/3)πr²h",
-            area: "A = πr(r + l)" 
+            area: "A = πr(r + g)" 
         },
-        dados: "Um cone tem raio (r) = 3 cm e altura (h) = 7 cm. Qual o volume do cone? (Use π = 3,14)",
+        dados: "Um cone tem raio (r) = 3 cm e geratriz (g) = 7 cm. Qual a área do cone? (Use π = 3)",
         imagem: "imagens/cone.png",
-        resposta: 198,
+        resposta: 90,
     }
-    
 
 ];
 
@@ -126,25 +115,25 @@ const perguntasM = [
     {
         solido: "Cilindro",
         formula: { 
-            volume: "V = πr²h",
-            area: "A = 2πr(h + r)" 
+            areaLateral: "Al = 2πrh",
+            area: "A = 2Ab + Al"
         },
-        dados: "Qual a área lateral de um cilindro com raio (r) = 4 e altura (h) = 8?",
+        dados: "Qual a área total de um cilindro com área da base (Ab) = 10cm² raio (r) = 4 e altura (h) = 8? (Use π = 3)",
         imagem: "imagens/cilindro.png",
-        resposta: 201,
+        resposta: 212,
     },
-    {
-        solido: "Cilindro",
+    { 
+        solido: "Cilindro", 
         formula: { 
-            volume: "V = πr²h",
-            area: "A = 2πr(h + r)" 
-        },
-        dados: "Qual a área lateral de um cilindro com raio (r) = 4 cm e altura (h) = 6 cm?",
-        imagem: "imagens/cilindro.png",
-        resposta: 150,
+            areaLateral: "Al = 2πrh", 
+            area: "A = 2Ab + Al" 
+        }, 
+        dados: "Qual a área total de um cilindro com raio (r) = 4 cm e altura (h) = 6 cm, sabendo que a área lateral (Al) é 150 cm²? (Use π = 3)", 
+        imagem: "imagens/cilindro.png", 
+        resposta: 208, // Aproximado com Ab = 35 cm² 
     },
 
-    // CONE
+    // CONE fazer
     {
         solido: "Cone",
         formula: { 
