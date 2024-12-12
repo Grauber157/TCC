@@ -46,7 +46,7 @@
                         ?>
                     </tbody>
                 </table>
-                
+
             <div class="turma-options">
                 <form action="../core/turma_repositorio.php" method="post">
                     <input type="hidden" name="acao" value="sair">
