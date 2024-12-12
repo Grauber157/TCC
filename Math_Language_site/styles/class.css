@@ -11,7 +11,6 @@
   padding: 20px;
   border-radius: 10px;
   margin: 10px;
-
 }
 
 .ranking h2 {
@@ -213,4 +212,141 @@ th {
 
 tr:nth-child(even) {
   background-color: #2a1355;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ranking {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .actions {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .create-container {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .join-class {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .form {
+    gap: 10px;
+  }
+
+  .input-group input {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.2rem; /* Diminui o tamanho da fonte */
+  }
+
+  .btn, .sign, .btn-entrar {
+    width: 100%;
+    margin: 10px 0; /* Garante que os botões fiquem empilhados */
+    padding: 12px;  /* Ajusta o tamanho dos botões */
+  }
+
+  /* Tamanho das fontes nas tabelas */
+  th, td {
+    font-size: 0.9rem; /* Ajuste do tamanho da fonte nas tabelas */
+  }
+
+  /* Ajuste na tabela para caber melhor em telas menores */
+  table {
+    font-size: 0.9rem;
+  }
+
+  .turma-options {
+    display: flex;
+    flex-direction: column; /* Alinha os botões um abaixo do outro */
+    align-items: stretch;   /* Garante que os botões ocupem toda a largura disponível */
+    gap: 10px;              /* Espaçamento entre os botões */
+  }
+
+  .botaoAlterar {
+    width: 100%;  /* Faz com que os botões ocupem toda a largura disponível */
+    padding: 12px; /* Ajuste no tamanho do botão */
+    margin: 0;     /* Remove margens extras */
+  }
+}
+
+@media (max-width: 460px) {
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ranking {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .actions {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .create-container {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .join-class {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .form {
+    gap: 8px;
+  }
+
+  .input-group input {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.1rem; /* Diminui ainda mais o tamanho da fonte */
+  }
+
+  .btn, .sign, .btn-entrar {
+    width: 100%;
+    margin: 8px 0; /* Distância reduzida entre os botões */
+    padding: 10px;  /* Ajuste o tamanho dos botões */
+  }
+
+  /* Tamanho das fontes nas tabelas */
+  th, td {
+    font-size: 0.5rem; /* Ajuste o tamanho das fontes nas tabelas */
+  }
+
+  /* Ajuste na tabela para caber melhor em telas menores */
+  table {
+    font-size: 0.8rem;
+  }
+
+  .turma-options {
+    display: flex;
+    flex-direction: column; /* Alinha os botões um abaixo do outro */
+    align-items: stretch;   /* Garante que os botões ocupem toda a largura disponível */
+    gap: 8px;               /* Menor espaçamento entre os botões */
+  }
+
+  .botaoAlterar {
+    width: 100%;  /* Faz com que os botões ocupem toda a largura disponível */
+    padding: 10px; /* Ajuste no tamanho do botão */
+    margin: 0;     /* Remove margens extras */
+  }
 }

@@ -80,6 +80,7 @@ const promptsD = [
     { question: '3(4x + 2) - 2(3x + 4) = x + 8', answer: 2 }
 ];
 
+const gameOverScreen = document.getElementById('game-over');
 
 // Escolhe a lista com base na dificuldade selecionada no PHP
 let selectedPrompts;
@@ -103,6 +104,8 @@ let interval; // Controle do cronômetro
 let currentPrompt; // Armazena o prompt atual
 let score = 0; // Pontuação inicial
 let isProcessing = false; // Variável para evitar múltiplos cliques
+let timer;
+let timeElapsed = 0;
 
 // Função para iniciar o jogo
 function startGame() {
@@ -112,6 +115,11 @@ function startGame() {
     generateQuestion(); // Gera a primeira pergunta
     clearResult();
     document.getElementById('game-over').classList.add('hidden'); // Esconde a tela de "game-over"
+}
+
+// Para o timer
+function stopTimer() {
+    clearInterval(timer);
 }
 
 // Função para atualizar o nível na tela
@@ -195,8 +203,9 @@ function clearResult() {
 }
 
 // Finaliza o jogo
-function gameOver() {
-    clearInterval(timerInterval); // Interrompe o cronômetro
+function endGame() {
+    clearInterval(timer);
+    // clearInterval(timerInterval); // Interrompe o cronômetro
     const totalTime = Math.floor((new Date().getTime() - startTime) / 1000); // Calcula o tempo total em segundos
 
     // Calcula a pontuação baseada no tempo
@@ -208,10 +217,13 @@ function gameOver() {
     }
 
     gameOverScreen.classList.remove('hidden'); // Mostra a tela de game over
-    document.getElementById('final-time').textContent = `${totalTime}s`; // Exibe o tempo total como texto
+    document.getElementById('final-time').textContent = `${score}`; // Exibe o tempo total como texto
     
     // Exibe a pontuação como texto
     document.getElementById('pontuacao').textContent = `Pontuação: ${score}`; //
+    // testa ne
+    const valor = score;
+    document.getElementById('pontuacao').value = valor;
 }
 
 

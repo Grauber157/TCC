@@ -213,7 +213,7 @@ h1 {
     #result {
         font-size: 12px; /* Ajusta o tamanho da fonte do resultado */
         position: absolute;
-        bottom: 6%; /* Alinha o resultado a uma altura fixa em relação à tela */
+        bottom: -12%; /* Alinha o resultado a uma altura fixa em relação à tela */
         left: 50%;
         transform: translateX(-50%); /* Centraliza horizontalmente */
         width: 50%; /* Garante que o resultado ocupe uma boa parte da tela */
@@ -264,7 +264,7 @@ h1 {
     #result {
         font-size: 10px; /* Ajusta o tamanho do texto do resultado */
         position: absolute;
-        bottom: 15%; /* Ajuste para telas menores */
+        bottom: -1%; /* Ajuste para telas menores */
         left: 52%;
         transform: translateX(-50%); /* Centraliza horizontalmente */
         width: 50%; /* Ocupa mais espaço na tela */

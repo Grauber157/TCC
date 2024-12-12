@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../../styles/games/contra.css">
     <link rel="stylesheet" href="../../../styles/cabeça.css">
     <link rel="stylesheet" href="../../../styles/fonts.css">
-    <link rel="stylesheet" href="../../../styles/media.css">
+    <!-- <link rel="stylesheet" href="../../../styles/media.css"> -->
     <link rel="shortcut icon" type="imagex/png" href="../../../Material/images/favicon.ico">
 </head>
 <body>

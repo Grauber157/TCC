@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="http://localhost:8080/TCC/Math_Language_site/styles/popup.css">
+<link rel="stylesheet" href="http://localhost:/TCC/Math_Language_site/styles/popup.css">
 
 <?php
   // Verifica se a variável POST 'jogo' foi enviada
