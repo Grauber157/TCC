@@ -107,142 +107,140 @@ const perguntasF = [
 
 ];
 
-
 //MÉDIAS
 const perguntasM = [
     // CILINDRO
     {
         solido: "Cilindro",
-        formula: { 
+        formula: {
             areaLateral: "Al = 2πrh",
-            area: "A = 2Ab + Al"
+            area: "A = 2Ab + Al",
         },
-        dados: "Qual a área total de um cilindro com área da base (Ab) = 10cm² raio (r) = 4 e altura (h) = 8? (Use π = 3)",
+        dados: "Qual a área total de um cilindro com área da base (Ab) = 12 cm², raio (r) = 5 cm e altura (h) = 10 cm? (Use π = 3)",
         imagem: "imagens/cilindro.png",
-        resposta: 212,
+        resposta: 192,
     },
-    { 
-        solido: "Cilindro", 
-        formula: { 
-            areaLateral: "Al = 2πrh", 
-            area: "A = 2Ab + Al" 
-        }, 
-        dados: "Qual a área total de um cilindro com raio (r) = 4 cm e altura (h) = 6 cm, sabendo que a área lateral (Al) é 150 cm²? (Use π = 3)", 
-        imagem: "imagens/cilindro.png", 
-        resposta: 246,
+    {
+        solido: "Cilindro",
+        formula: {
+            areaLateral: "Al = 2πrh",
+            area: "A = 2Ab + Al",
+        },
+        dados: "Qual a área total de um cilindro com raio (r) = 6 cm e altura (h) = 9 cm, sabendo que a área lateral (Al) é 324 cm²? (Use π = 3)",
+        imagem: "imagens/cilindro.png",
+        resposta: 348,
     },
 
     // CONE
     {
         solido: "Cone",
-        formula: { 
+        formula: {
             volume: "V = (1/3)πr²h",
-            area: "A = πr(r + l)" 
+            area: "A = πr(r + l)",
         },
-        dados: "Qual o volume de um cone com raio (r) = 3 cm e altura (h) = 7 cm? Use a fórmula V = (1/3)πr²h.",
+        dados: "Qual o volume de um cone com raio (r) = 4 cm e altura (h) = 10 cm? Use a fórmula V = (1/3)πr²h. (Use π = 3)",
         imagem: "imagens/cone.png",
-        resposta: 63,
-    },    
+        resposta: 160,
+    },
     {
         solido: "Cone",
-        formula: { 
+        formula: {
             volume: "V = (1/3)πr²h",
-            area: "A = πr(r + l)" 
+            area: "A = πr(r + l)",
         },
-        dados: "Qual o volume de um cone com raio (r) = 3 cm e altura (h) = 6 cm? Use a fórmula V = (1/3)πr²h.",
+        dados: "Qual o volume de um cone com raio (r) = 5 cm e altura (h) = 12 cm? Use a fórmula V = (1/3)πr²h. (Use π = 3)",
         imagem: "imagens/cone.png",
-        resposta: 54,
-    },    
-    
+        resposta: 300,
+    },
+
     // PIRAMIDE
     {
         solido: "Pirâmide",
-        formula: { 
+        formula: {
             volume: "V = (1/3)Ab × h",
-            area: "A = Ab + Al" 
+            area: "A = Ab + Al",
         },
-        dados: "Qual o volume de uma pirâmide com base (Ab) = 10 cm² e altura (h) = 9 cm? Use a fórmula V = (1/3)Ab × h.",
+        dados: "Qual o volume de uma pirâmide com base (Ab) = 15 cm² e altura (h) = 10 cm? Use a fórmula V = (1/3)Ab × h.",
         imagem: "imagens/piramide.png",
-        resposta: 30,
-    },    
+        resposta: 50,
+    },
     {
         solido: "Pirâmide",
-        formula: { 
+        formula: {
             volume: "V = (1/3)Ab × h",
-            area: "A = Ab + Al" 
+            area: "A = Ab + Al",
         },
-        dados: "Qual o volume de uma pirâmide com base (Ab) = 12 cm² e altura (h) = 9 cm? Use a fórmula V = (1/3)Ab × h.",
+        dados: "Qual o volume de uma pirâmide com base (Ab) = 20 cm² e altura (h) = 12 cm? Use a fórmula V = (1/3)Ab × h.",
         imagem: "imagens/piramide.png",
-        resposta: 36,
+        resposta: 80,
     },
-    
+
     // PRISMA TRIANGULAR
     {
         solido: "Prisma Triangular",
-        formula: { 
+        formula: {
             volume: "V = Ab × h",
-            area: "A = 2Ab + Al" 
+            area: "A = 2Ab + Al",
         },
-        dados: "Qual o volume de um prisma triangular com área da base (Ab) = 18 cm² e altura (h) = 10 cm? Use a fórmula V = Ab × h.",
+        dados: "Qual o volume de um prisma triangular com área da base (Ab) = 30 cm² e altura (h) = 12 cm? Use a fórmula V = Ab × h.",
         imagem: "imagens/prisma triangular.png",
-        resposta: 180,
+        resposta: 360,
     },
     {
         solido: "Prisma Triangular",
-        formula: { 
+        formula: {
             volume: "V = Ab × h",
-            area: "A = 2Ab + Al" 
+            area: "A = 2Ab + Al",
         },
-        dados: "Qual o volume de um prisma triangular com área da base (Ab) = 25 cm² e altura (h) = 10 cm? Use a fórmula V = Ab × h.",
+        dados: "Qual o volume de um prisma triangular com área da base (Ab) = 40 cm² e altura (h) = 15 cm? Use a fórmula V = Ab × h.",
         imagem: "imagens/prisma triangular.png",
-        resposta: 250,
+        resposta: 600,
     },
-    
+
     // PRISMA HEXAGONAL
     {
         solido: "Prisma Hexagonal",
-        formula: { 
+        formula: {
             volume: "V = Ab × h",
-            area: "A = 6 × (lado² × √3 / 4) + 6lh" 
+            area: "A = 6 × (lado² × √3 / 4) + 6lh",
         },
-        dados: "Qual o volume de um prisma hexagonal com área da base (Ab) = 30 cm² e altura (h) = 8 cm?",
+        dados: "Qual o volume de um prisma hexagonal com área da base (Ab) = 50 cm² e altura (h) = 10 cm?",
         imagem: "imagens/prisma hexagonal.png",
-        resposta: 240,
+        resposta: 500,
     },
     {
         solido: "Prisma Hexagonal",
-        formula: { 
+        formula: {
             volume: "V = Ab × h",
-            area: "A = 6 × (lado² × √3 / 4) + 6lh" 
+            area: "A = 6 × (lado² × √3 / 4) + 6lh",
         },
-        dados: "Qual o volume de um prisma hexagonal com área da base (Ab) = 45 cm² e altura (h) = 8 cm?",
+        dados: "Qual o volume de um prisma hexagonal com área da base (Ab) = 60 cm² e altura (h) = 12 cm?",
         imagem: "imagens/prisma hexagonal.png",
-        resposta: 360,
+        resposta: 720,
     },
 
     // PRISMA PENTAGONAL
     {
         solido: "Prisma Pentagonal",
-        formula: { 
+        formula: {
             volume: "V = Ab × h",
-            area: "A = 5 × (lado² × √3 / 4) + 5lh" 
+            area: "A = 5 × (lado² × √3 / 4) + 5lh",
         },
-        dados: "Qual o volume de um prisma pentagonal com área da base (Ab) = 35 cm² e altura (h) = 6 cm? Use a fórmula V = Ab × h.",
+        dados: "Qual o volume de um prisma pentagonal com área da base (Ab) = 40 cm² e altura (h) = 15 cm? Use a fórmula V = Ab × h.",
         imagem: "imagens/prisma pentagonal.png",
-        resposta: 210,
-    },    
+        resposta: 600,
+    },
     {
         solido: "Prisma Pentagonal",
-        formula: { 
+        formula: {
             volume: "V = Ab × h",
-            area: "A = 5 × (lado² × √3 / 4) + 5lh" 
+            area: "A = 5 × (lado² × √3 / 4) + 5lh",
         },
-        dados: "Qual o volume de um prisma pentagonal com área da base (Ab) = 50 cm² e altura (h) = 12 cm? Use a fórmula V = Ab × h.",
+        dados: "Qual o volume de um prisma pentagonal com área da base (Ab) = 55 cm² e altura (h) = 18 cm? Use a fórmula V = Ab × h.",
         imagem: "imagens/prisma pentagonal.png",
-        resposta: 600, // Resultado arredondado para inteiro
-    }  
+        resposta: 990, // Resultado arredondado para inteiro
+    },
 ];
-
 
 //DIFÍCEIS
 const perguntasD = [
@@ -250,24 +248,23 @@ const perguntasD = [
     {
         solido: "Cubo",
         formula: {
-            volume: "V = a³",
-            area: "A = 6a²",
-            perimetro: "P = 12a"
+            area: "A = a²",
+            areaLateral: "Al = 4a²",
+            areaTotal: "At = 6a²",
         },
-        dados: "Um cubo tem aresta (a) = 4 cm. Primeiro, calcule o volume do cubo. Depois, calcule a área e, por fim, calcule o perímetro do cubo.",
+        dados: "Um cubo tem aresta (a) = 4 cm. Calcule todas as áreas do cubo (lateral, base e total) e as some.",
         imagem: "imagens/cubo.png",
-        resposta: 96,  // Resultado final (volume)
+        resposta: 176,  // Resultado final (volume)
     },
     {
         solido: "Cubo",
         formula: {
             volume: "V = a³",
             area: "A = 6a²",
-            perimetro: "P = 12a"
         },
-        dados: "Um cubo tem aresta (a) = 6 cm. Primeiro, calcule o volume do cubo. Depois, calcule a área e, por fim, calcule o perímetro do cubo.",
+        dados: "Um cubo tem aresta (a) = 6 cm. Primeiro, calcule o volume do cubo. Depois, calcule a área e, por fim, subtraia os dois resultados.",
         imagem: "imagens/cubo.png",
-        resposta: 216,  // Resultado final (volume)
+        resposta: 0,  // Resultado final (volume)
     },
 
 // ESFERA
@@ -278,9 +275,9 @@ const perguntasD = [
             area: "A = 4πr²",
             circunferencia: "C = 2πr"
         },
-        dados: "Uma esfera tem raio (r) = 5 cm. Primeiro, calcule o volume da esfera. Depois, calcule a área e, por fim, calcule a circunferência da esfera.",
+        dados: "Uma esfera tem raio (r) = 3 cm. Calcule o valor da somatória do volume + area + circunferência. Use (π = 3)",
         imagem: "imagens/esfera.png",
-        resposta: 523,  // Resultado final (volume)
+        resposta: 234,  // Resultado final (volume)
     },
     {
         solido: "Esfera",
@@ -289,9 +286,9 @@ const perguntasD = [
             area: "A = 4πr²",
             circunferencia: "C = 2πr"
         },
-        dados: "Uma esfera tem raio (r) = 8 cm. Primeiro, calcule o volume da esfera. Depois, calcule a área e, por fim, calcule a circunferência da esfera.",
+        dados: "Uma esfera tem raio (r) = 6 cm. Primeiro, calcule o volume da esfera. Depois, calcule a área e, por fim, calcule a circunferência da esfera. Subtraia tudo no final para achar o resultado. (Use π = 3)",
         imagem: "imagens/esfera.png",
-        resposta: 2145,  // Resultado final (volume)
+        resposta: -180,
     },
 
 // CONE
@@ -302,20 +299,19 @@ const perguntasD = [
             areaLateral: "A = πrl",
             areaTotal: "A = πr(r + l)"
         },
-        dados: "Um cone tem raio (r) = 3 cm e altura (h) = 9 cm. Utilize π = 3,14. Primeiro, calcule o volume do cone. Em seguida, calcule a área lateral e, finalmente, calcule a área total do cone.",
+        dados: "Um cone tem raio (r) = 3 cm e altura (h) = 6 cm. Primeiro, calcule o volume do cone. Em seguida, calcule a área lateral e, finalmente, calcule a área total do cone. Some tudo no final. (Use π = 3)",
         imagem: "imagens/cone.png",
-        resposta: 117,  // Resultado final (área total)
+        resposta: 201,  // Resultado final (área total)
     },
     {
         solido: "Cone",
         formula: {
             volume: "V = (1/3)πr²h",
             areaLateral: "A = πrl",
-            areaTotal: "A = πr(r + l)"
         },
-        dados: "Um cone tem raio (r) = 5 cm e altura (h) = 12 cm. Utilize π = 3,14. Primeiro, calcule o volume do cone. Em seguida, calcule a área lateral e, finalmente, calcule a área total do cone.",
+        dados: "Um cone tem raio (r) = 6 cm e altura (h) = 12 cm. Primeiro, calcule o volume do cone. Em seguida, calcule a área lateral e, finalmente, divida um pelo outro. (Use π = 3)",
         imagem: "imagens/cone.png",
-        resposta: 471,  // Resultado final (área total)
+        resposta: 2,  // Resultado final (área total)
     },
 
 // CILINDRO
@@ -326,33 +322,32 @@ const perguntasD = [
             areaLateral: "A = 2πrh",
             areaTotal: "A = 2πr² + 2πrh"
         },
-        dados: "Um cilindro tem raio (r) = 3 cm e altura (h) = 10 cm. Utilize π = 3,14. Primeiro, calcule o volume do cilindro. Depois, calcule a área lateral e, por fim, calcule a área total do cilindro.",
+        dados: "Um cilindro tem raio (r) = 3 cm e altura (h) = 10 cm. Primeiro, calcule o volume do cilindro. Depois, calcule a área lateral e, por fim, calcule a área total do cilindro e subtraia tudo. Use (π = 3)",
         imagem: "imagens/cilindro.png",
-        resposta: 282,  // Resultado final (área total)
+        resposta: -144,
     },
     {
         solido: "Cilindro",
         formula: {
             volume: "V = πr²h",
             areaLateral: "A = 2πrh",
-            areaTotal: "A = 2πr² + 2πrh"
+            areaTotal: "A = 2πr² + 2πrh",
         },
-        dados: "Um cilindro tem raio (r) = 6 cm e altura (h) = 15 cm. Utilize π = 3,14. Primeiro, calcule o volume do cilindro. Depois, calcule a área lateral e, por fim, calcule a área total do cilindro.",
+        dados: "Um cilindro tem raio (r) = 3 cm e altura (h) = 12 cm. Primeiro, calcule o volume do cilindro. Depois, calcule a área lateral, calcule a área total do cilindro e, por fim multiplique tudo e divida pelo valor do volume vezes a área total. Use (π = 3)",
         imagem: "imagens/cilindro.png",
-        resposta: 1260,  // Resultado final (área total)
+        resposta: 216,
     },
-
+    
 // PARALELEPIPEDO
     {
         solido: "Paralelepípedo",
         formula: {
             volume: "V = a × b × c",
             areaTotal: "A = 2(ab + bc + ac)",
-            diagonal: "d = √(a² + b² + c²)"
         },
-        dados: "Um paralelepípedo tem comprimento (a) = 7 cm, largura (b) = 5 cm e altura (c) = 4 cm. Primeiro, calcule o volume do paralelepípedo. Em seguida, calcule a área total e, por fim, calcule a diagonal do paralelepípedo.",
+        dados: "Um paralelepípedo tem comprimento (a) = 7 cm, largura (b) = 5 cm e altura (c) = 4 cm. Primeiro, calcule o volume do paralelepípedo. Em seguida, calcule a área total, por fim, some tudo.",
         imagem: "imagens/paralelepipedo.png",
-        resposta: 210,  // Resultado final (área total)
+        resposta: 306,
     },
     {
         solido: "Paralelepípedo",
@@ -361,9 +356,9 @@ const perguntasD = [
             areaTotal: "A = 2(ab + bc + ac)",
             diagonal: "d = √(a² + b² + c²)"
         },
-        dados: "Um paralelepípedo tem comprimento (a) = 10 cm, largura (b) = 6 cm e altura (c) = 4 cm. Primeiro, calcule o volume do paralelepípedo. Em seguida, calcule a área total e, por fim, calcule a diagonal do paralelepípedo.",
+        dados: "Um paralelepípedo tem comprimento (a) = 10 cm, largura (b) = 6 cm e altura (c) = 4 cm. Primeiro, calcule o volume do paralelepípedo. Em seguida, calcule a área total, calcule a diagonal do paralelepípedo e, por fim, some tudo. Subtraia tudo pela área total.",
         imagem: "imagens/paralelepipedo.png",
-        resposta: 292,  // Resultado final (área total)
+        resposta: 252,
     },
 
 // PRISMA TRIANGULAR
@@ -373,9 +368,9 @@ const perguntasD = [
             volume: "V = A_base × h",
             areaTotal: "A = 2A_base + A_lateral"
         },
-        dados: "Um prisma triangular tem base triangular com altura de 4 cm e comprimento da base 6 cm, e a altura do prisma é 10 cm. Primeiro, calcule o volume e, depois, calcule a área total.",
+        dados: "Um prisma triangular tem base triangular com altura de 4 cm e comprimento da base 6 cm, e a altura do prisma é 10 cm. Primeiro, calcule o volume e, depois, calcule a área total e some tudo.",
         imagem: "imagens/prisma triangular.png",
-        resposta: 120,  // Resultado final (volume)
+        resposta: 316,
     },
     {
         solido: "Prisma Triangular",
@@ -383,9 +378,9 @@ const perguntasD = [
             volume: "V = A_base × h",
             areaTotal: "A = 2A_base + A_lateral"
         },
-        dados: "Um prisma triangular tem base triangular com altura de 5 cm e comprimento da base 7 cm, e a altura do prisma é 8 cm. Primeiro, calcule o volume e, depois, calcule a área total.",
+        dados: "Um prisma triangular tem base triangular com altura de 5 cm e comprimento da base 7 cm, e a altura do prisma é 8 cm. Primeiro, calcule o volume e, depois, calcule a área total, por fim subtraia um pelo outro respectivamente.",
         imagem: "imagens/prisma triangular.png",
-        resposta: 154,  // Resultado final (volume)
+        resposta: -60,
     },
 
 // PRISMA PENTAGONAL
@@ -395,19 +390,18 @@ const perguntasD = [
             volume: "V = A_base × h",
             areaTotal: "A = 5ab + 5h"
         },
-        dados: "Um prisma pentagonal tem base com lados de 5 cm e altura do prisma de 12 cm. Primeiro, calcule o volume e, depois, calcule a área total.",
+        dados: "Um prisma pentagonal tem base com lados de 5 cm e altura do prisma de 12 cm. Primeiro, calcule o volume e, depois, calcule a área total. Multiplique um pelo outro no final e subtraia por 90000.",
         imagem: "imagens/prisma pentagonal.png",
-        resposta: 600,  // Resultado final (volume)
+        resposta: 6348,
     },
     {
         solido: "Prisma Pentagonal",
         formula: {
             volume: "V = A_base × h",
-            areaTotal: "A = 5ab + 5h"
         },
-        dados: "Um prisma pentagonal tem base com lados de 4 cm e altura do prisma de 15 cm. Primeiro, calcule o volume e, depois, calcule a área total.",
+        dados: "Um prisma pentagonal tem base com lados de 5 cm e altura do prisma de 10 cm. Calcule o volume.",
         imagem: "imagens/prisma pentagonal.png",
-        resposta: 480,  // Resultado final (volume)
+        resposta: 430,
     },
 
 // PRISMA HEXAGONAL
@@ -417,9 +411,9 @@ const perguntasD = [
             volume: "V = A_base × h",
             areaTotal: "A = 6ab + 6h"
         },
-        dados: "Um prisma hexagonal tem base com lados de 6 cm e altura do prisma de 14 cm. Primeiro, calcule o volume e, depois, calcule a área total.",
+        dados: "Um prisma hexagonal tem base com lados de 2 cm e altura do prisma de 10 cm. Primeiro, calcule o volume e, depois, calcule a área total. Subtraia um pelo outro",
         imagem: "imagens/prisma hexagonal.png",
-        resposta: 1512,  // Resultado final (volume)
+        resposta: 20,  // Resultado final (volume)
     },
     {
         solido: "Prisma Hexagonal",
@@ -427,9 +421,9 @@ const perguntasD = [
             volume: "V = A_base × h",
             areaTotal: "A = 6ab + 6h"
         },
-        dados: "Um prisma hexagonal tem base com lados de 8 cm e altura do prisma de 10 cm. Primeiro, calcule o volume e, depois, calcule a área total.",
+        dados: "Um prisma hexagonal tem base com lados de 5 cm e altura do prisma de 10 cm. Primeiro, calcule o volume e, depois, calcule a área total. Some os resultados.",
         imagem: "imagens/prisma hexagonal.png",
-        resposta: 1920,  // Resultado final (volume)
+        resposta: 860,
     },
 ];
 
