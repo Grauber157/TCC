@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS usuario (
   apelido_usuario VARCHAR(50) NULL,
   descricao VARCHAR(250) NULL,
   data_nascimento DATE NULL,
-  ano_escolar VARCHAR(5) NULL,
+  ano_escolar VARCHAR(10) NULL,
   instituicao_escolar VARCHAR(100) NULL,
   turma_codigo VARCHAR(4),
   PRIMARY KEY (id));
