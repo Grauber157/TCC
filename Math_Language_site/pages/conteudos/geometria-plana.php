@@ -30,6 +30,7 @@
     <aside>
       <p>A geometria plana ou euclidiana é a parte da matemática que estuda as figuras que não possuem volume. A geometria plana também é chamada de euclidiana, uma vez que seu nome representa uma homenagem ao geômetra Euclides de Alexandria, considerado o “pai da geometria”. Curioso notar que o termo geometria é a união das palavras “geo” (terra) e “metria” (medida); assim, a palavra geometria significa a "medida de terra".</p>
     </aside>
+    <h1>Conteúdos</h1>
     <aside>
       <p>Ponto : Conceito adimensional, uma vez que não possui dimensão. Os pontos determinam uma localização e são indicados com letras maiúsculas.</p>
       <p>Reta: A reta, representada por letra minúscula, é uma linha ilimitada unidimensional (possui o comprimento como dimensão) e pode se apresentar em três posições: horizontal, vertical e inclinada. Dependendo da posição das retas, quando elas se cruzam, ou seja, possuem um ponto em comum, são chamadas de retas concorrentes. Por outro lado, as que não possuem ponto em comum, são classificadas como retas paralelas.</p>
