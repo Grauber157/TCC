@@ -47,7 +47,6 @@ const perguntasF = [
     {
         solido: "Esfera",
         formula: { 
-            volume: "V = (4/3)πr³",
             area: "A = 4πr²" 
         },
         dados: "Uma bola de futebol tem raio (r) = 3 cm. Qual a área da superfície da bola? (Use π = 3)",
@@ -130,10 +129,10 @@ const perguntasM = [
         }, 
         dados: "Qual a área total de um cilindro com raio (r) = 4 cm e altura (h) = 6 cm, sabendo que a área lateral (Al) é 150 cm²? (Use π = 3)", 
         imagem: "imagens/cilindro.png", 
-        resposta: 208, // Aproximado com Ab = 35 cm² 
+        resposta: 246,
     },
 
-    // CONE fazer
+    // CONE
     {
         solido: "Cone",
         formula: { 
@@ -152,7 +151,7 @@ const perguntasM = [
         },
         dados: "Qual o volume de um cone com raio (r) = 3 cm e altura (h) = 6 cm? Use a fórmula V = (1/3)πr²h.",
         imagem: "imagens/cone.png",
-        resposta: 51,
+        resposta: 54,
     },    
     
     // PIRAMIDE
@@ -305,7 +304,7 @@ const perguntasD = [
         },
         dados: "Um cone tem raio (r) = 3 cm e altura (h) = 9 cm. Utilize π = 3,14. Primeiro, calcule o volume do cone. Em seguida, calcule a área lateral e, finalmente, calcule a área total do cone.",
         imagem: "imagens/cone.png",
-        resposta: 254,  // Resultado final (área total)
+        resposta: 117,  // Resultado final (área total)
     },
     {
         solido: "Cone",
