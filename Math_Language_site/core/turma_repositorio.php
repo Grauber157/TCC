@@ -95,8 +95,8 @@
             #criterio para a verificacao
             $criterio = [['id', '=', $_SESSION['id']]];
             #verifica se o usuario já esta em uma turma
-            $retorno = Buscar('usuario', ['turma_codigo'], $criterio);
-            if(!isset($retorno[0]['turma_codigo']) || is_null($retorno[0]['turma_codigo']))
+            $usuario = Buscar('usuario', ['turma_codigo'], $criterio);
+            if(!isset($usuario[0]['turma_codigo']) || is_null($usuario[0]['turma_codigo']))
             {
                 #criterio para checagem
                 $criterio = [['codigo', '=', $codigo]];
@@ -108,10 +108,21 @@
                     #CRITERIO 2) se o hash inserido for igual ao hash do banco
                     if(crypt($senha_turma, $salt) == $retorno[0]['senha_turma'])
                     {
-                        #muda a coluna 'codigo_turma' do 'USUARIO', adicionando o codigo da turma
-                        Atualizar('usuario', ['turma_codigo' => $codigo], [['id', '=', $_SESSION['id']]]);
-                        header ('Location: ../index.php');
-                        exit;
+                        #checa a quantidade de pessoas 
+                        $usuario2 = Buscar('usuario', ['id'], [['turma_codigo', '=', $retorno[0]['codigo']]]);
+                        #faz a contagem de id's que pertencem ao codigo da turma
+                        if(count($usuario2) < 40)
+                        {
+                            #muda a coluna 'codigo_turma' do 'USUARIO', adicionando o codigo da turma
+                            Atualizar('usuario', ['turma_codigo' => $codigo], [['id', '=', $_SESSION['id']]]);
+                            header ('Location: ../index.php');
+                            exit;
+                        }
+                        else
+                        {
+                            echo 'Limite de membros da turma atingido!';
+                        }
+                        
                     }
                 }
             }
@@ -160,6 +171,7 @@
                 #deleta a turma
                 $sql = 'DELETE FROM turma WHERE codigo = "'.$retorno[0]['codigo'].'"';
                 DeletarSql($sql);
+                header ('Location: ../index.php');
                 exit;
             }
         break;

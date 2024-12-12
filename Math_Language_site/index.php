@@ -1,12 +1,13 @@
 <?php
     session_start();
-
+    require_once 'core/mysql.php';
+    require_once 'core/sql.php';
+    require_once 'core/conexao_mysql.php';
+    
     if(empty($_SESSION['id']))
     {
       header("Location: pages/login.php");
     }
-    //include("php/include/logout.php");
-    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

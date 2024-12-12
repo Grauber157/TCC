@@ -25,20 +25,37 @@
     {
         //CADASTRA-INSERE O USUARIO NO BANCO
         case 'criar':
-            #atribuicao de dados
-            $dados = [
-                'email' => $email,
-                #criptografa a senha
-                'senha' => crypt($senha, $salt),
-                'nome_usuario' => $name,
-                'apelido_usuario' => $nickname,
-                'data_nascimento' => $data,
-                'ano_escolar' => $ano_escola,
-                'instituicao_escolar' => $nome_escola
-                ];
+            $retorno = Buscar('usuario', ['email'], [['email', '=', $email]]);
+            var_dump($retorno);
+            if(!isset($retorno[0]['email']) || is_null($retorno[0]['email']))
+            {
+                #atribuicao de dados
+                $dados = [
+                    'email' => $email,
+                    #criptografa a senha
+                    'senha' => crypt($senha, $salt),
+                    'nome_usuario' => $name,
+                    'apelido_usuario' => $nickname,
+                    'data_nascimento' => $data,
+                    'ano_escolar' => $ano_escola,
+                    'instituicao_escolar' => $nome_escola
+                    ];
                 #funcao inserir
-            Inserir('usuario', $dados);
-            header ('Location: ../index.php');
+                Inserir('usuario', $dados);
+                
+                #inicia o sistema de pontuacao do usuario
+                $id = Buscar('usuario', ['id'], [['email','=',$dados['email']]]);
+
+                var_dump($id);
+                Inserir('usuario_jogos', ['id_usuario' => $id[0]['id'], 'id_jogo' => 0, 'pontuacao_jogo' => 0]);
+
+                #envia para o login
+                header ('Location: ../index.php');
+            }
+            else
+            {
+                echo "Email já está em uso!";
+            }
         break;
 
 
@@ -85,16 +102,40 @@
             }
         break;
 
+
         //LOG OUT DO USUARIO
         case 'logout':
             session_destroy();
+            header('Location: ../index.php');
+            exit;
         break;
 
 
         //DELETA O USUARIO
         case 'deletar':
-            Deletar('usuario', [['id', '=', $_SESSION['id']]]);
-            Deletar('usuario_jogos', [['id_usuario', '=', $_SESSION['id']]]);
+
+            $retorno = Buscar('turma', ['codigo', 'nome_turma'], [['administrador', '=', $_SESSION['id']]]);
+
+            if(!count($retorno))
+            {
+                #Deleta o usuario
+                $sql = 'DELETE FROM usuario WHERE id ="'. $_SESSION['id'].'"';
+                ComandoSql($sql);
+                #Deleta a pontuacao do usuario excluido
+                $sql = 'DELETE FROM usuario_jogos WHERE id_usuario ="'.$_SESSION['id'].'"';
+                ComandoSql($sql);
+                #Realiza o logout
+                session_destroy();
+                header('Location: ../index.php');
+            }
+            else
+            {
+                echo 'Você é administrador de uma turma! Exclua a turma antes de sair!';
+            }
+            
+
+            // header('Location: ../index.php');
+            exit;
         break;
     }
     

@@ -208,9 +208,9 @@ th, td {
 
 th {
   background-color: #252852ca;
-  color: white;
+  color: rgb(66, 24, 105);
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #2a1355;
 }

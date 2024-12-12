@@ -40,14 +40,17 @@
                     $turmas = BuscarSql($sql);
                     $x = 0;
                     foreach ($turmas as $turma):
-                        if($x > 10)
+                        if($x < 10)
+                        {
+                            echo '<li><span><strong>'.$turma["codigo"].' / '.$turma['nome_turma'].' / '.$turma['pontuacao_total'].'</strong></span></li>';
+                            $x++;
+                        }
+                        else
                         {
                             break;
                         }
-                        $x++;
-                        echo '<li><span><strong>'.$turma["codigo"].' / '.$turma['nome_turma'].' / '.$turma['pontuacao_total'].'</strong></span></li>';
+
                     endforeach;
-                    echo $x;
                 ?>
                 <!-- Repetir itens conforme necessário -->
         </section>
