@@ -55,6 +55,7 @@
                         <option value="8EF">8º ano Ensino Fundamental</option>
                         <option value="9EF">9º ano Ensino Fundamental</option>
                         <option value="Professor">Professor</option>
+                        <option value="Outro">Outro</option>
                     </select>
                 </div>
                 <!-- valor para criar -->
