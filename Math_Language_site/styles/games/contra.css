@@ -1,0 +1,273 @@
+/* Estilização global da página */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #1c1c2d;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #25264d;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    padding: 60px;
+    border-radius: 15px;
+}
+
+/* Título principal */
+h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.controls {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-around; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 200px;
+}
+
+.controls button, .terminar {
+    background-color: #6c2d91;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.controls button:hover, .terminar:hover {
+    background-color: #4d2d61;
+}
+
+.controls #timer {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Informações da questão */
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Botões que simulam portas */
+.option {
+    background-color: #6c2d91;
+    border: 4px solid #3a1f5c;
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    height: 350px;
+    margin: 0 25px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+    font-size: 50px;
+}
+
+/* Adiciona efeito ao hover para parecer que a porta está sendo empurrada */
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: #542f76;
+}
+
+/* Parte superior da porta como se fosse um detalhe */
+.option::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 15%;
+    background-color: #77449b;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.option.selected {
+    transform: scale(1.1); /* Destaca a porta clicada */
+    background-color: rgba(255, 255, 255, 0.3); /* Efeito visual */
+}
+
+/* Número na porta */
+.option .number {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajusta o alinhamento geral para manter o layout harmonioso */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 290px;
+}
+
+/* Resultado da interação */
+#result {
+    position: absolute;
+    bottom: 21%;
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Alinha o centro exato do elemento */
+    font-size: 15px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo para destacar */
+    padding: 10px 10px;
+    border-radius: 8px;
+    color: #fff; /* Cor do texto */
+}
+
+#result.success {
+    color: rgb(196, 11, 212);
+    text-decoration: solid;
+}
+
+#result.fail {
+    color: rgb(106, 0, 148);
+    text-decoration: solid;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1500px) {
+    .controls {
+        margin-left: 0px;
+    }
+}
+@media (max-width: 1440px) {
+    .controls {
+        margin-left: 0px;
+    }
+}
+@media (max-width: 1024px) {
+    .controls {
+        margin-left: 0px;
+    }
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ajusta a fonte para telas menores */
+    }
+
+    .controls {
+        flex-direction: column; /* Organiza os botões em coluna */
+        align-items: center; /* Centraliza os botões */
+        gap: 10px;
+        margin-left: 0px;
+    }
+
+    .controls button {
+        width: 100%;
+    }
+
+    .container {
+        padding: 40px;
+        height: 400px;
+    }
+
+    .question {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Faz os botões ficarem em coluna */
+        gap: 20px; /* Adiciona espaçamento entre os botões */
+    }
+
+    .option {
+        width: 91%; /* Faz os botões ocuparem toda a largura */
+        height: 150px; /* Ajusta a altura dos botões */
+        font-size: 2rem; /* Ajusta o tamanho da fonte */
+    }
+
+    #result {
+        font-size: 12px; /* Ajusta o tamanho da fonte do resultado */
+        position: absolute;
+        bottom: 6%; /* Alinha o resultado a uma altura fixa em relação à tela */
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        width: 50%; /* Garante que o resultado ocupe uma boa parte da tela */
+        text-align: center;
+    }
+}
+
+/* Para telas menores que 420px */
+@media (max-width: 420px) {
+    body {
+        font-size: 12px; /* Ajusta a fonte para telas muito pequenas */
+    }
+
+    .controls {
+        flex-direction: column; /* Organiza os botões em coluna */
+        align-items: center; /* Centraliza os botões */
+        gap: 5px;
+        margin-left: 0px;
+    }
+
+    .controls button {
+        width: 100%;
+        font-size: 1rem; /* Ajusta o tamanho da fonte dos botões */
+    }
+
+    .container {
+        padding: 30px;
+        width: 80%;
+        height: 400px;
+    }
+
+    .question {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Os botões continuam em coluna */
+        gap: 15px; /* Menor espaçamento entre os botões */
+    }
+
+    .option {
+        width: 75%; /* Botões ocupando toda a largura */
+        height: 120px; /* Menor altura para caber melhor em telas pequenas */
+        font-size: 1.8rem; /* Ajusta a fonte para um tamanho adequado */
+    }
+
+    #result {
+        font-size: 10px; /* Ajusta o tamanho do texto do resultado */
+        position: absolute;
+        bottom: 15%; /* Ajuste para telas menores */
+        left: 52%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        width: 50%; /* Ocupa mais espaço na tela */
+        text-align: center;
+    }
+}

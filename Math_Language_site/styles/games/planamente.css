@@ -22,7 +22,7 @@
             border-radius: 10px;
         }
 
-        .controls button {
+        .controls button, .terminar {
             background-color: #6c2d91;
             color: white;
             border: none;
@@ -31,13 +31,13 @@
             cursor: pointer;
             font-size: 1rem;
         }
-
-        .controls button:hover {
+        
+        .controls button:hover, .terminar:hover {
             background-color: #4d2d61;
         }
 
         .controls #timer {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #fff;
         }
 

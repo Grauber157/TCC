@@ -6,7 +6,10 @@
     require_once '../../../core/conexao_mysql.php';
     
     $pontuacao = $_POST['pontuacao'];
-    Inserir('usuario_jogos', ['id_usuario' => $_SESSION['id'], 'id_jogo' => 1, 'pontuacao_jogo' => $pontuacao]);
+
+    var_dump($pontuacao);
+
+    Inserir('usuario_jogos', ['id_usuario' => $_SESSION['id'], 'id_jogo' => 3, 'pontuacao_jogo' => $pontuacao]);
 
     header('Location: ../../games.php');
     exit;

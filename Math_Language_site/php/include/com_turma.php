@@ -12,7 +12,7 @@
     $nome_turma = Buscar('turma', ['nome_turma', 'administrador'], $criterio);
 
     #seleciona os membros da turma
-    $sql = 'SELECT u.nome_usuario, SUM(uj.pontuacao_jogo) AS pontuacao 
+    $sql = 'SELECT u.nome_usuario, SUM(uj.pontuacao_jogo) AS pontuacao, u.ano_escolar AS escolaridade, u.instituicao_escolar AS escola
         FROM usuario u 
         JOIN turma AS t ON u.turma_codigo = t.codigo
         JOIN usuario_jogos AS uj ON uj.id_usuario = u.id
@@ -33,13 +33,15 @@
                         <tr>
                             <td><strong>Nomes</strong></td>
                             <td><strong>Pontuação</strong></td>
+                            <td><strong>Escolaridade</strong></td>
+                            <td><strong>Instituição</strong></td>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                             for($x = 0; $x < count($membros); $x++)
                             {
-                                echo '<tr><td>'.$membros[$x]['nome_usuario'].'</td><td>'.$membros[$x]['pontuacao'].'</td></tr>';
+                                echo '<tr><td>'.$membros[$x]['nome_usuario'].'</td><td>'.$membros[$x]['pontuacao'].'</td><td>'.$membros[$x]['escolaridade'].'</td><td>'.$membros[$x]['escola'].'</td></tr>';
                             }
                         ?>
                     </tbody>

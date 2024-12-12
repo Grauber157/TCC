@@ -17,9 +17,9 @@ $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; //
     <link rel="stylesheet" href="../../../styles/media.css">
     <link rel="shortcut icon" type="imagex/png" href="../../../Material/images/favicon.ico">
 </head>
-<body>
+<body data-difficulty="<?php echo $difficulty; ?>">
     <div class="bodyy">
-    <h1>Ache o X</h1>
+        <h1>Ache o X</h1>
         <div class="controls">
             <button id="func" onclick="reiniciarJogo()">Reiniciar Jogo</button>
             <button id="func" onclick="voltarPagina()">Voltar</button>
@@ -65,11 +65,14 @@ $difficulty = isset($_POST['dificuldade']) ? $_POST['dificuldade'] : 'facil'; //
         </div>
 
         <div id="game-over" class="hidden">
-        <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
+            <h2>Parabéns! Você ganhou <span id="final-time"></span> pontos.</h2>
+            <!-- formulario para enviar valores para o banco de dados -->
+            <form action="gameover.php" method="post">
+                <input type="hidden" name="pontuacao" id="pontuacao">
+                <input type="submit" value="Terminar" class="terminar">
+            </form>
+        </div>
     </div>
-    </div>
-
-    
 
     <script src="ache.js"></script>
     <script>
